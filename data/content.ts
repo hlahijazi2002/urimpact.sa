@@ -589,13 +589,13 @@ export const content = {
       },
       {
         id: "agri",
-        title: { en: "Agricultural Monitoring", ar: "المراقبة الزراعية" },
+        title: { en: "AGRICULTURAL MONITORING", ar: "المراقبة الزراعية" },
         headline: {
           en: "Precision Agriculture From Space",
           ar: "الزراعة الدقيقة من الفضاء",
         },
         body: {
-          en: "Monitor crop health, optimize irrigation, detect pests early, and maximize yields with weekly satellite monitoring and AI-powered insights.",
+          en: "Monitor crop health, optimize irrigation, detect pests early, and maximize yields with weekly satellite monitoring and AI powered insights.",
           ar: "راقب صحة المحاصيل وحسّن الري واكتشف الآفات مبكراً وزِد الغلة إلى أقصاها من خلال مراقبة الأقمار الاصطناعية الأسبوعية ورؤى الذكاء الاصطناعي.",
         },
         features: [

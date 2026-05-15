@@ -187,7 +187,6 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
       <div className="rounded-xl bg-white/3 border border-white/8 p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-white/50 text-xs">Project Completion</span>
-          <span className="text-[#00E5A0] text-xs font-bold">78%</span>
         </div>
         <div className="w-full h-2 rounded-full bg-white/5">
           <div

@@ -13,7 +13,10 @@ export default function Platform() {
   const activeModule = pl.modules[active];
 
   return (
-    <section id="platform" className="relative py-32 bg-[#050D0A] overflow-hidden">
+    <section
+      id="platform"
+      className="relative py-32 bg-[#050D0A] overflow-hidden"
+    >
       {/* Background accent */}
       <div className="absolute inset-0">
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00E5A0]/5 rounded-full blur-3xl" />
@@ -29,7 +32,9 @@ export default function Platform() {
             className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : ""}`}
           >
             <span className="w-8 h-px bg-[#00E5A0]" />
-            <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">{t(pl.sectionLabel)}</span>
+            <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
+              {t(pl.sectionLabel)}
+            </span>
           </motion.div>
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
@@ -51,7 +56,9 @@ export default function Platform() {
         </div>
 
         {/* Tab Selector */}
-        <div className={`flex flex-wrap gap-2 mb-12 ${isAr ? "flex-row-reverse" : ""}`}>
+        <div
+          className={`flex flex-wrap gap-2 mb-12 ${isAr ? "flex-row-reverse" : ""}`}
+        >
           {pl.modules.map((mod, i) => (
             <motion.button
               key={mod.id}
@@ -62,7 +69,13 @@ export default function Platform() {
                   ? "border-transparent text-[#050D0A] shadow-lg"
                   : "border-white/10 text-white/50 hover:text-white hover:border-white/20 bg-transparent"
               }`}
-              style={active === i ? { background: `linear-gradient(135deg, ${mod.color}ee, ${mod.color}99)` } : {}}
+              style={
+                active === i
+                  ? {
+                      background: `linear-gradient(135deg, ${mod.color}ee, ${mod.color}99)`,
+                    }
+                  : {}
+              }
             >
               <span className="text-xl">{mod.icon}</span>
               {t(mod.title)}
@@ -83,16 +96,26 @@ export default function Platform() {
             {/* Left: Detail */}
             <div className={`space-y-8 ${isAr ? "text-right" : ""}`}>
               <div>
-                <div className="flex items-center gap-4 mb-4" style={{ flexDirection: isAr ? "row-reverse" : "row" }}>
+                <div
+                  className="flex items-center gap-4 mb-4"
+                  style={{ flexDirection: isAr ? "row-reverse" : "row" }}
+                >
                   <span
                     className="text-4xl w-14 h-14 flex items-center justify-center rounded-2xl"
-                    style={{ background: `${activeModule.color}15`, color: activeModule.color }}
+                    style={{
+                      background: `${activeModule.color}15`,
+                      color: activeModule.color,
+                    }}
                   >
                     {activeModule.icon}
                   </span>
-                  <h3 className="text-3xl font-black text-white">{t(activeModule.title)}</h3>
+                  <h3 className="text-3xl font-black text-white">
+                    {t(activeModule.title)}
+                  </h3>
                 </div>
-                <p className="text-white/60 text-base leading-relaxed">{t(activeModule.desc)}</p>
+                <p className="text-white/60 text-base leading-relaxed">
+                  {t(activeModule.desc)}
+                </p>
               </div>
 
               <div className={`grid grid-cols-2 gap-3`}>
@@ -104,8 +127,14 @@ export default function Platform() {
                     transition={{ delay: i * 0.08 }}
                     className={`flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 ${isAr ? "flex-row-reverse text-right" : ""}`}
                   >
-                    <span className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center" style={{ background: `${activeModule.color}20` }}>
-                      <span className="w-2 h-2 rounded-full" style={{ background: activeModule.color }} />
+                    <span
+                      className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center"
+                      style={{ background: `${activeModule.color}20` }}
+                    >
+                      <span
+                        className="w-2 h-2 rounded-full"
+                        style={{ background: activeModule.color }}
+                      />
                     </span>
                     <span className="text-white/70 text-sm">{t(feat)}</span>
                   </motion.div>
@@ -117,7 +146,9 @@ export default function Platform() {
             <div className="relative">
               <div
                 className="absolute -inset-4 rounded-3xl blur-2xl opacity-20"
-                style={{ background: `radial-gradient(circle, ${activeModule.color}, transparent)` }}
+                style={{
+                  background: `radial-gradient(circle, ${activeModule.color}, transparent)`,
+                }}
               />
               <div className="relative bg-[#0A1A14]/80 border border-white/10 rounded-2xl p-8 overflow-hidden">
                 <div
@@ -125,8 +156,13 @@ export default function Platform() {
                   style={{ background: activeModule.color }}
                 />
                 <div className="relative z-10">
-                  <div className="text-6xl mb-4 opacity-60">{activeModule.icon}</div>
-                  <h4 className={`text-2xl font-bold text-white mb-3 ${isAr ? "text-right" : ""}`} style={{ color: activeModule.color }}>
+                  <div className="text-6xl mb-4 opacity-60">
+                    {activeModule.icon}
+                  </div>
+                  <h4
+                    className={`text-2xl font-bold text-white mb-3 ${isAr ? "text-right" : ""}`}
+                    style={{ color: activeModule.color }}
+                  >
                     {t(activeModule.title)}
                   </h4>
                   {/* Fake chart */}
@@ -134,8 +170,12 @@ export default function Platform() {
                     {[85, 62, 91, 74].map((val, i) => (
                       <div key={i} className="space-y-1">
                         <div className="flex justify-between text-xs text-white/30">
-                          <span>{t(activeModule.features[i] || activeModule.features[0])}</span>
-                          <span>{val}%</span>
+                          <span>
+                            {t(
+                              activeModule.features[i] ||
+                                activeModule.features[0],
+                            )}
+                          </span>
                         </div>
                         <div className="h-1.5 bg-white/5 rounded-full overflow-hidden">
                           <motion.div

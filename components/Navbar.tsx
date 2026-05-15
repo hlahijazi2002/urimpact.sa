@@ -40,8 +40,8 @@ export default function Navbar() {
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#" className="flex items-center gap-1.5 group">
-          <div className="relative w-10 h-10">
-            <Image src="/logo.png" width={45} height={45} alt="logo" />
+          <div className="relative ">
+            <Image src="/logo.png" width={25} height={30} alt="logo" />
           </div>
           <span className="text-white font-bold text-xl tracking-tight">
             URI<span className="text-[#00E5A0]">MPACT</span>
