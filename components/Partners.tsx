@@ -6,69 +6,98 @@ import { content } from "../data/content";
 export default function Partners() {
   const { t } = useLang();
   const p = content.partners;
-
-  // Duplicate for infinite marquee
   const doubled = [...p.items, ...p.items];
 
   return (
-    <section className="relative py-20 overflow-hidden bg-[#030A07] border-y border-white/5">
-      {/* subtle top gradient */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#030A07] via-transparent to-[#030A07] z-10 pointer-events-none" />
+    <section className="relative py-24 overflow-hidden bg-[#050D0A]">
+      <div
+        className="absolute inset-0 opacity-[0.02]"
+        style={{
+          backgroundImage: `linear-gradient(rgba(0,229,160,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,160,1) 1px, transparent 1px)`,
+          backgroundSize: "48px 48px",
+        }}
+      />
 
-      <div className="relative z-0 max-w-7xl mx-auto px-6 mb-12 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
+          className="text-center mb-14"
         >
-          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-4">
+          <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-5">
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5A0]" />
             <span className="text-[#00E5A0] text-xs font-semibold uppercase tracking-widest">
               {t(p.sectionLabel)}
             </span>
           </div>
-          <h2 className="text-2xl lg:text-3xl font-bold text-white">
+          <h2 className="text-3xl lg:text-4xl font-black text-white mb-3">
             {t(p.headline)}
           </h2>
+          <p className="text-white/40 text-base max-w-xl mx-auto">
+            {t({
+              en: "Trusted by leading universities, government bodies, and research institutions across Saudi Arabia.",
+              ar: "موثوق به من قِبَل الجامعات الرائدة والجهات الحكومية ومراكز البحث في المملكة العربية السعودية.",
+            })}
+          </p>
         </motion.div>
-      </div>
 
-      {/* Marquee track */}
-      <div className="relative overflow-hidden">
-        {/* Left/right fade masks */}
-        <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#030A07] to-transparent z-10 pointer-events-none" />
-        <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#030A07] to-transparent z-10 pointer-events-none" />
+        {/* Marquee */}
+        <div className="relative overflow-hidden">
+          <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-r from-[#050D0A] to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 bg-gradient-to-l from-[#050D0A] to-transparent z-10 pointer-events-none" />
 
+          <motion.div
+            className="flex gap-5 w-max py-3"
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+          >
+            {doubled.map((partner, i) => (
+              <div
+                key={i}
+                className="flex-shrink-0 w-52 h-24 flex items-center justify-center px-7 rounded-2xl bg-white border border-white/90 shadow-sm hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={partner.logo}
+                  alt={partner.name}
+                  className="max-h-12 max-w-full object-contain"
+                  onError={(e) => {
+                    const target = e.target as HTMLImageElement;
+                    target.style.display = "none";
+                    const parent = target.parentElement;
+                    if (parent) {
+                      parent.innerHTML = `<span style="color:#1A2E2B;font-size:11px;font-weight:700;text-align:center;line-height:1.4">${partner.name}</span>`;
+                    }
+                  }}
+                />
+              </div>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* Stats bar */}
         <motion.div
-          className="flex gap-8 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            duration: 28,
-            ease: "linear",
-            repeat: Infinity,
-          }}
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="mt-14 grid grid-cols-3 gap-4"
         >
-          {doubled.map((partner, i) => (
+          {[
+            { val: "9+", label: { en: "Official Partners", ar: "شريك رسمي" }, icon: "🤝" },
+            { val: "5+", label: { en: "Government Bodies", ar: "جهة حكومية" }, icon: "🏛️" },
+            { val: "4+", label: { en: "Universities", ar: "جامعة" }, icon: "🎓" },
+          ].map((stat, i) => (
             <div
               key={i}
-              className="flex-shrink-0 h-20 w-44 flex items-center justify-center px-6 rounded-xl border border-white/6 bg-white/3 hover:border-[#00E5A0]/20 hover:bg-white/5 transition-all duration-300 group"
+              className="flex flex-col items-center justify-center py-6 rounded-2xl border border-white/6 bg-white/2 hover:border-[#00E5A0]/20 transition-colors duration-300"
             >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src={partner.logo}
-                alt={partner.name}
-                className="max-h-10 max-w-full object-contain opacity-40 group-hover:opacity-80 transition-opacity duration-300 filter brightness-0 invert"
-                onError={(e) => {
-                  // Fallback to text if logo fails
-                  const target = e.target as HTMLImageElement;
-                  target.style.display = "none";
-                  const parent = target.parentElement;
-                  if (parent) {
-                    parent.innerHTML = `<span class="text-white/40 text-xs font-medium text-center leading-tight">${partner.name}</span>`;
-                  }
-                }}
-              />
+              <span className="text-2xl mb-2">{stat.icon}</span>
+              <span className="text-3xl font-black text-white mb-1">{stat.val}</span>
+              <span className="text-white/40 text-xs font-medium">{t(stat.label)}</span>
             </div>
           ))}
         </motion.div>

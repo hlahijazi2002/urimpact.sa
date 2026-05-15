@@ -17,7 +17,7 @@ const tajawal = Tajawal({
 });
 
 export const metadata: Metadata = {
-  title: "URIMPACT — Measure. Manage. Mitigate.",
+  title: "URIMPACT",
   description:
     "URIMPACT enables organizations to measure GHG emissions, manage ESG performance, automate sustainability reporting, and accelerate decarbonization through AI-driven insights.",
 };

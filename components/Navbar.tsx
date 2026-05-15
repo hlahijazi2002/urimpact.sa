@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import Image from "next/image";
 
 export default function Navbar() {
   const { lang, setLang, t } = useLang();
@@ -38,30 +39,9 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-3 group">
+        <a href="#" className="flex items-center gap-1.5 group">
           <div className="relative w-10 h-10">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00E5A0] to-[#00C2FF] rounded-lg opacity-20 group-hover:opacity-40 transition-opacity" />
-            <div className="absolute inset-0 flex items-center justify-center">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6l-8-4z"
-                  fill="url(#logoGrad)"
-                />
-                <defs>
-                  <linearGradient
-                    id="logoGrad"
-                    x1="4"
-                    y1="2"
-                    x2="20"
-                    y2="23.35"
-                    gradientUnits="userSpaceOnUse"
-                  >
-                    <stop stopColor="#00E5A0" />
-                    <stop offset="1" stopColor="#00C2FF" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </div>
+            <Image src="/logo.png" width={45} height={45} alt="logo" />
           </div>
           <span className="text-white font-bold text-xl tracking-tight">
             URI<span className="text-[#00E5A0]">MPACT</span>

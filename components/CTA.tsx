@@ -57,7 +57,7 @@ export default function CTA() {
             className={`flex gap-4 justify-center flex-wrap ${isAr ? "flex-row-reverse" : ""}`}
           >
             <motion.a
-              href="/book-demo"
+              href="/demo"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="px-10 py-5 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-bold text-lg hover:shadow-[0_0_60px_rgba(0,229,160,0.5)] transition-shadow"

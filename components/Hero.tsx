@@ -23,7 +23,6 @@ function DashboardMockup() {
 
       {/* Main card */}
       <div className="relative bg-[#0A1A14]/90 backdrop-blur-xl border border-[#00E5A0]/20 rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
-        {/* Card header */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#0D2018]">
           <div className="flex gap-1.5">
             <span className="w-3 h-3 rounded-full bg-red-500/60" />

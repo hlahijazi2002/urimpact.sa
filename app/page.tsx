@@ -14,6 +14,7 @@ import About from "../components/About";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import SatelliteComparison from "@/components/Satellitecomparison";
+import DashboardShowcase from "@/components/Dashboardshowcase";
 
 export default function HomePage() {
   return (
@@ -28,6 +29,7 @@ export default function HomePage() {
       <Frameworks />
       <AIAnalytics />
       <NBS />
+      <DashboardShowcase />
       <SatelliteComparison />
       <BusinessValue />
       <CaseStudies />

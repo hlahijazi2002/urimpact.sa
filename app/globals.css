@@ -22,11 +22,13 @@ body {
 [lang="ar"] body,
 [lang="ar"] *:not([class*="font-mono"]) {
   font-family: var(--font-tajawal), sans-serif;
+  direction: rtl !important;
 }
 
 [lang="en"] body,
 [lang="en"] *:not([class*="font-mono"]) {
   font-family: var(--font-dm-sans), sans-serif;
+  direction: ltr;
 }
 
 @layer base {

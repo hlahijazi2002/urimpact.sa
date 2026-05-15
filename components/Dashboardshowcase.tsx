@@ -1,0 +1,293 @@
+"use client";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
+import { useLang } from "../context/LangContext";
+
+const tabs = [
+  {
+    id: "dashboard",
+    icon: (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <rect x="3" y="3" width="7" height="7" rx="1" />
+        <rect x="14" y="3" width="7" height="7" rx="1" />
+        <rect x="3" y="14" width="7" height="7" rx="1" />
+        <rect x="14" y="14" width="7" height="7" rx="1" />
+      </svg>
+    ),
+    label: { en: "Overview", ar: "نظرة عامة" },
+    desc: {
+      en: "Executive ESG & GHG dashboard",
+      ar: "لوحة ESG وGHG التنفيذية",
+    },
+  },
+  {
+    id: "ghg",
+    icon: (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M2 20h20M6 20V10l6-6 6 6v10" />
+      </svg>
+    ),
+    label: { en: "GHG Module", ar: "وحدة GHG" },
+    desc: {
+      en: "Scope 1, 2 & 3 emissions tracking",
+      ar: "تتبع انبعاثات النطاق 1 و2 و3",
+    },
+  },
+  {
+    id: "decarb",
+    icon: (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+      </svg>
+    ),
+    label: { en: "Net Zero Roadmap", ar: "خارطة طريق صفر الكربون" },
+    desc: {
+      en: "Decarbonization planning & initiatives",
+      ar: "تخطيط إزالة الكربون والمبادرات",
+    },
+  },
+  {
+    id: "esg",
+    icon: (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <circle cx="12" cy="12" r="10" />
+        <path d="M12 8v4l3 3" />
+      </svg>
+    ),
+    label: { en: "ESG Scorecard", ar: "بطاقة ESG" },
+    desc: {
+      en: "Environmental, social & governance KPIs",
+      ar: "مؤشرات الأداء البيئية والاجتماعية",
+    },
+  },
+  {
+    id: "supply",
+    icon: (
+      <svg
+        width="14"
+        height="14"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="2"
+      >
+        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      </svg>
+    ),
+    label: { en: "Supply Chain", ar: "سلسلة التوريد" },
+    desc: {
+      en: "Supplier sustainability tracker",
+      ar: "تتبع استدامة الموردين",
+    },
+  },
+];
+
+export default function DashboardShowcase() {
+  const { lang, t } = useLang();
+  const isAr = lang === "ar";
+  const [active, setActive] = useState("dashboard");
+
+  const activeTab = tabs.find((tb) => tb.id === active)!;
+
+  return (
+    <section
+      id="showcase"
+      className="relative py-32 overflow-hidden bg-[#030A07]"
+    >
+      {/* Background */}
+      <div className="absolute inset-0">
+        <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#00E5A0]/4 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00C2FF]/4 rounded-full blur-3xl" />
+        <div
+          className="absolute inset-0 opacity-[0.025]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(0,229,160,1) 1px, transparent 1px), linear-gradient(90deg, rgba(0,229,160,1) 1px, transparent 1px)`,
+            backgroundSize: "50px 50px",
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className={`mb-14 ${isAr ? "text-right" : ""}`}
+        >
+          <div
+            className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-5 ${isAr ? "flex-row-reverse" : ""}`}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00E5A0] animate-pulse" />
+            <span className="text-[#00E5A0] text-xs font-semibold uppercase tracking-widest">
+              {isAr ? "المنصة الحية" : "Live Platform"}
+            </span>
+          </div>
+          <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
+            {isAr
+              ? "تصور الاستدامة في الوقت الفعلي"
+              : "Visualize Sustainability in Real Time"}
+          </h2>
+          <p
+            className={`text-white/45 text-lg max-w-2xl ${isAr ? "mr-0 ml-auto" : ""}`}
+          >
+            {isAr
+              ? "استكشف لوحات تحكم URIMPACT — من تتبع انبعاثات الكربون إلى خطط إزالة الكربون وتقييم الموردين."
+              : "Explore URIMPACT's dashboards — from carbon emissions tracking to decarbonization roadmaps and supplier assessments."}
+          </p>
+        </motion.div>
+
+        {/* Tab bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className={`flex flex-wrap gap-2 mb-3 ${isAr ? "flex-row-reverse" : ""}`}
+        >
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              onClick={() => setActive(tab.id)}
+              className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300 ${
+                active === tab.id
+                  ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_20px_rgba(0,229,160,0.3)]"
+                  : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/20"
+              } ${isAr ? "flex-row-reverse" : ""}`}
+            >
+              {tab.icon}
+              <span>{t(tab.label)}</span>
+            </button>
+          ))}
+        </motion.div>
+
+        {/* Active tab description */}
+        <p className={`text-white/35 text-sm mb-5 ${isAr ? "text-right" : ""}`}>
+          {t(activeTab.desc)}
+        </p>
+
+        {/* Screenshot container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_80px_rgba(0,229,160,0.08)]"
+        >
+          {/* Browser chrome bar */}
+          <div
+            className={`flex items-center gap-3 px-5 py-3 bg-[#0D1F18] border-b border-white/8 ${isAr ? "flex-row-reverse" : ""}`}
+          >
+            <div className={`flex gap-1.5 ${isAr ? "flex-row-reverse" : ""}`}>
+              <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
+              <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
+              <div className="w-3 h-3 rounded-full bg-[#28C840]" />
+            </div>
+            <div className="flex-1 flex justify-center">
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white/5 border border-white/8 text-white/30 text-xs max-w-xs w-full justify-center">
+                <svg
+                  width="10"
+                  height="10"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <rect x="3" y="11" width="18" height="11" rx="2" />
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                </svg>
+                app.urimpact.sa/{active}
+              </div>
+            </div>
+            <div
+              className={`flex items-center gap-1 ${isAr ? "flex-row-reverse" : ""}`}
+            >
+              <span className="w-2 h-2 rounded-full bg-[#00E5A0] animate-pulse" />
+              <span className="text-[#00E5A0] text-[10px] font-semibold">
+                LIVE
+              </span>
+            </div>
+          </div>
+
+          <div
+            className="relative bg-[#F5F8F7] overflow-hidden"
+            style={{ height: "560px" }}
+          >
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={active}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                className="absolute inset-0"
+              >
+                <Image
+                  src={`/dash-${active}.png`}
+                  alt={`URIMPACT ${t(activeTab.label)} dashboard`}
+                  fill
+                  className="object-cover object-top"
+                  priority={active === "dashboard"}
+                  sizes="(max-width: 1280px) 100vw, 1200px"
+                />
+              </motion.div>
+            </AnimatePresence>
+
+            {/* Bottom fade */}
+            <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#030A07]/70 to-transparent pointer-events-none z-10" />
+
+            {/* Overlay CTA */}
+            <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
+              <a
+                href="/demo"
+                className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-bold text-sm shadow-[0_4px_24px_rgba(0,229,160,0.4)] hover:shadow-[0_4px_32px_rgba(0,229,160,0.6)] transition-shadow"
+              >
+                {isAr ? "جرّب المنصة — احجز عرضاً" : "Get Full Platform Access"}
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path d="M5 12h14M12 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
