@@ -33,9 +33,7 @@ export default function SatelliteComparison() {
           </h2>
         </motion.div>
 
-        <div
-          className={`grid lg:grid-cols-2 gap-8 ${isAr ? "direction-rtl" : ""}`}
-        >
+        <div className={`grid lg:grid-cols-2 gap-8`}>
           {/* Traditional — Red-tinted */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -44,9 +42,7 @@ export default function SatelliteComparison() {
             transition={{ duration: 0.6 }}
             className="rounded-2xl border border-red-500/15 bg-red-500/3 p-8"
           >
-            <div
-              className={`flex items-center gap-3 mb-8 ${isAr ? "flex-row-reverse" : ""}`}
-            >
+            <div className={`flex items-center gap-3 mb-8`}>
               <div className="w-8 h-8 rounded-lg bg-red-500/15 flex items-center justify-center">
                 <svg
                   width="16"
@@ -60,9 +56,7 @@ export default function SatelliteComparison() {
                   <path d="M15 9l-6 6M9 9l6 6" />
                 </svg>
               </div>
-              <h3
-                className={`text-white/70 font-bold text-base ${isAr ? "text-right" : ""}`}
-              >
+              <h3 className={`text-white/70 font-bold text-base`}>
                 {t(s.traditional.title)}
               </h3>
             </div>
@@ -74,7 +68,7 @@ export default function SatelliteComparison() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className={`flex gap-4 p-4 rounded-xl border border-red-500/10 bg-red-500/5 ${isAr ? "flex-row-reverse text-right" : ""}`}
+                  className={`flex gap-4 p-4 rounded-xl border border-red-500/10 bg-red-500/5`}
                 >
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-xl flex-shrink-0">
                     {item.icon}
@@ -100,9 +94,7 @@ export default function SatelliteComparison() {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="rounded-2xl border border-[#00E5A0]/20 bg-[#00E5A0]/3 p-8"
           >
-            <div
-              className={`flex items-center gap-3 mb-4 ${isAr ? "flex-row-reverse" : ""}`}
-            >
+            <div className={`flex items-center gap-3 mb-4`}>
               <div className="w-8 h-8 rounded-lg bg-[#00E5A0]/15 flex items-center justify-center">
                 <svg
                   width="16"
@@ -116,15 +108,11 @@ export default function SatelliteComparison() {
                   <path d="M8 12l3 3 5-5" />
                 </svg>
               </div>
-              <h3
-                className={`text-white font-bold text-base ${isAr ? "text-right" : ""}`}
-              >
+              <h3 className={`text-white font-bold text-base`}>
                 {t(s.automated.title)}
               </h3>
             </div>
-            <p
-              className={`text-white/45 text-sm leading-relaxed mb-7 ${isAr ? "text-right" : ""}`}
-            >
+            <p className={`text-white/45 text-sm leading-relaxed mb-7`}>
               {t(s.automated.body)}
             </p>
             <div className="space-y-4">
@@ -135,7 +123,7 @@ export default function SatelliteComparison() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 + i * 0.1 }}
-                  className={`flex gap-4 p-4 rounded-xl border border-[#00E5A0]/12 bg-[#00E5A0]/5 hover:bg-[#00E5A0]/8 transition-colors ${isAr ? "flex-row-reverse text-right" : ""}`}
+                  className={`flex gap-4 p-4 rounded-xl border border-[#00E5A0]/12 bg-[#00E5A0]/5 hover:bg-[#00E5A0]/8 transition-colors `}
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#00E5A0]/10 flex items-center justify-center text-xl flex-shrink-0">
                     {item.icon}

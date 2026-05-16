@@ -42,7 +42,7 @@ export default function AIAnalytics() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-white/60 text-lg max-w-2xl mx-auto leading-relaxed"
+            className={`text-white/60 text-lg max-w-2xl  leading-relaxed ${isAr ? "text-right" : "mx-auto"}`}
           >
             {t(ai.body)}
           </motion.p>

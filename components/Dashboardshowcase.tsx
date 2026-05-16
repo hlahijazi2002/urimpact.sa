@@ -213,7 +213,7 @@ export default function DashboardShowcase() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className={`flex flex-wrap gap-2 mb-3 ${isAr ? "flex-row-reverse" : ""}`}
+          className={`flex flex-wrap gap-2 mb-3 `}
         >
           {tabs.map((tab) => (
             <button
@@ -223,7 +223,7 @@ export default function DashboardShowcase() {
                 active === tab.id
                   ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_20px_rgba(0,229,160,0.3)]"
                   : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/25"
-              } ${isAr ? "flex-row-reverse" : ""}`}
+              } `}
             >
               {tab.icon}
               <span>{t(tab.label)}</span>
@@ -233,7 +233,7 @@ export default function DashboardShowcase() {
 
         {/* Active tab description */}
         <p
-          className={`text-white/35 text-sm mb-5 transition-all duration-300 ${isAr ? "text-right" : ""}`}
+          className={`text-white/35 text-sm mb-5 transition-all duration-300 `}
         >
           {t(activeTab.desc)}
         </p>

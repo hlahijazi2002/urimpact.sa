@@ -14,7 +14,12 @@ export default function NBS() {
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#050D0A] via-[#0A1A0D]/80 to-[#050D0A]" />
         {/* Organic shapes */}
-        <svg className="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1440 800" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg
+          className="absolute inset-0 w-full h-full opacity-10"
+          viewBox="0 0 1440 800"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
           <ellipse cx="200" cy="400" rx="300" ry="200" fill="#00E5A0" />
           <ellipse cx="1200" cy="300" rx="250" ry="180" fill="#39D353" />
           <ellipse cx="700" cy="700" rx="400" ry="150" fill="#00C2FF" />
@@ -30,7 +35,7 @@ export default function NBS() {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className={`relative ${isAr ? "order-2" : ""}`}
+            className={`relative`}
           >
             {/* Central visual */}
             <div className="relative w-full aspect-square max-w-md mx-auto">
@@ -39,7 +44,11 @@ export default function NBS() {
                 <motion.div
                   key={i}
                   animate={{ rotate: i % 2 === 0 ? 360 : -360 }}
-                  transition={{ duration: 20 + i * 8, repeat: Infinity, ease: "linear" }}
+                  transition={{
+                    duration: 20 + i * 8,
+                    repeat: Infinity,
+                    ease: "linear",
+                  }}
                   className="absolute inset-0 m-auto rounded-full border border-[#00E5A0]/20"
                   style={{
                     width: `${scale * 100}%`,
@@ -66,7 +75,11 @@ export default function NBS() {
                   <div
                     key={i}
                     className="absolute w-12 h-12 rounded-full bg-[#0A1A14] border border-[#00E5A0]/30 flex items-center justify-center shadow-lg"
-                    style={{ left: `${x}%`, top: `${y}%`, transform: "translate(-50%, -50%)" }}
+                    style={{
+                      left: `${x}%`,
+                      top: `${y}%`,
+                      transform: "translate(-50%, -50%)",
+                    }}
                   >
                     <span className="text-xl">{icon}</span>
                   </div>
@@ -84,7 +97,9 @@ export default function NBS() {
               className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : ""}`}
             >
               <span className="w-8 h-px bg-[#39D353]" />
-              <span className="text-[#39D353] text-sm font-semibold uppercase tracking-widest">{t(n.sectionLabel)}</span>
+              <span className="text-[#39D353] text-sm font-semibold uppercase tracking-widest">
+                {t(n.sectionLabel)}
+              </span>
             </motion.div>
             <motion.h2
               initial={{ opacity: 0, y: 30 }}
@@ -112,7 +127,7 @@ export default function NBS() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className={`flex items-center gap-4 p-4 rounded-xl border border-[#39D353]/20 bg-[#39D353]/5 hover:bg-[#39D353]/10 transition-colors ${isAr ? "flex-row-reverse" : ""}`}
+                  className={`flex items-center gap-4 p-4 rounded-xl border border-[#39D353]/20 bg-[#39D353]/5 hover:bg-[#39D353]/10 transition-colors `}
                 >
                   <div className="w-2 h-2 rounded-full bg-[#39D353] flex-shrink-0" />
                   <span className="text-white font-medium">{t(hl)}</span>

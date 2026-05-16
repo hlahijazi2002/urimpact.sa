@@ -35,9 +35,7 @@ export default function CaseStudies() {
           </motion.h2>
         </div>
 
-        <div
-          className={`flex gap-2 mb-10 flex-wrap ${isAr ? "flex-row-reverse" : ""}`}
-        >
+        <div className={`flex gap-2 mb-10 flex-wrap `}>
           {cs.cases.map((c, i) => (
             <button
               key={i}

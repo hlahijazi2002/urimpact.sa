@@ -51,13 +51,12 @@ export default function Partners() {
 
         {/* Marquee */}
         <div className="relative overflow-hidden">
-          {/* fade edges — يتلاءم مع الخلفية تلقائياً */}
           <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 dark:bg-gradient-to-r dark:from-[#050D0A] bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 dark:bg-gradient-to-l dark:from-[#050D0A] bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
 
           <motion.div
             className="flex gap-5 w-max py-3 partners-marquee"
-            style={{ direction: "ltr" }}
+            style={{ direction: isAr ? "rtl" : "ltr" }}
             animate={{ x: ["0%", "-50%"] }}
             transition={{ duration: 35, ease: "linear", repeat: Infinity }}
           >
@@ -66,7 +65,6 @@ export default function Partners() {
                 key={i}
                 className="flex-shrink-0 w-52 h-24 flex items-center justify-center px-7 rounded-2xl bg-white border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
               >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src={partner.logo}
                   alt={partner.name}

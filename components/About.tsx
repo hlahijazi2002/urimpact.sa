@@ -55,11 +55,9 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className={`group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[${color}]/30 transition-all duration-300 ${isAr ? "text-right" : ""}`}
+                className={`group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[${color}]/30 transition-all duration-300 `}
               >
-                <div
-                  className={`flex items-center gap-4 mb-4 ${isAr ? "flex-row-reverse" : ""}`}
-                >
+                <div className={`flex items-center gap-4 mb-4`}>
                   <span className="text-2xl">{icon}</span>
                   <span
                     className="text-sm font-semibold uppercase tracking-widest"

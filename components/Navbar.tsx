@@ -51,7 +51,7 @@ export default function Navbar() {
     >
       <nav
         className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4"
-        dir="ltr"
+        dir={isAr ? "rtl" : "ltr"}
       >
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 group flex-shrink-0">
@@ -77,7 +77,6 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* Right Actions — always LTR order */}
         <div className="flex items-center gap-2 flex-shrink-0">
           {/* Language Switcher */}
           <button
@@ -170,14 +169,15 @@ export default function Navbar() {
             className="lg:hidden dark:bg-[#050D0A]/98 bg-white/98 backdrop-blur-xl border-t dark:border-white/5 border-gray-100 overflow-hidden"
           >
             <div
-              className={`px-6 py-5 flex flex-col gap-1 ${isAr ? "items-end" : ""}`}
+              className="px-6 py-5 flex flex-col gap-1"
+              dir={isAr ? "rtl" : "ltr"}
             >
               {navLinks.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`w-full py-3 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 border-b dark:border-white/5 border-gray-100 text-sm transition-colors ${isAr ? "text-right" : ""}`}
+                  className={`w-full py-3 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 border-b dark:border-white/5 border-gray-100 text-sm transition-colors`}
                 >
                   {t(link.label)}
                 </a>

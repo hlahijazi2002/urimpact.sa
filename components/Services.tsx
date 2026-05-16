@@ -52,9 +52,7 @@ export default function Services() {
         </motion.div>
 
         {/* Tab bar */}
-        <div
-          className={`flex flex-wrap gap-2 mb-10 ${isAr ? "flex-row-reverse" : ""}`}
-        >
+        <div className={`flex flex-wrap gap-2 mb-10`}>
           {s.tabs.map((tab) => (
             <button
               key={tab.id}
@@ -63,7 +61,7 @@ export default function Services() {
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_24px_rgba(0,229,160,0.3)]"
                   : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/20"
-              } ${isAr ? "flex-row-reverse" : ""}`}
+              }`}
             >
               <span>{TAB_ICONS[tab.id]}</span>
               <span>{t(tab.title)}</span>
@@ -103,7 +101,7 @@ export default function Services() {
                       initial={{ opacity: 0, x: isAr ? 16 : -16 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.07 }}
-                      className={`flex items-center gap-3 ${isAr ? "flex-row-reverse" : ""}`}
+                      className={`flex items-center gap-3 `}
                     >
                       <div className="w-5 h-5 rounded-full bg-[#00E5A0]/15 border border-[#00E5A0]/30 flex items-center justify-center flex-shrink-0">
                         <svg

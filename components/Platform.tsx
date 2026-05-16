@@ -56,9 +56,7 @@ export default function Platform() {
         </div>
 
         {/* Tab Selector */}
-        <div
-          className={`flex flex-wrap gap-2 mb-12 ${isAr ? "flex-row-reverse" : ""}`}
-        >
+        <div className={`flex flex-wrap gap-2 mb-12 `}>
           {pl.modules.map((mod, i) => (
             <motion.button
               key={mod.id}
@@ -93,12 +91,11 @@ export default function Platform() {
             transition={{ duration: 0.4 }}
             className="grid lg:grid-cols-2 gap-10 items-center"
           >
-            {/* Left: Detail */}
-            <div className={`space-y-8 ${isAr ? "text-right" : ""}`}>
+            <div className={`space-y-8 `}>
               <div>
                 <div
                   className="flex items-center gap-4 mb-4"
-                  style={{ flexDirection: isAr ? "row-reverse" : "row" }}
+                  style={{ flexDirection: "row" }}
                 >
                   <span
                     className="text-4xl w-14 h-14 flex items-center justify-center rounded-2xl"
@@ -125,7 +122,7 @@ export default function Platform() {
                     initial={{ opacity: 0, x: isAr ? 10 : -10 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.08 }}
-                    className={`flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5 ${isAr ? "flex-row-reverse text-right" : ""}`}
+                    className={`flex items-center gap-3 p-3 rounded-xl bg-white/5 border border-white/5`}
                   >
                     <span
                       className="w-5 h-5 rounded-full flex-shrink-0 flex items-center justify-center"
@@ -142,7 +139,7 @@ export default function Platform() {
               </div>
             </div>
 
-            {/* Right: Visual card */}
+            {/* Visual card */}
             <div className="relative">
               <div
                 className="absolute -inset-4 rounded-3xl blur-2xl opacity-20"

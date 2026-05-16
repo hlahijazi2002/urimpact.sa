@@ -195,12 +195,9 @@ export default function Hero() {
           </motion.p>
 
           {/* CTAs */}
-          <motion.div
-            {...fadeUp(0.4)}
-            className={`flex gap-4 ${isAr ? "flex-row-reverse" : ""} flex-wrap`}
-          >
+          <motion.div {...fadeUp(0.4)} className={`flex gap-4 flex-wrap`}>
             <a
-              href="/bodemo"
+              href="/demo"
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-bold text-base hover:shadow-[0_0_40px_rgba(0,229,160,0.4)] transition-all duration-300 hover:scale-[1.02]"
             >
               {t(h.cta1)}
@@ -214,10 +211,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Stats */}
-          <motion.div
-            {...fadeUp(0.5)}
-            className={`flex gap-8 pt-4 ${isAr ? "flex-row-reverse" : ""}`}
-          >
+          <motion.div {...fadeUp(0.5)} className={`flex gap-8 pt-4`}>
             {h.stats.map((stat, i) => (
               <div key={i} className="space-y-1">
                 <div className="text-3xl font-black text-[#00E5A0]">
@@ -229,10 +223,7 @@ export default function Hero() {
           </motion.div>
 
           {/* Trust Strip */}
-          <motion.div
-            {...fadeUp(0.6)}
-            className={`flex flex-wrap gap-3 pt-2 ${isAr ? "flex-row-reverse" : ""}`}
-          >
+          <motion.div {...fadeUp(0.6)} className={`flex flex-wrap gap-3 pt-2`}>
             {h.trustItems.map((item, i) => (
               <span
                 key={i}
