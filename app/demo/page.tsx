@@ -9,7 +9,7 @@ const demoContent = {
   badge: { en: "Book a Demo", ar: "احجز عرضاً تجريبياً" },
   headline: {
     en: "See URIMPACT in Action",
-    ar: "شاهد يوريمباكت في العمل",
+    ar: "شاهد URIMPACT في العمل",
   },
   sub: {
     en: "Fill in the form below and our team will reach out within 24 hours to schedule a personalized demo tailored to your organization's sustainability goals.",
@@ -32,7 +32,7 @@ const demoContent = {
     title: { en: "We'll be in touch!", ar: "سنتواصل معك قريباً!" },
     body: {
       en: "Thank you for your interest in URIMPACT. Our team will contact you within 24 hours.",
-      ar: "شكراً لاهتمامك بيوريمباكت. سيتواصل معك فريقنا خلال 24 ساعة.",
+      ar: "شكراً لاهتمامك بURIMPACT. سيتواصل معك فريقنا خلال 24 ساعة.",
     },
   },
   features: [
