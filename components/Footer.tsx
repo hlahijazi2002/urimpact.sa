@@ -77,9 +77,7 @@ export default function Footer() {
           >
             {t(f.newsletter.label)}
           </p>
-          <div
-            className={`flex items-center gap-2 w-full sm:w-auto ${isAr ? "flex-row-reverse" : ""}`}
-          >
+          <div className={`flex items-center gap-2 w-full sm:w-auto`}>
             <input
               type="email"
               placeholder={t(f.newsletter.placeholder)}
@@ -96,9 +94,7 @@ export default function Footer() {
           className={`pt-6 border-t border-white/5 ${isAr ? "direction-rtl" : ""}`}
         >
           {/* Legal links */}
-          <div
-            className={`flex flex-wrap gap-x-5 gap-y-2 mb-5 ${isAr ? "justify-end" : ""}`}
-          >
+          <div className={`flex flex-wrap gap-x-5 gap-y-2 mb-5 `}>
             <span className="text-white/20 text-xs font-medium">Legal</span>
             {f.legal.map((link, i) => (
               <a

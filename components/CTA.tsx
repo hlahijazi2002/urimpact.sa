@@ -53,9 +53,7 @@ export default function CTA() {
             {t(c.sub)}
           </p>
 
-          <div
-            className={`flex gap-4 justify-center flex-wrap ${isAr ? "flex-row-reverse" : ""}`}
-          >
+          <div className={`flex gap-4 justify-center flex-wrap `}>
             <motion.a
               href="/demo"
               whileHover={{ scale: 1.03 }}

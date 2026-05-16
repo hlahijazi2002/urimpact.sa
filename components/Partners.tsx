@@ -1,13 +1,20 @@
 "use client";
+import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
 
 export default function Partners() {
   const { lang, t } = useLang();
-  const isAr = lang === "ar";
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const isAr = mounted && lang === "ar";
   const p = content.partners;
-  const doubled = [...p.items, ...p.items];
+  const tripled = [...p.items, ...p.items, ...p.items];
 
   return (
     <section
@@ -49,26 +56,26 @@ export default function Partners() {
           </p>
         </motion.div>
 
-        {/* Marquee */}
-        <div className="relative overflow-hidden">
+        <div className="relative overflow-hidden" dir="ltr">
           <div className="absolute left-0 top-0 bottom-0 w-24 lg:w-40 dark:bg-gradient-to-r dark:from-[#050D0A] bg-gradient-to-r from-gray-50 to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-24 lg:w-40 dark:bg-gradient-to-l dark:from-[#050D0A] bg-gradient-to-l from-gray-50 to-transparent z-10 pointer-events-none" />
 
           <motion.div
-            className="flex gap-5 w-max py-3 partners-marquee"
-            style={{ direction: isAr ? "rtl" : "ltr" }}
-            animate={{ x: ["0%", "-50%"] }}
-            transition={{ duration: 35, ease: "linear", repeat: Infinity }}
+            className="flex gap-5 py-3"
+            style={{ width: "max-content" }}
+            animate={{ x: ["0%", `-${100 / 3}%`] }}
+            transition={{ duration: 40, ease: "linear", repeat: Infinity }}
           >
-            {doubled.map((partner, i) => (
+            {tripled.map((partner, i) => (
               <div
                 key={i}
-                className="flex-shrink-0 w-52 h-24 flex items-center justify-center px-7 rounded-2xl bg-white border border-gray-200 dark:border-white/10 shadow-sm hover:shadow-lg hover:scale-[1.03] transition-all duration-300"
+                className="group flex-shrink-0 w-60 h-28 flex items-center justify-center px-6 rounded-2xl border border-gray-200/60 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
+                style={{ backgroundColor: "rgba(255,255,255,0.55)" }}
               >
                 <img
                   src={partner.logo}
                   alt={partner.name}
-                  className="max-h-12 max-w-full object-contain"
+                  className="max-h-16 max-w-full object-contain transition-transform duration-300 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
                     target.style.display = "none";
