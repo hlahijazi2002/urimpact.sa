@@ -29,7 +29,7 @@ export default function BusinessValue() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : "justify-center"}`}
+            className={`flex items-center gap-3  mb-6 ${isAr ? "flex-row-reverse justify-end" : "justify-center"}`}
           >
             <span className="w-8 h-px bg-[#00E5A0]" />
             <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
@@ -56,7 +56,7 @@ export default function BusinessValue() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative flex flex-col items-center text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent hover:border-[#00E5A0]/40 transition-all duration-300 overflow-hidden ${isAr ? "text-right items-end" : ""}`}
+              className={`group relative flex flex-col items-center text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent hover:border-[#00E5A0]/40 transition-all duration-300 overflow-hidden `}
             >
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5A0]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
