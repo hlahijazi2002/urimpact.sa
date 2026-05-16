@@ -9,7 +9,10 @@ export default function Problem() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-32 overflow-hidden bg-[#050D0A]">
+    <section
+      className="relative py-32 overflow-hidden bg-[#050D0A]"
+      dir={isAr ? "rtl" : "ltr"}
+    >
       {/* Subtle separator line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-[#00E5A0]/30 to-transparent" />
 
@@ -23,7 +26,9 @@ export default function Problem() {
           className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : ""}`}
         >
           <span className="w-8 h-px bg-[#00E5A0]" />
-          <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">{t(p.sectionLabel)}</span>
+          <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
+            {t(p.sectionLabel)}
+          </span>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
@@ -64,11 +69,15 @@ export default function Problem() {
             >
               {/* Hover glow */}
               <div className="absolute inset-0 bg-gradient-to-br from-[#00E5A0]/0 to-[#00E5A0]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              
+
               <div className="relative z-10">
                 <div className="text-3xl mb-4">{card.icon}</div>
-                <h3 className="text-white font-bold text-base mb-2">{t(card.title)}</h3>
-                <p className="text-white/50 text-sm leading-relaxed">{t(card.desc)}</p>
+                <h3 className="text-white font-bold text-base mb-2">
+                  {t(card.title)}
+                </h3>
+                <p className="text-white/50 text-sm leading-relaxed">
+                  {t(card.desc)}
+                </p>
               </div>
 
               {/* Corner accent */}

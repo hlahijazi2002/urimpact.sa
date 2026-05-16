@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import Image from "next/image";
 
 export default function Footer() {
   const { lang, t } = useLang();
@@ -16,7 +17,10 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-[#030A07] border-t border-white/5 pt-20 pb-10 overflow-hidden">
+    <footer
+      className="relative bg-[#030A07] border-t border-white/5 pt-20 pb-10 overflow-hidden"
+      dir={isAr ? "rtl" : "ltr"}
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div
           className={`grid grid-cols-2 lg:grid-cols-5 gap-10 mb-16 ${isAr ? "direction-rtl" : ""}`}
@@ -26,28 +30,10 @@ export default function Footer() {
             className={`col-span-2 lg:col-span-1 ${isAr ? "text-right" : ""}`}
           >
             <div
-              className={`flex items-center gap-3 mb-4 ${isAr ? "flex-row-reverse justify-end" : ""}`}
+              className={`flex items-center gap-2 mb-4 ${isAr ? "flex-row-reverse justify-end" : ""}`}
             >
-              <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-[#00E5A0]/20 to-[#00C2FF]/20 border border-[#00E5A0]/30 flex items-center justify-center">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M12 2L4 6v6c0 5.25 3.5 10.15 8 11.35C16.5 22.15 20 17.25 20 12V6l-8-4z"
-                    fill="url(#footerLogoGrad)"
-                  />
-                  <defs>
-                    <linearGradient
-                      id="footerLogoGrad"
-                      x1="4"
-                      y1="2"
-                      x2="20"
-                      y2="23.35"
-                      gradientUnits="userSpaceOnUse"
-                    >
-                      <stop stopColor="#00E5A0" />
-                      <stop offset="1" stopColor="#00C2FF" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+              <div className="relative">
+                <Image src="/logo.png" alt={"Logo"} height={25} width={25} />
               </div>
               <span className="text-white font-bold text-lg">
                 URI<span className="text-[#00E5A0]">MPACT</span>

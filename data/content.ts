@@ -736,8 +736,8 @@ export const content = {
       ],
     },
     copyright: {
-      en: "© 2025 URIMPACT. All rights reserved.",
-      ar: "© 2025 URIMPACT. جميع الحقوق محفوظة.",
+      en: `© 2026 URIMPACT. All rights reserved.`,
+      ar: `© 2026 URIMPACT. جميع الحقوق محفوظة.`,
     },
     newsletter: {
       label: {

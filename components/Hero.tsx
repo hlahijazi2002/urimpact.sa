@@ -23,6 +23,7 @@ function DashboardMockup() {
 
       {/* Main card */}
       <div className="relative bg-[#0A1A14]/90 backdrop-blur-xl border border-[#00E5A0]/20 rounded-2xl overflow-hidden shadow-[0_32px_80px_rgba(0,0,0,0.5)]">
+        {/* Card header */}
         <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#0D2018]">
           <div className="flex gap-1.5">
             <span className="w-3 h-3 rounded-full bg-red-500/60" />
@@ -142,7 +143,10 @@ export default function Hero() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+    <section
+      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      dir={isAr ? "rtl" : "ltr"}
+    >
       {/* Background */}
       <div className="absolute inset-0 bg-[#050D0A]">
         {/* Grid */}
@@ -196,7 +200,7 @@ export default function Hero() {
             className={`flex gap-4 ${isAr ? "flex-row-reverse" : ""} flex-wrap`}
           >
             <a
-              href="/demo"
+              href="/bodemo"
               className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-bold text-base hover:shadow-[0_0_40px_rgba(0,229,160,0.4)] transition-all duration-300 hover:scale-[1.02]"
             >
               {t(h.cta1)}

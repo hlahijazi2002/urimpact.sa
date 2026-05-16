@@ -1,4 +1,5 @@
 @import "tailwindcss/index.css";
+@variant dark (&:where(.dark, .dark *));
 
 :root {
   --color-emerald: #00e5a0;

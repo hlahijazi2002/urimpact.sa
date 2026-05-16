@@ -17,13 +17,28 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     const saved = localStorage.getItem("urimpact-theme") as Theme | null;
-    if (saved) setTheme(saved);
+    if (saved) {
+      setTheme(saved);
+      applyTheme(saved);
+    } else {
+      applyTheme("dark");
+    }
   }, []);
 
-  useEffect(() => {
+  const applyTheme = (t: Theme) => {
     const root = document.documentElement;
-    root.setAttribute("data-theme", theme);
-    localStorage.setItem("urimpact-theme", theme);
+    if (t === "dark") {
+      root.classList.add("dark");
+    } else {
+      root.classList.remove("dark");
+    }
+    // keep data-theme for any CSS variables you might use
+    root.setAttribute("data-theme", t);
+    localStorage.setItem("urimpact-theme", t);
+  };
+
+  useEffect(() => {
+    applyTheme(theme);
   }, [theme]);
 
   const toggleTheme = () => setTheme((t) => (t === "dark" ? "light" : "dark"));

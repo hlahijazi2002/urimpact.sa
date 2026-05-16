@@ -45,7 +45,7 @@ export default function Navbar() {
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 overflow-hidden ${
         scrolled
-          ? "bg-[#050D0A]/95 backdrop-blur-xl border-b border-[#00E5A0]/10 shadow-[0_4px_40px_rgba(0,229,160,0.05)]"
+          ? "dark:bg-[#050D0A]/95 bg-white/95 backdrop-blur-xl border-b dark:border-[#00E5A0]/10 border-gray-200/80 shadow-[0_4px_40px_rgba(0,229,160,0.05)] dark:shadow-[0_4px_40px_rgba(0,229,160,0.05)]"
           : "bg-transparent"
       }`}
     >
@@ -53,12 +53,12 @@ export default function Navbar() {
         className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4"
         dir="ltr"
       >
-        {/* Logo — always LTR */}
+        {/* Logo */}
         <a href="/" className="flex items-center gap-3 group flex-shrink-0">
           <div className="relative">
             <Image src="/logo.png" alt={"Logo"} height={25} width={25} />
           </div>
-          <span className="text-white font-bold text-xl tracking-tight whitespace-nowrap">
+          <span className="dark:text-white text-gray-900 font-bold text-xl tracking-tight whitespace-nowrap">
             URI<span className="text-[#00E5A0]">MPACT</span>
           </span>
         </a>
@@ -69,7 +69,7 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className={`px-3 py-2 text-sm text-white/60 hover:text-white transition-colors duration-200 rounded-lg hover:bg-white/5 whitespace-nowrap ${isAr ? "font-medium" : ""}`}
+                className={`px-3 py-2 text-sm dark:text-white/60 text-gray-500 dark:hover:text-white hover:text-gray-900 transition-colors duration-200 rounded-lg dark:hover:bg-white/5 hover:bg-gray-100 whitespace-nowrap ${isAr ? "font-medium" : ""}`}
               >
                 {t(link.label)}
               </a>
@@ -82,7 +82,7 @@ export default function Navbar() {
           {/* Language Switcher */}
           <button
             onClick={() => setLang(lang === "en" ? "ar" : "en")}
-            className="flex items-center gap-1.5 px-3 py-2 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 text-white/70 hover:text-white text-sm font-medium transition-all duration-200 whitespace-nowrap"
+            className="flex items-center gap-1.5 px-3 py-2 rounded-lg border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-50 dark:hover:bg-white/10 hover:bg-gray-100 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 text-sm font-medium transition-all duration-200 whitespace-nowrap"
           >
             <svg
               width="13"
@@ -102,7 +102,7 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="hidden lg:flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 bg-white/5 text-white/60 hover:text-white hover:border-white/20 transition-all duration-200 flex-shrink-0"
+            className="hidden lg:flex items-center justify-center w-9 h-9 rounded-lg border dark:border-white/10 border-gray-200 dark:bg-white/5 bg-gray-50 dark:text-white/60 text-gray-500 dark:hover:text-white hover:text-gray-900 dark:hover:border-white/20 hover:border-gray-300 transition-all duration-200 flex-shrink-0"
           >
             {theme === "dark" ? (
               <svg
@@ -140,7 +140,7 @@ export default function Navbar() {
 
           {/* Mobile hamburger */}
           <button
-            className="lg:hidden p-2 text-white/70 hover:text-white flex-shrink-0"
+            className="lg:hidden p-2 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 flex-shrink-0"
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
@@ -167,7 +167,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.25 }}
-            className="lg:hidden bg-[#050D0A]/98 backdrop-blur-xl border-t border-white/5 overflow-hidden"
+            className="lg:hidden dark:bg-[#050D0A]/98 bg-white/98 backdrop-blur-xl border-t dark:border-white/5 border-gray-100 overflow-hidden"
           >
             <div
               className={`px-6 py-5 flex flex-col gap-1 ${isAr ? "items-end" : ""}`}
@@ -177,7 +177,7 @@ export default function Navbar() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className={`w-full py-3 text-white/70 hover:text-white border-b border-white/5 text-sm transition-colors ${isAr ? "text-right" : ""}`}
+                  className={`w-full py-3 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 border-b dark:border-white/5 border-gray-100 text-sm transition-colors ${isAr ? "text-right" : ""}`}
                 >
                   {t(link.label)}
                 </a>
@@ -185,7 +185,7 @@ export default function Navbar() {
               {/* Mobile theme toggle */}
               <button
                 onClick={toggleTheme}
-                className="w-full py-3 text-white/70 hover:text-white border-b border-white/5 text-sm transition-colors flex items-center gap-2"
+                className="w-full py-3 dark:text-white/70 text-gray-600 dark:hover:text-white hover:text-gray-900 border-b dark:border-white/5 border-gray-100 text-sm transition-colors flex items-center gap-2"
               >
                 {theme === "dark" ? "☀️" : "🌙"}
                 <span>
