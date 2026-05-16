@@ -28,7 +28,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html suppressHydrationWarning>
+    <html suppressHydrationWarning lang="en" dir="ltr">
       <body
         className={`${dmSans.variable} ${tajawal.variable} font-sans antialiased`}
       >

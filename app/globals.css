@@ -185,3 +185,18 @@ body {
 [data-theme="light"] textarea::placeholder {
   color: rgba(0, 80, 50, 0.35) !important;
 }
+
+/* ─── RTL (Arabic) font via html[dir] ─── */
+html[dir="rtl"] body,
+html[dir="rtl"] * {
+  font-family: var(--font-tajawal), sans-serif;
+}
+html[dir="ltr"] body,
+html[dir="ltr"] * {
+  font-family: var(--font-dm-sans), sans-serif;
+}
+
+/* Fix flex direction for RTL — Tailwind flex-row-reverse works with dir=rtl too */
+html[dir="rtl"] .navbar-nav {
+  flex-direction: row-reverse;
+}
