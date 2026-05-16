@@ -2,11 +2,13 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "../context/LangContext";
+import { useTheme } from "../context/ThemeContext";
 import { content } from "../data/content";
 import Image from "next/image";
 
 export default function Navbar() {
   const { lang, setLang, t } = useLang();
+  const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const n = content.nav;
@@ -39,9 +41,9 @@ export default function Navbar() {
     >
       <nav className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="flex items-center gap-1.5 group">
+        <a href="#" className="flex items-center gap-2 group">
           <div className="relative ">
-            <Image src="/logo.png" width={25} height={30} alt="logo" />
+            <Image src="/logo.png" alt={"Logo"} width={25} height={25} />
           </div>
           <span className="text-white font-bold text-xl tracking-tight">
             URI<span className="text-[#00E5A0]">MPACT</span>
@@ -85,9 +87,41 @@ export default function Navbar() {
             </span>
           </button>
 
+          {/* Theme Toggle */}
+          <button
+            onClick={toggleTheme}
+            aria-label="Toggle theme"
+            className="hidden lg:flex items-center justify-center w-9 h-9 rounded-lg border border-white/10 bg-white/5 text-white/60 hover:text-white hover:border-white/20 transition-all duration-200"
+          >
+            {theme === "dark" ? (
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <circle cx="12" cy="12" r="5" />
+                <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" />
+              </svg>
+            ) : (
+              <svg
+                width="15"
+                height="15"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+              </svg>
+            )}
+          </button>
+
           {/* Demo CTA */}
           <a
-            href="/demo"
+            href="/book-demo"
             className="hidden lg:flex items-center gap-2 px-5 py-2.5 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm hover:shadow-[0_0_24px_rgba(0,229,160,0.4)] transition-all duration-300 hover:scale-[1.02]"
           >
             {t(n.demo)}
@@ -134,7 +168,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="/demo"
+                href="/book-demo"
                 className="mt-4 text-center py-3 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm"
               >
                 {t(n.demo)}

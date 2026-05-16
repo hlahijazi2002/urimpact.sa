@@ -8,7 +8,6 @@ const TAB_ICONS: Record<string, string> = {
   csr: "🌳",
   esg: "📊",
   mrv: "🔬",
-  agri: "🌾",
 };
 
 export default function Services() {
@@ -136,7 +135,6 @@ export default function Services() {
                 {activeTab === "csr" && <CSRMockup isAr={isAr} />}
                 {activeTab === "esg" && <ESGMockup isAr={isAr} />}
                 {activeTab === "mrv" && <MRVMockup isAr={isAr} />}
-                {activeTab === "agri" && <AgriMockup isAr={isAr} />}
               </div>
             </div>
           </motion.div>
@@ -288,64 +286,6 @@ function MRVMockup({ isAr }: { isAr: boolean }) {
             <div className="text-xl mb-2">{item.icon}</div>
             <p className="text-white/60 text-xs mb-0.5">{item.label}</p>
             <p className="text-[#00E5A0] text-xs font-bold">{item.status}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
-function AgriMockup({ isAr }: { isAr: boolean }) {
-  return (
-    <div>
-      <p className="text-white/60 text-xs uppercase tracking-wider font-medium mb-5">
-        Field Health Monitor
-      </p>
-      {/* Simulated NDVI heatmap */}
-      <div className="rounded-xl overflow-hidden mb-5 border border-white/8">
-        <div className="relative h-36 bg-[#0A1A0D]">
-          {/* Gradient blocks simulating NDVI */}
-          <div className="absolute inset-0 grid grid-cols-8 grid-rows-4 gap-0.5 p-1">
-            {Array.from({ length: 32 }).map((_, i) => {
-              const hues = [
-                "#39D353",
-                "#00E5A0",
-                "#FBBF24",
-                "#39D353",
-                "#00C2FF",
-                "#39D353",
-                "#EF4444",
-                "#39D353",
-              ];
-              return (
-                <div
-                  key={i}
-                  className="rounded-sm opacity-70"
-                  style={{ backgroundColor: hues[i % hues.length] }}
-                />
-              );
-            })}
-          </div>
-          <div className="absolute bottom-2 left-2 bg-[#050D0A]/80 backdrop-blur-sm rounded-lg px-2 py-1">
-            <p className="text-white text-[10px] font-bold">
-              NDVI Map • Field A
-            </p>
-          </div>
-        </div>
-      </div>
-      <div className="grid grid-cols-3 gap-2">
-        {[
-          { icon: "💧", label: "Irrigation", val: "Optimal" },
-          { icon: "🐛", label: "Pest Risk", val: "Low" },
-          { icon: "📈", label: "Yield Est.", val: "+12%" },
-        ].map((m, i) => (
-          <div
-            key={i}
-            className="rounded-xl border border-white/8 bg-white/3 p-2.5 text-center"
-          >
-            <div className="text-base mb-1">{m.icon}</div>
-            <p className="text-white/40 text-[9px]">{m.label}</p>
-            <p className="text-[#00E5A0] text-xs font-bold">{m.val}</p>
           </div>
         ))}
       </div>

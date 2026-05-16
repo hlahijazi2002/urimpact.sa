@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Tajawal } from "next/font/google";
 import "./globals.css";
 import { LangProvider } from "../context/LangContext";
-import Navbar from "@/components/Navbar";
+import { ThemeProvider } from "../context/ThemeContext";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -32,10 +32,9 @@ export default function RootLayout({
       <body
         className={`${dmSans.variable} ${tajawal.variable} font-sans antialiased`}
       >
-        <LangProvider>
-          <Navbar />
-          {children}
-        </LangProvider>
+        <ThemeProvider>
+          <LangProvider>{children}</LangProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

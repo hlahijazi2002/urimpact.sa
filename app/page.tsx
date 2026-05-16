@@ -13,8 +13,8 @@ import CaseStudies from "../components/CaseStudies";
 import About from "../components/About";
 import CTA from "../components/CTA";
 import Footer from "../components/Footer";
-import SatelliteComparison from "@/components/Satellitecomparison";
 import DashboardShowcase from "@/components/Dashboardshowcase";
+import SatelliteComparison from "@/components/Satellitecomparison";
 
 export default function HomePage() {
   return (

@@ -22,7 +22,7 @@ export const content = {
     headline3: { en: "Mitigate", ar: "خفِّف" },
     subheadline: {
       en: "URIMPACT enables organizations to measure GHG emissions, manage ESG performance, automate sustainability reporting, and accelerate decarbonization through AI-driven insights and Nature-Based Solutions.",
-      ar: "تُمكّن URIMPACT المؤسسات من قياس انبعاثات الغازات الدفيئة، وإدارة أداء ESG، وأتمتة تقارير الاستدامة، وتسريع إزالة الكربون من خلال رؤى الذكاء الاصطناعي والحلول القائمة على الطبيعة.",
+      ar: "تُمكّن يوريمباكت المؤسسات من قياس انبعاثات الغازات الدفيئة، وإدارة أداء ESG، وأتمتة تقارير الاستدامة، وتسريع إزالة الكربون من خلال رؤى الذكاء الاصطناعي والحلول القائمة على الطبيعة.",
     },
     cta1: { en: "Request Demo", ar: "طلب عرض تجريبي" },
     cta2: { en: "Learn More", ar: "اعرف المزيد" },
@@ -58,7 +58,7 @@ export const content = {
     },
     transition: {
       en: "URIMPACT helps organizations move from disconnected spreadsheets to intelligent sustainability management.",
-      ar: "تساعد URIMPACT المؤسسات على الانتقال من جداول البيانات المتفرقة إلى إدارة الاستدامة الذكية.",
+      ar: "تساعد يوريمباكت المؤسسات على الانتقال من جداول البيانات المتفرقة إلى إدارة الاستدامة الذكية.",
     },
     cards: [
       {
@@ -110,7 +110,7 @@ export const content = {
     },
     intro: {
       en: "URIMPACT combines ESG management, GHG accounting, decarbonization intelligence, and Nature-Based Solutions into a single enterprise platform.",
-      ar: "تجمع URIMPACT إدارة ESG ومحاسبة الغازات الدفيئة وذكاء إزالة الكربون والحلول القائمة على الطبيعة في منصة مؤسسية واحدة.",
+      ar: "تجمع يوريمباكت إدارة ESG ومحاسبة الغازات الدفيئة وذكاء إزالة الكربون والحلول القائمة على الطبيعة في منصة مؤسسية واحدة.",
     },
     modules: [
       {
@@ -250,7 +250,7 @@ export const content = {
     },
     body: {
       en: "URIMPACT simplifies sustainability disclosures by aligning your reporting workflows with globally accepted standards and regional compliance requirements.",
-      ar: "تبسّط URIMPACT إفصاحات الاستدامة من خلال مواءمة سير عمل التقارير مع المعايير المقبولة عالمياً ومتطلبات الامتثال الإقليمية.",
+      ar: "تبسّط يوريمباكت إفصاحات الاستدامة من خلال مواءمة سير عمل التقارير مع المعايير المقبولة عالمياً ومتطلبات الامتثال الإقليمية.",
     },
     items: [
       "GRI",
@@ -335,7 +335,7 @@ export const content = {
     },
     body: {
       en: "Unlike traditional ESG software platforms, URIMPACT combines digital sustainability intelligence with real-world Nature-Based Solutions to create measurable environmental impact.",
-      ar: "على خلاف منصات برامج ESG التقليدية، تجمع URIMPACT بين الذكاء الرقمي للاستدامة والحلول الطبيعية الواقعية لخلق تأثير بيئي قابل للقياس.",
+      ar: "على خلاف منصات برامج ESG التقليدية، تجمع يوريمباكت بين الذكاء الرقمي للاستدامة والحلول الطبيعية الواقعية لخلق تأثير بيئي قابل للقياس.",
     },
     highlights: [
       { en: "Urban Landscaping", ar: "التشجير الحضري" },
@@ -454,10 +454,10 @@ export const content = {
 
   about: {
     sectionLabel: { en: "About", ar: "عن الشركة" },
-    headline: { en: "About URIMPACT", ar: "عن URIMPACT" },
+    headline: { en: "About URIMPACT", ar: "عن يوريمباكت" },
     body: {
       en: "URIMPACT is a sustainability intelligence platform helping organizations accelerate their transition toward responsible, resilient, and low-carbon operations. We combine ESG management, GHG accounting, AI-powered decarbonization, and Nature-Based Solutions into one integrated ecosystem designed for modern enterprises.",
-      ar: "URIMPACT هي منصة ذكاء استدامة تساعد المؤسسات على تسريع انتقالها نحو عمليات مسؤولة ومرنة وذات انبعاثات كربونية منخفضة. نجمع إدارة ESG ومحاسبة الغازات الدفيئة وإزالة الكربون المدعومة بالذكاء الاصطناعي والحلول الطبيعية في نظام بيئي متكامل واحد مصمم للمؤسسات الحديثة.",
+      ar: "يوريمباكت هي منصة ذكاء استدامة تساعد المؤسسات على تسريع انتقالها نحو عمليات مسؤولة ومرنة وذات انبعاثات كربونية منخفضة. نجمع إدارة ESG ومحاسبة الغازات الدفيئة وإزالة الكربون المدعومة بالذكاء الاصطناعي والحلول الطبيعية في نظام بيئي متكامل واحد مصمم للمؤسسات الحديثة.",
     },
     mission: {
       label: { en: "Mission", ar: "المهمة" },
@@ -587,26 +587,6 @@ export const content = {
           { en: "Third-party audit support", ar: "دعم التدقيق من طرف ثالث" },
         ],
       },
-      {
-        id: "agri",
-        title: { en: "AGRICULTURAL MONITORING", ar: "المراقبة الزراعية" },
-        headline: {
-          en: "Precision Agriculture From Space",
-          ar: "الزراعة الدقيقة من الفضاء",
-        },
-        body: {
-          en: "Monitor crop health, optimize irrigation, detect pests early, and maximize yields with weekly satellite monitoring and AI powered insights.",
-          ar: "راقب صحة المحاصيل وحسّن الري واكتشف الآفات مبكراً وزِد الغلة إلى أقصاها من خلال مراقبة الأقمار الاصطناعية الأسبوعية ورؤى الذكاء الاصطناعي.",
-        },
-        features: [
-          { en: "Crop health heatmaps", ar: "خرائط حرارية لصحة المحاصيل" },
-          { en: "NDVI analysis", ar: "تحليل NDVI" },
-          { en: "Irrigation alerts", ar: "تنبيهات الري" },
-          { en: "Yield optimization", ar: "تحسين الغلة" },
-          { en: "Pest detection", ar: "كشف الآفات" },
-          { en: "Historical performance", ar: "الأداء التاريخي" },
-        ],
-      },
     ],
   },
 
@@ -659,7 +639,7 @@ export const content = {
     automated: {
       title: {
         en: "URIMPACT Provides Automated Satellite Monitoring",
-        ar: "URIMPACT تقدم مراقبة آلية بالأقمار الاصطناعية",
+        ar: "يوريمباكت تقدم مراقبة آلية بالأقمار الاصطناعية",
       },
       body: {
         en: "Automated satellite monitoring + AI-driven analysis provides continuous, verifiable, and auditable insights across every planting project.",
@@ -757,7 +737,7 @@ export const content = {
     },
     copyright: {
       en: "© 2025 URIMPACT. All rights reserved.",
-      ar: "© 2025 URIMPACT. جميع الحقوق محفوظة.",
+      ar: "© 2025 يوريمباكت. جميع الحقوق محفوظة.",
     },
     newsletter: {
       label: {
