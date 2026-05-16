@@ -310,7 +310,7 @@ export default function DashboardShowcase() {
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#030A07]/80 to-transparent pointer-events-none z-10" />
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
               <a
-                href="/book-demo"
+                href="/demo"
                 className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-bold text-sm shadow-[0_4px_24px_rgba(0,229,160,0.4)] hover:shadow-[0_4px_32px_rgba(0,229,160,0.6)] transition-shadow"
               >
                 {isAr ? "احجز عرضك التجريبي الآن" : "Get Full Platform Access"}
