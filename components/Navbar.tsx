@@ -59,7 +59,7 @@ export default function Navbar() {
             <Image src="/logo.png" alt={"Logo"} height={25} width={25} />
           </div>
           <span className="dark:text-white text-gray-900 font-bold text-xl tracking-tight whitespace-nowrap">
-            URI<span className="text-[#00E5A0]">MPACT</span>
+            UR<span className="text-[#00E5A0]">IMPACT</span>
           </span>
         </a>
 

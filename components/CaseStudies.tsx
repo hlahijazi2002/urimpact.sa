@@ -11,8 +11,12 @@ export default function CaseStudies() {
   const [active, setActive] = useState(0);
 
   return (
-    <section className="relative py-32 bg-[#050D0A] overflow-hidden">
+    <section
+      className="relative py-14 md:py-20 lg:py-26 bg-[#050D0A] overflow-hidden"
+      dir={isAr ? "rtl" : "ltr"}
+    >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
+        {/* Header */}
         <div className={`mb-16 ${isAr ? "text-right" : ""}`}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -35,7 +39,10 @@ export default function CaseStudies() {
           </motion.h2>
         </div>
 
-        <div className={`flex gap-2 mb-10 flex-wrap `}>
+        {/* Industry tabs */}
+        <div
+          className={`flex gap-2 mb-10 flex-wrap `}
+        >
           {cs.cases.map((c, i) => (
             <button
               key={i}
@@ -51,6 +58,7 @@ export default function CaseStudies() {
           ))}
         </div>
 
+        {/* Case detail */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
@@ -60,8 +68,9 @@ export default function CaseStudies() {
             transition={{ duration: 0.4 }}
             className="grid lg:grid-cols-3 gap-6"
           >
+            {/* Challenge */}
             <div
-              className={`p-8 rounded-2xl border border-white/10 bg-white/[0.03] ${isAr ? "text-right" : ""}`}
+              className={`p-4 md:p-8 rounded-2xl border border-white/10 bg-white/[0.03] `}
             >
               <div className="text-[#00E5A0] text-xs font-semibold uppercase tracking-widest mb-4">
                 {lang === "ar" ? "التحدي" : "The Challenge"}
@@ -71,8 +80,9 @@ export default function CaseStudies() {
               </p>
             </div>
 
+            {/* Solution */}
             <div
-              className={`p-8 rounded-2xl border border-[#00C2FF]/20 bg-[#00C2FF]/5 ${isAr ? "text-right" : ""}`}
+              className={`p-4 md:p-8 rounded-2xl border border-[#00C2FF]/20 bg-[#00C2FF]/5 `}
             >
               <div className="text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-4">
                 {lang === "ar" ? "الحل" : "The Solution"}
@@ -82,7 +92,8 @@ export default function CaseStudies() {
               </p>
             </div>
 
-            <div className="p-8 rounded-2xl border border-[#00E5A0]/20 bg-[#00E5A0]/5">
+            {/* Results */}
+            <div className="p-4 md:p-8 rounded-2xl border border-[#00E5A0]/20 bg-[#00E5A0]/5">
               <div
                 className={`text-[#00E5A0] text-xs font-semibold uppercase tracking-widest mb-6 ${isAr ? "text-right" : ""}`}
               >
@@ -106,6 +117,7 @@ export default function CaseStudies() {
           </motion.div>
         </AnimatePresence>
 
+        {/* Pilot note */}
         <motion.p
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}

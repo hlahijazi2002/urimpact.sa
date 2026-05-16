@@ -74,14 +74,14 @@ export default function Frameworks() {
   return (
     <section
       id="frameworks"
-      className="relative py-32 bg-[#050D0A] overflow-hidden"
+      className="relative py-12 md:py-16 lg:py-26 bg-[#050D0A] overflow-hidden"
     >
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-[#00C2FF]/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           {/* Left: text */}
-          <div className={isAr ? "text-right order-2 lg:order-1" : ""}>
+          <div>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -130,11 +130,11 @@ export default function Frameworks() {
 
           {/* Right: colored framework badges */}
           <motion.div
-            initial={{ opacity: 0, x: 30 }}
+            initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
-            className={`grid grid-cols-2 gap-3 ${isAr ? "order-1 lg:order-2" : ""}`}
+            className={`grid grid-cols-2 gap-3 ${isAr ? "lg:order-2" : ""}`}
           >
             {f.items.map((item, i) => {
               const style = FRAMEWORK_STYLES[item] ?? {

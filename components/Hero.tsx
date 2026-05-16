@@ -144,7 +144,7 @@ export default function Hero() {
 
   return (
     <section
-      className="relative min-h-screen flex items-center overflow-hidden pt-20"
+      className="relative min-h-screen flex items-center overflow-hidden py-14 md:py-20 lg:py-26"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Background */}

@@ -10,7 +10,7 @@ export default function Problem() {
 
   return (
     <section
-      className="relative py-32 overflow-hidden bg-[#050D0A]"
+      className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#050D0A]"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Subtle separator line */}
@@ -23,7 +23,7 @@ export default function Problem() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : ""}`}
+          className={`flex items-center gap-3 mb-8 ${isAr ? "flex-row-reverse justify-end" : ""}`}
         >
           <span className="w-8 h-px bg-[#00E5A0]" />
           <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
@@ -31,7 +31,7 @@ export default function Problem() {
           </span>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-20">
+        <div className="grid lg:grid-cols-2 gap-5 md:gap-10 items-start mb-10 md:mb-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

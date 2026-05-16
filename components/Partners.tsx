@@ -18,7 +18,7 @@ export default function Partners() {
 
   return (
     <section
-      className="relative py-24 overflow-hidden dark:bg-[#050D0A] bg-gray-50"
+      className="relative py-10 md:py-14 lg:py-24 overflow-hidden dark:bg-[#050D0A] bg-gray-50"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Grid pattern */}
@@ -96,7 +96,7 @@ export default function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-14 grid grid-cols-3 gap-4"
+          className="mt-14 grid md:grid-cols-3 gap-4 "
         >
           {[
             {
@@ -117,7 +117,7 @@ export default function Partners() {
           ].map((stat, i) => (
             <div
               key={i}
-              className="flex flex-col items-center justify-center py-6 rounded-2xl border dark:border-white/6 border-gray-200 dark:bg-white/2 bg-white hover:border-[#00E5A0]/30 dark:hover:border-[#00E5A0]/20 shadow-sm dark:shadow-none transition-colors duration-300"
+              className="flex md:flex-col items-center justify-around md:justify-center py-6 rounded-2xl border dark:border-white/6 border-gray-200 dark:bg-white/2 bg-white hover:border-[#00E5A0]/30 dark:hover:border-[#00E5A0]/20 shadow-sm dark:shadow-none transition-colors duration-300"
             >
               <span className="text-2xl mb-2">{stat.icon}</span>
               <span className="text-3xl font-black dark:text-white text-gray-900 mb-1">

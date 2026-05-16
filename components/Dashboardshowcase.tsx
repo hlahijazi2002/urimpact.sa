@@ -4,7 +4,23 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "../context/LangContext";
 
-const tabs = [
+type TabId =
+  | "dashboard"
+  | "ghg"
+  | "decarb"
+  | "esg"
+  | "gap"
+  | "business"
+  | "supply";
+
+interface Tab {
+  id: TabId;
+  label: { en: string; ar: string };
+  desc: { en: string; ar: string };
+  icon: React.ReactNode;
+}
+
+const tabs: Tab[] = [
   {
     id: "dashboard",
     label: { en: "Overview", ar: "نظرة عامة" },
@@ -156,14 +172,15 @@ const tabs = [
 export default function DashboardShowcase() {
   const { lang, t } = useLang();
   const isAr = lang === "ar";
-  const [active, setActive] = useState("dashboard");
-  const activeTab = tabs.find((tb) => tb.id === active)!;
+  const [active, setActive] = useState<TabId>("dashboard");
+  const activeTab = tabs.find((tb) => tb.id === active) as Tab;
 
   return (
     <section
       id="showcase"
-      className="relative py-32 overflow-hidden bg-[#030A07]"
+      className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#030A07]"
     >
+      {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-[#00E5A0]/4 rounded-full blur-3xl" />
         <div className="absolute bottom-0 right-1/4 w-96 h-96 bg-[#00C2FF]/4 rounded-full blur-3xl" />
@@ -186,20 +203,26 @@ export default function DashboardShowcase() {
           className={`mb-12 ${isAr ? "text-right" : ""}`}
         >
           <div
-            className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-5 ${isAr ? "flex-row-reverse" : ""}`}
+            className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-5 ${
+              isAr ? "flex-row-reverse" : ""
+            }`}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00E5A0] animate-pulse" />
             <span className="text-[#00E5A0] text-xs font-semibold uppercase tracking-widest">
               {isAr ? "المنصة الحية" : "Live Platform"}
             </span>
           </div>
+
           <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight mb-4">
             {isAr
               ? "تصوّر الاستدامة في الوقت الفعلي"
               : "Visualize Sustainability in Real Time"}
           </h2>
+
           <p
-            className={`text-white/45 text-lg max-w-2xl ${isAr ? "mr-0 ml-auto" : ""}`}
+            className={`text-white/45 text-lg max-w-2xl ${
+              isAr ? "mr-0 ml-auto" : ""
+            }`}
           >
             {isAr
               ? "استكشف لوحات تحكم URIMPACT — من تتبع انبعاثات الكربون إلى خطط إزالة الكربون وتقييم الموردين وتحليل الفجوات."
@@ -207,13 +230,13 @@ export default function DashboardShowcase() {
           </p>
         </motion.div>
 
-        {/* Tab bar — scrollable on mobile */}
+        {/* Tab bar */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className={`flex flex-wrap gap-2 mb-3 `}
+          className="flex flex-wrap gap-2 mb-3"
         >
           {tabs.map((tab) => (
             <button
@@ -222,8 +245,8 @@ export default function DashboardShowcase() {
               className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-semibold transition-all duration-300 ${
                 active === tab.id
                   ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_20px_rgba(0,229,160,0.3)]"
-                  : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/25"
-              } `}
+                  : "border border-white/10 bg-white/[0.03] text-white/50 hover:text-white hover:border-white/25"
+              }`}
             >
               {tab.icon}
               <span>{t(tab.label)}</span>
@@ -232,9 +255,7 @@ export default function DashboardShowcase() {
         </motion.div>
 
         {/* Active tab description */}
-        <p
-          className={`text-white/35 text-sm mb-5 transition-all duration-300 `}
-        >
+        <p className="text-white/35 text-sm mb-5 transition-all duration-300">
           {t(activeTab.desc)}
         </p>
 
@@ -248,15 +269,18 @@ export default function DashboardShowcase() {
         >
           {/* Browser chrome */}
           <div
-            className={`flex items-center gap-3 px-5 py-3 bg-[#0D1F18] border-b border-white/8 ${isAr ? "flex-row-reverse" : ""}`}
+            className={`flex items-center gap-3 px-5 py-3 bg-[#0D1F18] border-b border-white/[0.08] ${
+              isAr ? "flex-row-reverse" : ""
+            }`}
           >
             <div className={`flex gap-1.5 ${isAr ? "flex-row-reverse" : ""}`}>
               <div className="w-3 h-3 rounded-full bg-[#FF5F57]" />
               <div className="w-3 h-3 rounded-full bg-[#FEBC2E]" />
               <div className="w-3 h-3 rounded-full bg-[#28C840]" />
             </div>
+
             <div className="flex-1 flex justify-center">
-              <div className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white/5 border border-white/8 text-white/30 text-xs max-w-xs w-full justify-center">
+              <div className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-white/5 border border-white/[0.08] text-white/30 text-xs max-w-xs w-full justify-center">
                 <svg
                   width="10"
                   height="10"
@@ -271,8 +295,11 @@ export default function DashboardShowcase() {
                 app.urimpact.sa/{active}
               </div>
             </div>
+
             <div
-              className={`flex items-center gap-1.5 ${isAr ? "flex-row-reverse" : ""}`}
+              className={`flex items-center gap-1.5 ${
+                isAr ? "flex-row-reverse" : ""
+              }`}
             >
               <span className="w-2 h-2 rounded-full bg-[#00E5A0] animate-pulse" />
               <span className="text-[#00E5A0] text-[10px] font-bold tracking-widest">
@@ -281,11 +308,8 @@ export default function DashboardShowcase() {
             </div>
           </div>
 
-          {/* Screenshot */}
-          <div
-            className="relative bg-[#F5F8F7] overflow-hidden"
-            style={{ height: "560px" }}
-          >
+          {/* Screenshot area */}
+          <div className="relative bg-[#F5F8F7] overflow-hidden h-[560px]">
             <AnimatePresence mode="wait">
               <motion.div
                 key={active}
@@ -306,8 +330,42 @@ export default function DashboardShowcase() {
               </motion.div>
             </AnimatePresence>
 
-            {/* Bottom fade + CTA */}
+            {/* Mobile tap-to-expand — hidden on md+ */}
+            <a
+              href={`/dash-${active}.png`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="absolute inset-0 z-10 flex md:hidden items-start justify-end p-4"
+              aria-label={
+                isAr ? "اضغط لعرض الصورة كاملة" : "Tap to view full image"
+              }
+            >
+              {/* Subtle corner gradient — top right now */}
+              <div className="absolute top-0 right-0 w-36 h-28 bg-gradient-to-bl from-black/25 to-transparent pointer-events-none" />
+              {/* Hint badge */}
+              <div
+                className={`relative flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-black/40 backdrop-blur-sm border border-white/15 text-white/75 text-[11px] font-medium ${
+                  isAr ? "flex-row-reverse" : ""
+                }`}
+              >
+                <svg
+                  width="11"
+                  height="11"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
+                  <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                </svg>
+                {isAr ? "اضغط للتكبير" : "Tap to expand"}
+              </div>
+            </a>
+
+            {/* Bottom fade */}
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#030A07]/80 to-transparent pointer-events-none z-10" />
+
+            {/* CTA button */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 z-20">
               <a
                 href="/demo"

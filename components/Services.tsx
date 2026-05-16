@@ -21,7 +21,8 @@ export default function Services() {
   return (
     <section
       id="solutions"
-      className="relative py-32 overflow-hidden bg-[#050D0A]"
+      className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#050D0A]"
+      dir={isAr ? "rtl" : "ltr"}
     >
       {/* Background */}
       <div className="absolute inset-0">
@@ -36,7 +37,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className={`mb-14 ${isAr ? "text-right" : ""}`}
+          className={`mb-14`}
         >
           <div
             className={`inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-[#00E5A0]/20 bg-[#00E5A0]/5 mb-5 ${isAr ? "flex-row-reverse" : ""}`}
@@ -52,7 +53,7 @@ export default function Services() {
         </motion.div>
 
         {/* Tab bar */}
-        <div className={`flex flex-wrap gap-2 mb-10`}>
+        <div className={`flex flex-wrap gap-2 mb-10 `}>
           {s.tabs.map((tab) => (
             <button
               key={tab.id}
@@ -61,7 +62,7 @@ export default function Services() {
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_24px_rgba(0,229,160,0.3)]"
                   : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/20"
-              }`}
+              } d`}
             >
               <span>{TAB_ICONS[tab.id]}</span>
               <span>{t(tab.title)}</span>
@@ -79,8 +80,7 @@ export default function Services() {
             transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] }}
           >
             <div className={`grid lg:grid-cols-2 gap-10 items-start`}>
-              {/* Left: text */}
-              <div className={isAr ? "text-right" : ""}>
+              <div>
                 <div className="inline-flex items-center gap-2 mb-4 text-[#00E5A0] text-sm font-semibold">
                   <span className="text-2xl">{TAB_ICONS[active.id]}</span>
                   <span className="uppercase tracking-widest">
@@ -180,16 +180,21 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
           </div>
         ))}
       </div>
-      <div className="rounded-xl bg-white/3 border border-white/8 p-4">
-        <div className="flex items-center justify-between mb-2">
-          <span className="text-white/50 text-xs">Project Completion</span>
-        </div>
-        <div className="w-full h-2 rounded-full bg-white/5">
+      <div className="grid grid-cols-2 gap-2">
+        {[
+          { icon: "📡", label: "Satellite Verified", color: "#00E5A0" },
+          { icon: "📍", label: "GPS Tracked", color: "#39D353" },
+          { icon: "🌿", label: "Carbon Sequestered", color: "#00C2FF" },
+          { icon: "📋", label: "Audit Ready", color: "#00E5A0" },
+        ].map((item, i) => (
           <div
-            className="h-2 rounded-full bg-gradient-to-r from-[#00E5A0] to-[#39D353]"
-            style={{ width: "78%" }}
-          />
-        </div>
+            key={i}
+            className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/8 bg-white/3"
+          >
+            <span className="text-sm">{item.icon}</span>
+            <span className="text-white/60 text-xs">{item.label}</span>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -197,9 +202,9 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
 
 function ESGMockup({ isAr }: { isAr: boolean }) {
   const metrics = [
-    { label: "Scope 1", val: "1,240 tCO₂e", color: "#00E5A0", pct: 35 },
-    { label: "Scope 2", val: "890 tCO₂e", color: "#00C2FF", pct: 55 },
-    { label: "Scope 3", val: "3,120 tCO₂e", color: "#7B61FF", pct: 80 },
+    { label: "Scope 1", val: "1,240 tCO₂e", color: "#00E5A0" },
+    { label: "Scope 2", val: "890 tCO₂e", color: "#00C2FF" },
+    { label: "Scope 3", val: "3,120 tCO₂e", color: "#7B61FF" },
   ];
   return (
     <div>
@@ -211,24 +216,24 @@ function ESGMockup({ isAr }: { isAr: boolean }) {
           Real-time
         </span>
       </div>
-      <div className="space-y-4">
+      <div className="space-y-3">
         {metrics.map((m, i) => (
-          <div key={i}>
+          <div
+            key={i}
+            className={`flex items-center justify-between p-3 rounded-xl border border-white/8 bg-white/3 ${isAr ? "flex-row-reverse" : ""}`}
+          >
             <div
-              className={`flex items-center justify-between mb-1.5 ${isAr ? "flex-row-reverse" : ""}`}
+              className={`flex items-center gap-2 ${isAr ? "flex-row-reverse" : ""}`}
             >
-              <span className="text-white/60 text-xs">{m.label}</span>
-              <span className="text-white text-xs font-bold">{m.val}</span>
-            </div>
-            <div className="w-full h-2.5 rounded-full bg-white/5">
-              <motion.div
-                className="h-2.5 rounded-full"
+              <div
+                className="w-2.5 h-2.5 rounded-full flex-shrink-0"
                 style={{ backgroundColor: m.color }}
-                initial={{ width: 0 }}
-                animate={{ width: `${m.pct}%` }}
-                transition={{ duration: 1, delay: i * 0.15 }}
               />
+              <span className="text-white/60 text-xs font-medium">
+                {m.label}
+              </span>
             </div>
+            <span className="text-white text-xs font-black">{m.val}</span>
           </div>
         ))}
       </div>

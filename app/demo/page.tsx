@@ -121,7 +121,6 @@ export default function BookDemoPage() {
     await new Promise((r) => setTimeout(r, 1600));
     setSubmitting(false);
     setSubmitted(true);
-    // Auto-dismiss toast after 6 seconds
     setTimeout(() => setSubmitted(false), 6000);
   };
 
@@ -129,7 +128,6 @@ export default function BookDemoPage() {
     <>
       <Navbar />
 
-      {/* Toast notification */}
       <AnimatePresence>
         {submitted && (
           <motion.div
@@ -187,8 +185,9 @@ export default function BookDemoPage() {
           <div
             className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${isAr ? "direction-rtl" : ""}`}
           >
-            {/* Left: Feature highlights */}
+            {/* Left: Feature highlights — shown second on mobile */}
             <motion.div
+              className="order-2 lg:order-none"
               initial={{ opacity: 0, x: isAr ? 30 : -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -198,7 +197,7 @@ export default function BookDemoPage() {
               }}
             >
               <p
-                className={`text-[#00E5A0] text-sm font-semibold uppercase tracking-widest mb-6 ${isAr ? "text-right" : ""}`}
+                className={`text-[#00E5A0] text-sm font-semibold uppercase tracking-widest mb-6 `}
               >
                 {isAr ? "ما ستشاهده في العرض" : "What you'll see in the demo"}
               </p>
@@ -210,7 +209,7 @@ export default function BookDemoPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 + i * 0.1 }}
-                    className={`flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-[#0A1A14]/60 hover:border-[#00E5A0]/20 hover:bg-[#0A1A14] transition-all duration-300 ${isAr ? "flex-row-reverse text-right" : ""}`}
+                    className={`flex items-start gap-4 p-5 rounded-xl border border-white/5 bg-[#0A1A14]/60 hover:border-[#00E5A0]/20 hover:bg-[#0A1A14] transition-all duration-300 `}
                   >
                     <div className="w-11 h-11 rounded-lg bg-[#00E5A0]/10 border border-[#00E5A0]/15 flex items-center justify-center text-xl shrink-0">
                       {feat.icon}
@@ -226,15 +225,11 @@ export default function BookDemoPage() {
               </div>
 
               {/* Trust badges */}
-              <div
-                className={`mt-10 pt-8 border-t border-white/5 ${isAr ? "text-right" : ""}`}
-              >
+              <div className={`mt-10 pt-8 border-t border-white/5 `}>
                 <p className="text-white/30 text-xs font-medium uppercase tracking-widest mb-4">
                   {isAr ? "متوافق مع" : "Compliant with"}
                 </p>
-                <div
-                  className={`flex flex-wrap gap-2 ${isAr ? "justify-end" : ""}`}
-                >
+                <div className={`flex flex-wrap gap-2 `}>
                   {[
                     "GRI",
                     "IFRS S1 & S2",
@@ -253,8 +248,9 @@ export default function BookDemoPage() {
               </div>
             </motion.div>
 
-            {/* Right: Form card */}
+            {/* Right: Form card — shown first on mobile */}
             <motion.div
+              className="order-1 lg:order-none"
               initial={{ opacity: 0, x: isAr ? -30 : 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{
@@ -417,7 +413,7 @@ export default function BookDemoPage() {
                               fill="none"
                               stroke="currentColor"
                               strokeWidth="2.5"
-                              className={`transition-transform duration-200 group-hover:translate-x-1 ${isAr ? "rotate-180 group-hover:-translate-x-1 group-hover:translate-x-0" : ""}`}
+                              className={`transition-transform duration-200 group-hover:translate-x-1 `}
                             >
                               <path d="M5 12h14M12 5l7 7-7 7" />
                             </svg>

@@ -18,7 +18,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative bg-[#030A07] border-t border-white/5 pt-20 pb-10 overflow-hidden"
+      className="relative bg-[#030A07] border-t border-white/5 pt-6  md:pt-10 lg:pt-20 pb-10 overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -30,13 +30,13 @@ export default function Footer() {
             className={`col-span-2 lg:col-span-1 ${isAr ? "text-right" : ""}`}
           >
             <div
-              className={`flex items-center gap-2 mb-4 ${isAr ? "flex-row-reverse justify-end" : ""}`}
+              className={`flex items-center gap-2 mb-4 `}
             >
               <div className="relative">
                 <Image src="/logo.png" alt={"Logo"} height={25} width={25} />
               </div>
               <span className="text-white font-bold text-lg">
-                URI<span className="text-[#00E5A0]">MPACT</span>
+                UR<span className="text-[#00E5A0]">IMPACT</span>
               </span>
             </div>
             <p className="text-white/30 text-sm leading-relaxed">

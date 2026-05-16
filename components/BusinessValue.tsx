@@ -9,7 +9,11 @@ export default function BusinessValue() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-32 bg-[#030A07] overflow-hidden">
+    <section
+      className="relative py-14 md:py-20 lg:py-26 bg-[#030A07] overflow-hidden"
+      dir={isAr ? "rtl" : "ltr"}
+    >
+      {/* Big text BG */}
       <div className="absolute inset-0 flex items-center justify-center overflow-hidden pointer-events-none">
         <span className="text-[20vw] font-black text-white/[0.02] leading-none select-none whitespace-nowrap">
           IMPACT
@@ -17,7 +21,10 @@ export default function BusinessValue() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        <div className={`text-center mb-20 ${isAr ? "text-right" : ""}`}>
+        {/* Header */}
+        <div
+          className={`text-center mb-10 lg:mb-20 ${isAr ? "text-right" : ""}`}
+        >
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -40,6 +47,7 @@ export default function BusinessValue() {
           </motion.h2>
         </div>
 
+        {/* Metrics */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
           {bv.metrics.map((metric, i) => (
             <motion.div
@@ -48,7 +56,7 @@ export default function BusinessValue() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.1 }}
-              className={`group relative flex flex-col items-center text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent hover:border-[#00E5A0]/40 transition-all duration-300 overflow-hidden`}
+              className={`group relative flex flex-col items-center text-center p-8 rounded-2xl border border-white/10 bg-gradient-to-b from-white/[0.04] to-transparent hover:border-[#00E5A0]/40 transition-all duration-300 overflow-hidden ${isAr ? "text-right items-end" : ""}`}
             >
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5A0]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 

@@ -9,7 +9,7 @@ export default function SatelliteComparison() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-32 overflow-hidden bg-[#030A07]">
+    <section className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#030A07]">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00E5A0]/4 rounded-full blur-3xl" />
       </div>

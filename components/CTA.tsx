@@ -11,7 +11,7 @@ export default function CTA() {
   return (
     <section
       id="contact"
-      className="relative py-32 overflow-hidden bg-[#050D0A]"
+      className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#050D0A]"
     >
       {/* Background */}
       <div className="absolute inset-0">
