@@ -18,7 +18,7 @@ export default function Partners() {
 
   return (
     <section
-      className="relative py-10 md:py-14 lg:py-24 overflow-hidden dark:bg-[#050D0A] bg-gray-50"
+      className="relative py-8 md:py-12 lg:py-14overflow-hidden dark:bg-[#050D0A] bg-gray-50"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Grid pattern */}
@@ -69,8 +69,7 @@ export default function Partners() {
             {tripled.map((partner, i) => (
               <div
                 key={i}
-                className="group flex-shrink-0 w-60 h-28 flex items-center justify-center px-6 rounded-2xl border border-gray-200/60 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
-                style={{ backgroundColor: "rgba(255,255,255,0.55)" }}
+                className="group bg-white flex-shrink-0 w-60 h-28 flex items-center justify-center px-3 rounded-2xl border border-gray-200/60 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
                 <img
                   src={partner.logo}

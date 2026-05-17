@@ -178,7 +178,7 @@ export default function DashboardShowcase() {
   return (
     <section
       id="showcase"
-      className="relative py-14 md:py-20 lg:py-26 overflow-hidden bg-[#030A07]"
+      className="relative py-8 md:py-12 lg:py-14overflow-hidden bg-[#030A07]"
     >
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">

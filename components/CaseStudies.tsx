@@ -12,7 +12,7 @@ export default function CaseStudies() {
 
   return (
     <section
-      className="relative py-14 md:py-20 lg:py-26 bg-[#050D0A] overflow-hidden"
+      className="relative py-8 md:py-12 lg:py-14bg-[#050D0A] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -40,9 +40,7 @@ export default function CaseStudies() {
         </div>
 
         {/* Industry tabs */}
-        <div
-          className={`flex gap-2 mb-10 flex-wrap `}
-        >
+        <div className={`flex gap-2 mb-10 flex-wrap `}>
           {cs.cases.map((c, i) => (
             <button
               key={i}

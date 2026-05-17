@@ -9,7 +9,7 @@ export default function AIAnalytics() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-14 md:py-20 lg:py-26 bg-[#030A07] overflow-hidden">
+    <section className="relative py-8 md:py-12 lg:py-14bg-[#030A07] overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-full bg-gradient-to-b from-transparent via-[#7B61FF]/20 to-transparent" />
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B61FF]/5 rounded-full blur-3xl" />

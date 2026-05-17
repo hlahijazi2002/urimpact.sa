@@ -15,7 +15,7 @@ export default function Platform() {
   return (
     <section
       id="platform"
-      className="relative py-14 md:py-20 lg:py-26 bg-[#050D0A] overflow-hidden"
+      className="relative py-8 md:py-12 lg:py-14bg-[#050D0A] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Background accent */}

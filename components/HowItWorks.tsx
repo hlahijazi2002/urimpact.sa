@@ -9,7 +9,7 @@ export default function HowItWorks() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-14 md:py-20 lg:py-26 bg-[#030A07] overflow-hidden">
+    <section className="relative py-8 md:py-12 lg:py-14bg-[#030A07] overflow-hidden">
       {/* Background grid */}
       <div
         className="absolute inset-0 opacity-[0.02]"

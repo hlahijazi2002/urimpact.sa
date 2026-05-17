@@ -17,9 +17,9 @@ export const content = {
       en: "Saudi Vision 2030 Aligned",
       ar: "متوافق مع رؤية السعودية 2030",
     },
-    headline1: { en: "Measure", ar: "قِس" },
-    headline2: { en: "Manage", ar: "أدِر" },
-    headline3: { en: "Mitigate", ar: "خفِّف" },
+    headline1: { en: "Measure", ar: "حوِّل بياناتك" },
+    headline2: { en: "Manage", ar: "إلى تأثير" },
+    headline3: { en: "Mitigate", ar: "حقيقي" },
     subheadline: {
       en: "URIMPACT enables organizations to measure GHG emissions, manage ESG performance, automate sustainability reporting, and accelerate decarbonization through AI-driven insights and Nature-Based Solutions.",
       ar: "تُمكّن URIMPACT المؤسسات من قياس انبعاثات الغازات الدفيئة، وإدارة أداء ESG، وأتمتة تقارير الاستدامة، وتسريع إزالة الكربون من خلال رؤى الذكاء الاصطناعي والحلول القائمة على الطبيعة.",
@@ -41,7 +41,7 @@ export const content = {
       { value: "3x", label: { en: "Faster Compliance", ar: "امتثال أسرع" } },
       {
         value: "100+",
-        label: { en: "ESG KPIs Tracked", ar: "مؤشر ESG مُتتبَّع" },
+        label: { en: "ESG KPIs Tracked", ar: "مؤشر ESG قيد التتبع" }, // FIX: مُتتبَّع → قيد التتبع
       },
     ],
   },
@@ -66,7 +66,7 @@ export const content = {
         title: { en: "ESG Reporting Complexity", ar: "تعقيد تقارير ESG" },
         desc: {
           en: "Multi-framework requirements create compliance bottlenecks and resource drain.",
-          ar: "متطلبات الأطر المتعددة تخلق اختناقات الامتثال واستنزاف الموارد.",
+          ar: "متطلبات الأطر المتعددة تخلق اختناقات الامتثال وإرهاق الموارد.", // FIX: استنزاف → إرهاق
         },
       },
       {
@@ -120,7 +120,7 @@ export const content = {
         title: { en: "ESG Management", ar: "إدارة ESG" },
         desc: {
           en: "Track ESG KPIs across environmental, social, and governance pillars with automated workflows, compliance mapping, and performance dashboards.",
-          ar: "تتبع مؤشرات ESG عبر الأعمدة البيئية والاجتماعية والحوكمة مع سير عمل آلي ورسم خرائط الامتثال ولوحات الأداء.",
+          ar: "تتبع مؤشرات ESG عبر الركائز البيئية والاجتماعية والحوكمة مع سير عمل آلي ورسم خرائط الامتثال ولوحات الأداء.", // FIX: الأعمدة → الركائز
         },
         features: [
           { en: "ESG KPI tracking", ar: "تتبع مؤشرات ESG" },
@@ -225,7 +225,7 @@ export const content = {
       },
       {
         num: "04",
-        title: { en: "Decarbonize", ar: "خفِّف الكربون" },
+        title: { en: "Decarbonize", ar: "خفِّض الكربون" }, // FIX: خفِّف → خفِّض
         desc: {
           en: "Implement reduction strategies and Nature-Based Solutions aligned with business goals.",
           ar: "نفّذ استراتيجيات التخفيض والحلول القائمة على الطبيعة المتوافقة مع أهداف العمل.",
@@ -307,7 +307,7 @@ export const content = {
       },
       {
         icon: "📈",
-        title: { en: "Smart Benchmarking", ar: "المقارسة الذكية" },
+        title: { en: "Smart Benchmarking", ar: "المقارنة الذكية" }, // FIX: المقارسة → المقارنة (خطأ إملائي)
         desc: {
           en: "Compare performance against industry peers and best practices.",
           ar: "قارن الأداء مع أقران الصناعة وأفضل الممارسات.",

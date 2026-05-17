@@ -10,7 +10,7 @@ export default function BusinessValue() {
 
   return (
     <section
-      className="relative py-14 md:py-20 lg:py-26 bg-[#030A07] overflow-hidden"
+      className="relative py-8 md:py-12 lg:py-14bg-[#030A07] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Big text BG */}
