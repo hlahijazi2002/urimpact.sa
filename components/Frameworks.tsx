@@ -3,66 +3,149 @@ import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
 
-// Each framework gets its own color identity
+
 const FRAMEWORK_STYLES: Record<
   string,
-  { bg: string; border: string; text: string; dot: string; abbr: string }
+  {
+    darkCard: string;
+    lightCard: string;
+    nameText: string;
+    lightNameText: string;
+    dot: string;
+    lightDot: string;
+    badge: string;
+    lightBadge: string;
+    abbr: string;
+    abbrAr: string;
+  }
 > = {
   GRI: {
-    bg: "bg-[#1B4332]/60",
-    border: "border-[#2D6A4F]/50",
-    text: "text-[#52B788]",
-    dot: "bg-[#52B788]",
+    darkCard:
+      "dark:bg-[#1B4332]/60 dark:border-[#2D6A4F]/50 dark:hover:bg-[#1B4332]/80",
+    lightCard:
+      "bg-[#ECFDF5] border-[#6EE7B7]/60 hover:bg-[#D1FAE5]",
+    nameText: "dark:text-[#52B788]",
+    lightNameText: "text-[#065F46]",
+    dot: "dark:bg-[#52B788]",
+    lightDot: "bg-[#059669]",
+    badge:
+      "dark:border-[#2D6A4F]/50 dark:text-[#52B788]",
+    lightBadge:
+      "border-[#6EE7B7]/60 text-[#065F46]",
     abbr: "Global Reporting Initiative",
+    abbrAr: "مبادرة التقارير العالمية",
   },
   SASB: {
-    bg: "bg-[#1A3A5C]/60",
-    border: "border-[#2563EB]/40",
-    text: "text-[#60A5FA]",
-    dot: "bg-[#60A5FA]",
+    darkCard:
+      "dark:bg-[#1A3A5C]/60 dark:border-[#2563EB]/40 dark:hover:bg-[#1A3A5C]/80",
+    lightCard:
+      "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
+    nameText: "dark:text-[#60A5FA]",
+    lightNameText: "text-[#1D4ED8]",
+    dot: "dark:bg-[#60A5FA]",
+    lightDot: "bg-[#2563EB]",
+    badge:
+      "dark:border-[#2563EB]/40 dark:text-[#60A5FA]",
+    lightBadge:
+      "border-[#93C5FD]/60 text-[#1D4ED8]",
     abbr: "Sustainability Accounting",
+    abbrAr: "محاسبة الاستدامة",
   },
   TCFD: {
-    bg: "bg-[#312E81]/60",
-    border: "border-[#6D28D9]/40",
-    text: "text-[#A78BFA]",
-    dot: "bg-[#A78BFA]",
+    darkCard:
+      "dark:bg-[#312E81]/60 dark:border-[#6D28D9]/40 dark:hover:bg-[#312E81]/80",
+    lightCard:
+      "bg-[#F5F3FF] border-[#C4B5FD]/60 hover:bg-[#EDE9FE]",
+    nameText: "dark:text-[#A78BFA]",
+    lightNameText: "text-[#6D28D9]",
+    dot: "dark:bg-[#A78BFA]",
+    lightDot: "bg-[#7C3AED]",
+    badge:
+      "dark:border-[#6D28D9]/40 dark:text-[#A78BFA]",
+    lightBadge:
+      "border-[#C4B5FD]/60 text-[#6D28D9]",
     abbr: "Climate Financial Disclosures",
+    abbrAr: "الإفصاحات المناخية المالية",
   },
   "IFRS S1/S2": {
-    bg: "bg-[#7C2D12]/60",
-    border: "border-[#EA580C]/40",
-    text: "text-[#FB923C]",
-    dot: "bg-[#FB923C]",
+    darkCard:
+      "dark:bg-[#7C2D12]/60 dark:border-[#EA580C]/40 dark:hover:bg-[#7C2D12]/80",
+    lightCard:
+      "bg-[#FFF7ED] border-[#FDBA74]/60 hover:bg-[#FFEDD5]",
+    nameText: "dark:text-[#FB923C]",
+    lightNameText: "text-[#C2410C]",
+    dot: "dark:bg-[#FB923C]",
+    lightDot: "bg-[#EA580C]",
+    badge:
+      "dark:border-[#EA580C]/40 dark:text-[#FB923C]",
+    lightBadge:
+      "border-[#FDBA74]/60 text-[#C2410C]",
     abbr: "International Financial Reporting",
+    abbrAr: "معايير التقارير المالية الدولية",
   },
   CSRD: {
-    bg: "bg-[#14532D]/60",
-    border: "border-[#16A34A]/40",
-    text: "text-[#4ADE80]",
-    dot: "bg-[#4ADE80]",
+    darkCard:
+      "dark:bg-[#14532D]/60 dark:border-[#16A34A]/40 dark:hover:bg-[#14532D]/80",
+    lightCard:
+      "bg-[#F0FDF4] border-[#86EFAC]/60 hover:bg-[#DCFCE7]",
+    nameText: "dark:text-[#4ADE80]",
+    lightNameText: "text-[#15803D]",
+    dot: "dark:bg-[#4ADE80]",
+    lightDot: "bg-[#16A34A]",
+    badge:
+      "dark:border-[#16A34A]/40 dark:text-[#4ADE80]",
+    lightBadge:
+      "border-[#86EFAC]/60 text-[#15803D]",
     abbr: "Corporate Sustainability Reporting",
+    abbrAr: "تقارير استدامة الشركات",
   },
   "GHG Protocol": {
-    bg: "bg-[#164E63]/60",
-    border: "border-[#0891B2]/40",
-    text: "text-[#22D3EE]",
-    dot: "bg-[#22D3EE]",
+    darkCard:
+      "dark:bg-[#164E63]/60 dark:border-[#0891B2]/40 dark:hover:bg-[#164E63]/80",
+    lightCard:
+      "bg-[#ECFEFF] border-[#67E8F9]/60 hover:bg-[#CFFAFE]",
+    nameText: "dark:text-[#22D3EE]",
+    lightNameText: "text-[#0E7490]",
+    dot: "dark:bg-[#22D3EE]",
+    lightDot: "bg-[#0891B2]",
+    badge:
+      "dark:border-[#0891B2]/40 dark:text-[#22D3EE]",
+    lightBadge:
+      "border-[#67E8F9]/60 text-[#0E7490]",
     abbr: "Greenhouse Gas Protocol",
+    abbrAr: "بروتوكول غازات الاحتباس الحراري",
   },
   CDP: {
-    bg: "bg-[#1E3A5F]/60",
-    border: "border-[#2980B9]/40",
-    text: "text-[#5BA4E5]",
-    dot: "bg-[#5BA4E5]",
+    darkCard:
+      "dark:bg-[#1E3A5F]/60 dark:border-[#2980B9]/40 dark:hover:bg-[#1E3A5F]/80",
+    lightCard:
+      "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
+    nameText: "dark:text-[#5BA4E5]",
+    lightNameText: "text-[#1E40AF]",
+    dot: "dark:bg-[#5BA4E5]",
+    lightDot: "bg-[#2563EB]",
+    badge:
+      "dark:border-[#2980B9]/40 dark:text-[#5BA4E5]",
+    lightBadge:
+      "border-[#93C5FD]/60 text-[#1E40AF]",
     abbr: "Carbon Disclosure Project",
+    abbrAr: "مشروع الإفصاح عن الكربون",
   },
   "UN SDGs": {
-    bg: "bg-[#4A1942]/60",
-    border: "border-[#9333EA]/40",
-    text: "text-[#E879F9]",
-    dot: "bg-[#E879F9]",
+    darkCard:
+      "dark:bg-[#4A1942]/60 dark:border-[#9333EA]/40 dark:hover:bg-[#4A1942]/80",
+    lightCard:
+      "bg-[#FDF4FF] border-[#E879F9]/40 hover:bg-[#FAE8FF]",
+    nameText: "dark:text-[#E879F9]",
+    lightNameText: "text-[#7E22CE]",
+    dot: "dark:bg-[#E879F9]",
+    lightDot: "bg-[#9333EA]",
+    badge:
+      "dark:border-[#9333EA]/40 dark:text-[#E879F9]",
+    lightBadge:
+      "border-[#E879F9]/40 text-[#7E22CE]",
     abbr: "Sustainable Development Goals",
+    abbrAr: "أهداف التنمية المستدامة",
   },
 };
 
@@ -117,7 +200,7 @@ export default function Frameworks() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.25 }}
-              className={`inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#00C2FF]/20 bg-[#00C2FF]/5 ${isAr ? "flex-row-reverse" : ""}`}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-[#00C2FF]/20 bg-[#00C2FF]/5"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse" />
               <span className="text-[#00C2FF] text-xs font-semibold">
@@ -138,11 +221,16 @@ export default function Frameworks() {
           >
             {f.items.map((item, i) => {
               const style = FRAMEWORK_STYLES[item] ?? {
-                bg: "bg-white/5",
-                border: "border-white/10",
-                text: "text-white/70",
-                dot: "bg-white/40",
+                darkCard: "dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10",
+                lightCard: "bg-gray-50 border-gray-200 hover:bg-gray-100",
+                nameText: "dark:text-white/70",
+                lightNameText: "text-gray-600",
+                dot: "dark:bg-white/40",
+                lightDot: "bg-gray-400",
+                badge: "dark:border-white/10 dark:text-white/70",
+                lightBadge: "border-gray-200 text-gray-500",
                 abbr: "",
+                abbrAr: "",
               };
               return (
                 <motion.div
@@ -152,30 +240,31 @@ export default function Frameworks() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.07, duration: 0.4 }}
                   whileHover={{ scale: 1.03, y: -2 }}
-                  className={`relative flex flex-col justify-between p-4 rounded-2xl border ${style.bg} ${style.border} cursor-default group overflow-hidden transition-all duration-300`}
+                  className={`
+                    relative flex flex-col justify-between p-4 rounded-2xl border
+                    cursor-default group overflow-hidden transition-all duration-300
+                    ${style.darkCard} ${style.lightCard}
+                  `}
                 >
-                  {/* Glow on hover */}
-                  <div
-                    className={`absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 ${style.bg} blur-sm`}
-                  />
-
                   <div className="relative z-10">
                     {/* Top row: dot + name */}
                     <div
                       className={`flex items-center gap-2 mb-2 ${isAr ? "flex-row-reverse" : ""}`}
                     >
                       <span
-                        className={`w-2 h-2 rounded-full flex-shrink-0 ${style.dot}`}
+                        className={`w-2 h-2 rounded-full flex-shrink-0 ${style.dot} ${style.lightDot}`}
                       />
                       <span
-                        className={`font-black text-base tracking-tight ${style.text}`}
+                        className={`font-black text-base tracking-tight ${style.nameText} ${style.lightNameText}`}
                       >
                         {item}
                       </span>
                     </div>
                     {/* Full name */}
-                    <p className="text-white/35 text-[10px] leading-snug font-medium">
-                      {style.abbr}
+                    <p
+                      className={`text-[10px] leading-snug font-medium dark:text-white/35 text-gray-400 ${isAr ? "text-right" : "text-left"}`}
+                    >
+                      {isAr ? style.abbrAr : style.abbr}
                     </p>
                   </div>
 
@@ -184,7 +273,7 @@ export default function Frameworks() {
                     className={`relative z-10 mt-3 flex ${isAr ? "justify-end" : "justify-start"}`}
                   >
                     <span
-                      className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border ${style.border} ${style.text} bg-black/20`}
+                      className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-full border bg-black/5 dark:bg-black/10 ${style.badge} ${style.lightBadge}`}
                     >
                       {isAr ? "متوافق" : "Aligned"}
                     </span>

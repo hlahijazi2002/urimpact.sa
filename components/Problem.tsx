@@ -11,6 +11,7 @@ export default function Problem() {
   return (
     <section
       className="relative py-10 md:py-14 lg:py-16 overflow-hidden bg-[#050D0A]"
+      id="solutions"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Subtle separator line */}

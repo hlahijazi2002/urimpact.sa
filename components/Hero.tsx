@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import Image from "next/image";
 
 const fadeUp = (delay = 0) => ({
   initial: { opacity: 0, y: 30 },
@@ -10,32 +11,32 @@ const fadeUp = (delay = 0) => ({
 });
 
 function DashboardMockup({ isAr }: { isAr: boolean }) {
-  const scopes = [
-    {
-      label: isAr ? "النطاق 1" : "Scope 1",
-      val: "2,345 tCO₂e",
-      sub: isAr ? "انبعاثات مباشرة" : "Direct Emissions",
-      color: "#00E5A0",
-    },
-    {
-      label: isAr ? "النطاق 2" : "Scope 2",
-      val: "3,210 tCO₂e",
-      sub: isAr ? "الطاقة المشتراة" : "Purchased Energy",
-      color: "#00C2FF",
-    },
-    {
-      label: isAr ? "النطاق 3" : "Scope 3",
-      val: "6,901 tCO₂e",
-      sub: isAr ? "سلسلة القيمة" : "Value Chain",
-      color: "#7B61FF",
-    },
-  ];
-  const stats = [
-    { val: "2035", sub: isAr ? "هدف صفر كربون" : "Net Zero Target" },
-    { val: "84", sub: isAr ? "نقاط ESG" : "ESG Score" },
-    { val: "94%", sub: isAr ? "الامتثال" : "Compliance" },
-  ];
-  const bars = [20, 35, 28, 42, 38, 55, 48, 60, 52, 70, 65, 80];
+  // const scopes = [
+  //   {
+  //     label: isAr ? "النطاق 1" : "Scope 1",
+  //     val: "2,345 tCO₂e",
+  //     sub: isAr ? "انبعاثات مباشرة" : "Direct Emissions",
+  //     color: "#00E5A0",
+  //   },
+  //   {
+  //     label: isAr ? "النطاق 2" : "Scope 2",
+  //     val: "3,210 tCO₂e",
+  //     sub: isAr ? "الطاقة المشتراة" : "Purchased Energy",
+  //     color: "#00C2FF",
+  //   },
+  //   {
+  //     label: isAr ? "النطاق 3" : "Scope 3",
+  //     val: "6,901 tCO₂e",
+  //     sub: isAr ? "سلسلة القيمة" : "Value Chain",
+  //     color: "#7B61FF",
+  //   },
+  // ];
+  // const stats = [
+  //   { val: "2035", sub: isAr ? "هدف صفر كربون" : "Net Zero Target" },
+  //   { val: "84", sub: isAr ? "نقاط ESG" : "ESG Score" },
+  //   { val: "94%", sub: isAr ? "الامتثال" : "Compliance" },
+  // ];
+  // const bars = [20, 35, 28, 42, 38, 55, 48, 60, 52, 70, 65, 80];
 
   return (
     <motion.div
@@ -66,8 +67,8 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
           </span>
         </div>
 
-        <div className="p-5 space-y-4">
-          {/* GHG header */}
+        {/* <div className="p-5 space-y-4">
+       
           <div className="flex items-center justify-between text-xs">
             <span className="text-white/40">
               {isAr ? "انبعاثات الغازات الدفيئة" : "GHG Emissions"}
@@ -77,7 +78,7 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
             </span>
           </div>
 
-          {/* Scope KPI rows — clean, no progress bars */}
+     
           <div className="space-y-2">
             {scopes.map((s, i) => (
               <motion.div
@@ -102,7 +103,7 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
             ))}
           </div>
 
-          {/* Stats */}
+        
           <div className="grid grid-cols-3 gap-2">
             {stats.map((stat, i) => (
               <motion.div
@@ -122,7 +123,6 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
             ))}
           </div>
 
-          {/* Trend chart — decorative only, no % labels */}
           <div className="bg-white/3 rounded-xl p-3">
             <div className="flex items-end gap-1 h-10">
               {bars.map((h, i) => (
@@ -148,6 +148,15 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
                 : "Decarbonization Trend — 12 Months"}
             </div>
           </div>
+        </div> */}
+
+        <div>
+          <Image
+            src="/dash-hero.png"
+            alt="dashboard"
+            width={550}
+            height={600}
+          />
         </div>
       </div>
 
@@ -217,7 +226,7 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.div {...fadeUp(0.2)} className="space-y-2">
-            <h1 className="text-5xl lg:text-6xl font-black tracking-tight leading-none text-white">
+            <h1 className="text-5xl lg:text-6xl font-black tracking-tight leading-tight text-white">
               <span
                 className={`block text-[#00E5A0] ${isAr ? "text-white" : ""}`}
               >

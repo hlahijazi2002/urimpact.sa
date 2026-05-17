@@ -321,7 +321,7 @@ export const content = {
         },
         desc: {
           en: "AI-generated action plans to accelerate Net Zero goals.",
-          ar: "خطط عمل مُولَّدة بالذكاء الاصطناعي لتسريع أهداف الصفر الصافي.",
+          ar: "خطط عمل مُولَّدة بالذكاء الاصطناعي لتسريع أهداف الحياد الصفري.",
         },
       },
     ],
@@ -470,7 +470,7 @@ export const content = {
       label: { en: "Vision", ar: "الرؤية" },
       text: {
         en: "To become the leading sustainability operating system for enterprises across the Middle East and beyond.",
-        ar: "أن نصبح نظام التشغيل الرائد للاستدامة للمؤسسات عبر الشرق الأوسط وما بعده.",
+        ar: "أن نصبح نظام التشغيل الرائد للاستدامة للمؤسسات عبر الشرق الأوسط  .",
       },
     },
   },
@@ -685,13 +685,13 @@ export const content = {
   cta: {
     headline: {
       en: "Ready to Accelerate Your Net Zero Journey?",
-      ar: "هل أنت مستعد لتسريع رحلتك نحو الصفر الصافي؟",
+      ar: "هل أنت مستعد لتسريع رحلتك نحو الحياد الصفري؟",
     },
     sub: {
       en: "Designed for enterprises building climate resilience, ESG leadership, and long-term sustainability impact.",
       ar: "مصمم للمؤسسات التي تبني المرونة المناخية وقيادة ESG وتأثير الاستدامة طويل الأمد.",
     },
-    btn1: { en: "Schedule a Demo", ar: "جدوِل عرضاً تجريبياً" },
+    btn1: { en: "Schedule a Demo", ar: "طلب عرض" },
     btn2: {
       en: "Talk to Sustainability Experts",
       ar: "تحدث إلى خبراء الاستدامة",

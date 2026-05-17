@@ -1,13 +1,16 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
-import Image from "next/image";
+import { useTheme } from "../context/ThemeContext";
 
 export default function Footer() {
   const { lang, t } = useLang();
+  const { theme, toggleTheme } = useTheme();
   const f = content.footer;
   const isAr = lang === "ar";
+  const isDark = theme === "dark";
 
   const columns = [
     { data: f.platform },
@@ -18,7 +21,7 @@ export default function Footer() {
 
   return (
     <footer
-      className="relative bg-[#030A07] border-t border-white/5 pt-6  md:pt-10 lg:pt-20 pb-10 overflow-hidden"
+      className="relative bg-[#030A07] border-t border-white/5 pt-20 pb-10 overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
@@ -29,20 +32,19 @@ export default function Footer() {
           <div
             className={`col-span-2 lg:col-span-1 ${isAr ? "text-right" : ""}`}
           >
-            <div
-              className={`flex items-center gap-2 mb-4 `}
-            >
-              <div className="relative">
-                <Image src="/logo.png" alt={"Logo"} height={25} width={25} />
-              </div>
-              <span className="text-white font-bold text-lg">
-                UR<span className="text-[#00E5A0]">IMPACT</span>
-              </span>
+            <div className="mb-4">
+              <Image
+                src={isDark ? "/logo-dark.png" : "/logo-light.png"}
+                alt="URIMPACT"
+                width={130}
+                height={30}
+                className="object-contain h-8 w-auto"
+              />
             </div>
             <p className="text-white/30 text-sm leading-relaxed">
               {lang === "ar"
-                ? "منصة ذكاء الاستدامة للشركات في الشرق الأوسط وما بعده"
-                : "Sustainability intelligence platform for enterprises across the Middle East and beyond."}
+                ? "منصة ذكاء الاستدامة للشركات في الشرق الأوسط "
+                : "Sustainability intelligence platform for enterprises across the Middle East"}
             </p>
           </div>
 
@@ -77,7 +79,9 @@ export default function Footer() {
           >
             {t(f.newsletter.label)}
           </p>
-          <div className={`flex items-center gap-2 w-full sm:w-auto`}>
+          <div
+            className={`flex items-center gap-2 w-full sm:w-auto ${isAr ? "flex-row-reverse" : ""}`}
+          >
             <input
               type="email"
               placeholder={t(f.newsletter.placeholder)}
@@ -94,7 +98,9 @@ export default function Footer() {
           className={`pt-6 border-t border-white/5 ${isAr ? "direction-rtl" : ""}`}
         >
           {/* Legal links */}
-          <div className={`flex flex-wrap gap-x-5 gap-y-2 mb-5 `}>
+          <div
+            className={`flex flex-wrap gap-x-5 gap-y-2 mb-5 ${isAr ? "justify-end" : ""}`}
+          >
             <span className="text-white/20 text-xs font-medium">Legal</span>
             {f.legal.map((link, i) => (
               <a

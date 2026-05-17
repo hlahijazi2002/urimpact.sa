@@ -16,6 +16,73 @@ export default function Partners() {
   const p = content.partners;
   const tripled = [...p.items, ...p.items, ...p.items];
 
+  const PartnersIcon = () => (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  );
+
+  const GovIcon = () => (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <line x1="3" y1="22" x2="21" y2="22" />
+      <line x1="6" y1="18" x2="6" y2="11" />
+      <line x1="10" y1="18" x2="10" y2="11" />
+      <line x1="14" y1="18" x2="14" y2="11" />
+      <line x1="18" y1="18" x2="18" y2="11" />
+      <polygon points="12 2 20 7 4 7" />
+    </svg>
+  );
+
+  const UniIcon = () => (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+      <path d="M6 12v5c3 3 9 3 12 0v-5" />
+    </svg>
+  );
+
+  const stats = [
+    {
+      val: "9+",
+      label: { en: "Official Partners", ar: "شريك رسمي" },
+      Icon: PartnersIcon,
+    },
+    {
+      val: "5+",
+      label: { en: "Government Bodies", ar: "جهة حكومية" },
+      Icon: GovIcon,
+    },
+    { val: "4+", label: { en: "Universities", ar: "جامعة" }, Icon: UniIcon },
+  ];
   return (
     <section
       className="relative py-10 md:py-14 lg:py-16 overflow-hidden dark:bg-[#050D0A] bg-gray-50"
@@ -95,35 +162,21 @@ export default function Partners() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="mt-14 grid md:grid-cols-3 gap-4 "
+          className="mt-14 grid md:grid-cols-3 gap-4"
         >
-          {[
-            {
-              val: "9+",
-              label: { en: "Official Partners", ar: "شريك رسمي" },
-              icon: "🤝",
-            },
-            {
-              val: "5+",
-              label: { en: "Government Bodies", ar: "جهة حكومية" },
-              icon: "🏛️",
-            },
-            {
-              val: "4+",
-              label: { en: "Universities", ar: "جامعة" },
-              icon: "🎓",
-            },
-          ].map((stat, i) => (
+          {stats.map(({ val, label, Icon }, i) => (
             <div
               key={i}
-              className="flex md:flex-col items-center justify-around md:justify-center py-6 rounded-2xl border dark:border-white/6 border-gray-200 dark:bg-white/2 bg-white hover:border-[#00E5A0]/30 dark:hover:border-[#00E5A0]/20 shadow-sm dark:shadow-none transition-colors duration-300"
+              className="flex md:flex-col items-center justify-around md:justify-center py-6 px-4 rounded-2xl border border-white/6 bg-white/2 hover:border-[#00E5A0]/25 transition-colors duration-300"
             >
-              <span className="text-2xl mb-2">{stat.icon}</span>
-              <span className="text-3xl font-black dark:text-white text-gray-900 mb-1">
-                {stat.val}
+              <span className="text-[#00E5A0] md:mb-3">
+                <Icon />
               </span>
-              <span className="dark:text-white/40 text-gray-500 text-xs font-medium">
-                {t(stat.label)}
+              <span className="text-3xl font-black text-white md:mb-1">
+                {val}
+              </span>
+              <span className="text-white/40 text-xs font-medium">
+                {t(label)}
               </span>
             </div>
           ))}

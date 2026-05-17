@@ -155,17 +155,20 @@ export default function Platform() {
                   style={{ background: activeModule.color }}
                 />
                 <div className="relative z-10">
-                  <div className="text-6xl mb-4 opacity-60">
-                    {activeModule.icon}
+                  <div className="flex justify-start gap-2 items-center">
+                    <div className="text-5xl opacity-60">
+                      {activeModule.icon}
+                    </div>
+                    <h4
+                      className={`text-2xl font-bold text-white `}
+                      style={{ color: activeModule.color }}
+                    >
+                      {t(activeModule.title)}
+                    </h4>
                   </div>
-                  <h4
-                    className={`text-2xl font-bold text-white mb-3 `}
-                    style={{ color: activeModule.color }}
-                  >
-                    {t(activeModule.title)}
-                  </h4>
+
                   {/* Feature chips grid */}
-                  <div className="mt-6 grid grid-cols-2 gap-2">
+                  <div className="mt-3 grid grid-cols-2 gap-2">
                     {activeModule.features.map((feat, i) => (
                       <motion.div
                         key={i}
