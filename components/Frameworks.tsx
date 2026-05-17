@@ -74,7 +74,7 @@ export default function Frameworks() {
   return (
     <section
       id="frameworks"
-      className="relative py-8 md:py-14 lg:py-16bg-[#050D0A] overflow-hidden"
+      className="relative py-10 md:py-14 lg:py-16 bg-[#050D0A] overflow-hidden"
     >
       <div className="absolute right-0 top-1/2 -translate-y-1/2 w-full h-full bg-[#00C2FF]/5 rounded-full blur-3xl" />
 

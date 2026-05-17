@@ -18,7 +18,7 @@ export default function Partners() {
 
   return (
     <section
-      className="relative py-8 md:py-14 lg:py-16overflow-hidden dark:bg-[#050D0A] bg-gray-50"
+      className="relative py-10 md:py-14 lg:py-16 overflow-hidden dark:bg-[#050D0A] bg-gray-50"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Grid pattern */}

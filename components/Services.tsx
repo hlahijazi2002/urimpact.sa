@@ -21,7 +21,7 @@ export default function Services() {
   return (
     <section
       id="solutions"
-      className="relative py-8 md:py-14 lg:py-16 overflow-hidden bg-[#050D0A]"
+      className="relative py-10 md:py-14 lg:py-16  overflow-hidden bg-[#050D0A]"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Background */}

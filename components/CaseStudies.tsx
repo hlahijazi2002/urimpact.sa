@@ -12,7 +12,7 @@ export default function CaseStudies() {
 
   return (
     <section
-      className="relative py-8 md:py-14 lg:py-16bg-[#050D0A] overflow-hidden"
+      className="relative py-10 md:py-14 lg:py-16 bg-[#050D0A] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
       <div className="relative z-10 max-w-7xl mx-auto px-6">
