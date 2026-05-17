@@ -9,7 +9,7 @@ export default function NBS() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-8 md:py-12 lg:py-14overflow-hidden bg-[#050D0A]">
+    <section className="relative py-8 md:py-14 lg:py-16overflow-hidden bg-[#050D0A]">
       {/* Nature background overlay */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#050D0A] via-[#0A1A0D]/80 to-[#050D0A]" />

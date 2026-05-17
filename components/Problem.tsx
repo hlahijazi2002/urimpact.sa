@@ -10,7 +10,7 @@ export default function Problem() {
 
   return (
     <section
-      className="relative py-8 md:py-12 lg:py-14overflow-hidden bg-[#050D0A]"
+      className="relative py-8 md:py-14 lg:py-16overflow-hidden bg-[#050D0A]"
       dir={isAr ? "rtl" : "ltr"}
     >
       {/* Subtle separator line */}
