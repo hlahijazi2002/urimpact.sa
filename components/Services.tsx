@@ -299,7 +299,7 @@ function MRVMockup({ isAr }: { isAr: boolean }) {
         {[
           {
             icon: "transparent" as IconName,
-            label: "Q3 2024 Report",
+            label: "Q3 2026 Report",
             status: "Generated",
           },
           {
