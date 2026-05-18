@@ -13,7 +13,6 @@ export default function CTA() {
       id="contact"
       className="relative py-10 md:py-14 lg:py-16 overflow-hidden bg-[#050D0A]"
     >
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#00E5A0]/10 via-[#050D0A] to-[#00C2FF]/10" />
         <div
@@ -33,7 +32,6 @@ export default function CTA() {
           viewport={{ once: true }}
           transition={{ duration: 0.7 }}
         >
-          {/* Decorative top */}
           <div className="flex items-center justify-center gap-4 mb-8">
             <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#00E5A0]/30" />
             <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
@@ -53,7 +51,7 @@ export default function CTA() {
             {t(c.sub)}
           </p>
 
-          <div className={`flex gap-4 justify-center flex-wrap `}>
+          <div className={`flex gap-4 justify-center flex-wrap`}>
             <motion.a
               href="/demo"
               whileHover={{ scale: 1.03 }}

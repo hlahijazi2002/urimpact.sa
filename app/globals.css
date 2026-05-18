@@ -75,6 +75,12 @@ body {
   background-color: var(--color-bg) !important;
 }
 
+/* ✅ NBS: إخفاء الـ blobs والـ overlay الداخلية في اللايت */
+[data-theme="light"] #nbs > .absolute.inset-0,
+[data-theme="light"] #contact > .absolute.inset-0 {
+  display: none !important;
+}
+
 /* Text overrides */
 [data-theme="light"] .text-white {
   color: #0d1f18 !important;
@@ -109,7 +115,7 @@ body {
 [data-theme="light"] .bg-\[\#030A07\],
 [data-theme="light"] .bg-\[\#0A1A14\],
 [data-theme="light"] .bg-\[\#0D1F18\] {
-  background-color: var(--color-bg) !important;
+  background-color: var(--color-bg);
 }
 
 /* Border overrides */
@@ -143,7 +149,6 @@ body {
 /* Navbar */
 [data-theme="light"] nav {
   background-color: rgba(240, 247, 244, 0.97) !important;
-  border-color: rgba(0, 80, 50, 0.1) !important;
 }
 [data-theme="light"] nav a {
   color: #1e4035 !important;
@@ -197,7 +202,14 @@ html[dir="ltr"] * {
   font-family: var(--font-dm-sans), sans-serif;
 }
 
-/* Fix flex direction for RTL — Tailwind flex-row-reverse works with dir=rtl too */
 html[dir="rtl"] .navbar-nav {
   flex-direction: row-reverse;
+}
+
+/* ─── dark-section + navbar border: داخل @layer utilities عشان يتغلب على Tailwind ─── */
+@layer utilities {
+  /* Navbar border في اللايت مود */
+  html[data-theme="light"] header {
+    border-color: rgba(229, 231, 235, 0.8) !important;
+  }
 }

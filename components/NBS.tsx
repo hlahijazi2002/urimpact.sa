@@ -9,11 +9,12 @@ export default function NBS() {
   const isAr = lang === "ar";
 
   return (
-    <section className="relative py-10 md:py-14 lg:py-16 overflow-hidden bg-[#050D0A]">
-      {/* Nature background overlay */}
+    <section
+      id="nbs"
+      className="relative py-10 md:py-14 lg:py-16 overflow-hidden bg-[#050D0A]"
+    >
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-br from-[#050D0A] via-[#0A1A0D]/80 to-[#050D0A]" />
-        {/* Organic shapes */}
         <svg
           className="absolute inset-0 w-full h-full opacity-10"
           viewBox="0 0 1440 800"
@@ -29,7 +30,6 @@ export default function NBS() {
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
-          {/* Left visual */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -37,9 +37,7 @@ export default function NBS() {
             transition={{ duration: 0.8 }}
             className={`relative`}
           >
-            {/* Central visual */}
             <div className="relative w-full aspect-square max-w-md mx-auto">
-              {/* Rings */}
               {[1, 0.75, 0.5, 0.25].map((scale, i) => (
                 <motion.div
                   key={i}
@@ -59,13 +57,9 @@ export default function NBS() {
                   }}
                 />
               ))}
-
-              {/* Center icon */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-[#00E5A0] to-[#39D353] flex items-center justify-center shadow-[0_0_60px_rgba(0,229,160,0.4)]">
                 <span className="text-5xl">🌿</span>
               </div>
-
-              {/* Orbit icons */}
               {["🌳", "💧", "☀️", "🌍"].map((icon, i) => {
                 const angle = (i / 4) * 2 * Math.PI;
                 const r = 42;
@@ -88,7 +82,6 @@ export default function NBS() {
             </div>
           </motion.div>
 
-          {/* Right content */}
           <div className={isAr ? "text-right order-1" : ""}>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -127,7 +120,7 @@ export default function NBS() {
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 + i * 0.1 }}
-                  className={`flex items-center gap-4 p-4 rounded-xl border border-[#39D353]/20 bg-[#39D353]/5 hover:bg-[#39D353]/10 transition-colors `}
+                  className={`flex items-center gap-4 p-4 rounded-xl border border-[#39D353]/20 bg-[#39D353]/5 hover:bg-[#39D353]/10 transition-colors`}
                 >
                   <div className="w-2 h-2 rounded-full bg-[#39D353] flex-shrink-0" />
                   <span className="text-white font-medium">{t(hl)}</span>

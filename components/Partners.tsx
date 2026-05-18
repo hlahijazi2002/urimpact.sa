@@ -167,17 +167,19 @@ export default function Partners() {
           {stats.map(({ val, label, Icon }, i) => (
             <div
               key={i}
-              className="flex md:flex-col items-center justify-around md:justify-center py-6 px-4 rounded-2xl border border-white/6 bg-white/2 hover:border-[#00E5A0]/25 transition-colors duration-300"
+              className="flex items-center gap-4 md:flex-col md:items-center md:justify-center md:gap-0 py-6 px-6 rounded-2xl border border-white/6 bg-white/2 hover:border-[#00E5A0]/25 transition-colors duration-300"
             >
-              <span className="text-[#00E5A0] md:mb-3">
+              <span className="text-[#00E5A0] flex-shrink-0 md:mb-3">
                 <Icon />
               </span>
-              <span className="text-3xl font-black text-white md:mb-1">
-                {val}
-              </span>
-              <span className="text-white/40 text-xs font-medium">
-                {t(label)}
-              </span>
+              <div className="flex flex-col md:items-center">
+                <span className="text-3xl font-black text-white md:mb-1">
+                  {val}
+                </span>
+                <span className="text-white/40 text-xs font-medium">
+                  {t(label)}
+                </span>
+              </div>
             </div>
           ))}
         </motion.div>
