@@ -4,7 +4,7 @@ export const content = {
   nav: {
     platform: { en: "Platform", ar: "المنصة" },
     solutions: { en: "Solutions", ar: "الحلول" },
-    frameworks: { en: "Frameworks", ar: "الأطر" },
+    frameworks: { en: "Frameworks", ar: "المعايير" },
     resources: { en: "Resources", ar: "الموارد" },
     about: { en: "About", ar: "عن الشركة" },
     contact: { en: "Contact", ar: "تواصل معنا" },
@@ -66,7 +66,7 @@ export const content = {
         title: { en: "ESG Reporting Complexity", ar: "تعقيد تقارير ESG" },
         desc: {
           en: "Multi-framework requirements create compliance bottlenecks and resource drain.",
-          ar: "متطلبات الأطر المتعددة تخلق اختناقات الامتثال وإرهاق الموارد.", // FIX: استنزاف → إرهاق
+          ar: "متطلبات المعايير المتعددة تخلق اختناقات الامتثال وإرهاق الموارد.", // FIX: استنزاف → إرهاق
         },
       },
       {
@@ -236,7 +236,7 @@ export const content = {
         title: { en: "Report", ar: "أبلِّغ" },
         desc: {
           en: "Generate investor-grade sustainability reports aligned with global frameworks.",
-          ar: "أنشئ تقارير استدامة بمستوى المستثمرين متوافقة مع الأطر العالمية.",
+          ar: "أنشئ تقارير استدامة بمستوى المستثمرين متوافقة مع المعايير العالمية.",
         },
       },
     ],
@@ -246,7 +246,7 @@ export const content = {
     sectionLabel: { en: "Compliance", ar: "الامتثال" },
     headline: {
       en: "Built for Global Sustainability Frameworks",
-      ar: "مبني للأطر العالمية للاستدامة",
+      ar: "مبني للمعايير العالمية للاستدامة",
     },
     body: {
       en: "URIMPACT simplifies sustainability disclosures by aligning your reporting workflows with globally accepted standards and regional compliance requirements.",
@@ -368,7 +368,7 @@ export const content = {
         value: "100%",
         label: {
           en: "Framework Compliance Coverage",
-          ar: "تغطية امتثال الأطر",
+          ar: "تغطية امتثال المعايير",
         },
         icon: "✓",
       },
@@ -384,7 +384,6 @@ export const content = {
       },
     ],
   },
-
   caseStudies: {
     sectionLabel: { en: "Impact", ar: "التأثير" },
     headline: {
@@ -403,12 +402,24 @@ export const content = {
           ar: "تتبع انبعاثات سلسلة التوريد الآلي مع رؤى مدعومة بالذكاء الاصطناعي",
         },
         stat1: {
-          value: "45%",
-          label: { en: "Emissions Reduced", ar: "تخفيض الانبعاثات" },
+          label: {
+            en: "Emissions Reduced",
+            ar: "تخفيض الانبعاثات",
+          },
+          value: {
+            en: "Pilot results available upon request",
+            ar: "النتائج التجريبية متاحة عند الطلب",
+          },
         },
         stat2: {
-          value: "80%",
-          label: { en: "ESG Score Improved", ar: "تحسين نقاط ESG" },
+          label: {
+            en: "ESG Score Improved",
+            ar: "تحسين نقاط ESG",
+          },
+          value: {
+            en: "Pilot results available upon request",
+            ar: "النتائج التجريبية متاحة عند الطلب",
+          },
         },
       },
       {
@@ -422,12 +433,24 @@ export const content = {
           ar: "مراقبة الطاقة في الوقت الفعلي مع خرائط طريق إزالة الكربون",
         },
         stat1: {
-          value: "60%",
-          label: { en: "Carbon Footprint Cut", ar: "خفض البصمة الكربونية" },
+          label: {
+            en: "Carbon Footprint Cut",
+            ar: "خفض البصمة الكربونية",
+          },
+          value: {
+            en: "Pilot results available upon request",
+            ar: "النتائج التجريبية متاحة عند الطلب",
+          },
         },
         stat2: {
-          value: "2x",
-          label: { en: "Investor Confidence", ar: "ثقة المستثمرين" },
+          label: {
+            en: "Investor Confidence",
+            ar: "ثقة المستثمرين",
+          },
+          value: {
+            en: "2X",
+            ar: "2X",
+          },
         },
       },
       {
@@ -440,13 +463,28 @@ export const content = {
           en: "Unified ESG dashboard with NBS integration for urban greening",
           ar: "لوحة ESG موحدة مع دمج الحلول الطبيعية للتخضير الحضري",
         },
+
         stat1: {
-          value: "35%",
-          label: { en: "Urban Heat Reduced", ar: "تخفيض الحرارة الحضرية" },
+          label: {
+            en: "Urban Heat Reduced",
+            ar: "تخفيض الحرارة الحضرية",
+          },
+
+          value: {
+            en: "Pilot results available upon request",
+            ar: "النتائج التجريبية متاحة عند الطلب",
+          },
         },
         stat2: {
-          value: "100%",
-          label: { en: "Reporting Automated", ar: "تقارير مؤتمتة" },
+          label: {
+            en: "Reporting Automated",
+            ar: "تقارير مؤتمتة",
+          },
+
+          value: {
+            en: "Pilot results available upon request",
+            ar: "النتائج التجريبية متاحة عند الطلب",
+          },
         },
       },
     ],
@@ -722,7 +760,7 @@ export const content = {
       links: [
         { en: "Blogs", ar: "المدونات" },
         { en: "Sustainability Insights", ar: "رؤى الاستدامة" },
-        { en: "Framework Guides", ar: "أدلة الأطر" },
+        { en: "Framework Guides", ar: "أدلة المعايير" },
         { en: "ESG News", ar: "أخبار ESG" },
       ],
     },

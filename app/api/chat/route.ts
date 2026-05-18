@@ -23,7 +23,7 @@ Compliance Frameworks: GRI, SASB, TCFD, IFRS S1/S2, CSRD, GHG Protocol, CDP, UN 
 Vision: Become the leading sustainability operating system for enterprises across the Middle East, aligned with Saudi Vision 2030.
 
 Contact & Demo:
-- Book a Demo: /book-demo
+- Book a Demo: /demo
 - Website: urimpact.sa
 - LinkedIn: https://www.linkedin.com/company/urimpact/
 - WhatsApp: https://api.whatsapp.com/send?phone=966545636919

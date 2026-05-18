@@ -101,11 +101,11 @@ export default function CaseStudies() {
                 {[cs.cases[active].stat1, cs.cases[active].stat2].map(
                   (stat, i) => (
                     <div key={i} className={isAr ? "text-right" : ""}>
-                      <div className="text-4xl font-black text-[#00E5A0] leading-none">
-                        {stat.value}
-                      </div>
-                      <div className="text-white/50 text-sm mt-1">
+                      <div className="text-[#00E5A0] font-semibold text-xl mt-1">
                         {t(stat.label)}
+                      </div>
+                      <div className="text-sm   text-white/50  leading-snug">
+                        {t(stat.value)}
                       </div>
                     </div>
                   ),

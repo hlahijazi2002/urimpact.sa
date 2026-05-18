@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/context/LangContext";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import emailjs from "@emailjs/browser";
 
 const demoContent = {
   badge: { en: "Book a Demo", ar: "احجز عرضاً تجريبياً" },
@@ -110,7 +111,9 @@ export default function BookDemoPage() {
     return newErrors;
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     const v = validate();
     if (Object.keys(v).length > 0) {
       setErrors(v);
@@ -118,10 +121,34 @@ export default function BookDemoPage() {
     }
     setErrors({});
     setSubmitting(true);
-    await new Promise((r) => setTimeout(r, 1600));
-    setSubmitting(false);
-    setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 6000);
+
+    try {
+      const res = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          fullName: formData.name,
+          workEmail: formData.email,
+          message: formData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+
+      if (res.status !== 200) throw new Error();
+
+      setSubmitted(true);
+      setFormData({ name: "", email: "", message: "" }); // تنظيف الفورم
+      setTimeout(() => setSubmitted(false), 6000);
+    } catch (error) {
+      console.error("EmailJS Error:", error);
+      alert(
+        isAr
+          ? "حدث خطأ، حاول مجدداً"
+          : "Something went wrong, please try again.",
+      );
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (

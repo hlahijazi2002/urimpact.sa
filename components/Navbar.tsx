@@ -52,12 +52,12 @@ export default function Navbar() {
         scrolled
           ? isDark
             ? "bg-[#050D0A]/95 backdrop-blur-xl border-b border-[#00E5A0]/10 shadow-sm"
-            : "bg-white/95 backdrop-blur-xl border-b border-gray-200/80 shadow-sm"
+            : "bg-[#f0f7f4] backdrop-blur-xl border-b border-gray-200/80 shadow-sm"
           : "bg-transparent"
       }`}
     >
       <nav
-        className="max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4"
+        className="w-full max-w-7xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between gap-4"
         dir={isAr ? "rtl" : "ltr"}
       >
         <a href="/" className="flex items-center flex-shrink-0 group">
@@ -152,7 +152,7 @@ export default function Navbar() {
 
           {/* Demo CTA */}
           <a
-            href="/book-demo"
+            href="/demo"
             className="hidden lg:flex items-center gap-2 px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm hover:shadow-[0_0_24px_rgba(0,229,160,0.4)] transition-all duration-300 hover:scale-[1.02] whitespace-nowrap flex-shrink-0"
           >
             {t(n.demo)}
@@ -231,7 +231,7 @@ export default function Navbar() {
                 </span>
               </button>
               <a
-                href="/book-demo"
+                href="/demo"
                 onClick={() => setMenuOpen(false)}
                 className="mt-3 w-full text-center py-3 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm"
               >
