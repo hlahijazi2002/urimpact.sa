@@ -175,7 +175,7 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
             key={i}
             className="rounded-xl bg-white/3 border border-white/8 p-3 text-center"
           >
-            <p className="text-[#00E5A0] text-[10px] font-black leading-tight">
+            <p className="text-[#00E5A0] text-xs font-black leading-tight">
               {s.val}
             </p>
             <p className="text-white/30 text-[10px] mt-0.5">{s.label}</p>
