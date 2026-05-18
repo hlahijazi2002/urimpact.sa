@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "@/data/icons";
 
 export default function BusinessValue() {
   const { lang, t } = useLang();
@@ -61,7 +62,7 @@ export default function BusinessValue() {
               <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#00E5A0]/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
 
               <div className="text-4xl mb-3 group-hover:scale-110 transition-transform duration-300">
-                {metric.icon}
+                <Icon name={metric.icon} size={24} />
               </div>
               <div className="text-4xl font-black text-[#00E5A0] mb-2 leading-none">
                 {metric.value}

@@ -1,3 +1,5 @@
+import type { IconName } from "./icons";
+
 export type Lang = "en" | "ar";
 
 export const content = {
@@ -41,7 +43,7 @@ export const content = {
       { value: "3x", label: { en: "Faster Compliance", ar: "امتثال أسرع" } },
       {
         value: "100+",
-        label: { en: "ESG KPIs Tracked", ar: "مؤشر ESG قيد التتبع" }, // FIX: مُتتبَّع → قيد التتبع
+        label: { en: "ESG KPIs Tracked", ar: "مؤشر ESG قيد التتبع" },
       },
     ],
   },
@@ -62,15 +64,15 @@ export const content = {
     },
     cards: [
       {
-        icon: "⚡",
+        icon: "lightning" as IconName,
         title: { en: "ESG Reporting Complexity", ar: "تعقيد تقارير ESG" },
         desc: {
           en: "Multi-framework requirements create compliance bottlenecks and resource drain.",
-          ar: "متطلبات المعايير المتعددة تخلق اختناقات الامتثال وإرهاق الموارد.", // FIX: استنزاف → إرهاق
+          ar: "متطلبات المعايير المتعددة تخلق اختناقات الامتثال واستنزاف الموارد.",
         },
       },
       {
-        icon: "🔍",
+        icon: "scope3" as IconName,
         title: { en: "Scope 3 Data Gaps", ar: "فجوات بيانات النطاق 3" },
         desc: {
           en: "Supply chain emissions remain invisible without integrated data collection.",
@@ -78,7 +80,7 @@ export const content = {
         },
       },
       {
-        icon: "📊",
+        icon: "chart-gap" as IconName,
         title: {
           en: "No Decarbonization Visibility",
           ar: "غياب رؤية إزالة الكربون",
@@ -89,7 +91,7 @@ export const content = {
         },
       },
       {
-        icon: "🗺️",
+        icon: "roadmap" as IconName,
         title: {
           en: "No Actionable Roadmap",
           ar: "غياب خارطة طريق قابلة للتنفيذ",
@@ -115,12 +117,12 @@ export const content = {
     modules: [
       {
         id: "esg",
-        icon: "◈",
+        icon: "esg-module" as IconName,
         color: "#00E5A0",
         title: { en: "ESG Management", ar: "إدارة ESG" },
         desc: {
           en: "Track ESG KPIs across environmental, social, and governance pillars with automated workflows, compliance mapping, and performance dashboards.",
-          ar: "تتبع مؤشرات ESG عبر الركائز البيئية والاجتماعية والحوكمة مع سير عمل آلي ورسم خرائط الامتثال ولوحات الأداء.", // FIX: الأعمدة → الركائز
+          ar: "تتبع مؤشرات ESG عبر الركائز البيئية والاجتماعية والحوكمة مع سير عمل آلي ورسم خرائط الامتثال ولوحات الأداء.",
         },
         features: [
           { en: "ESG KPI tracking", ar: "تتبع مؤشرات ESG" },
@@ -131,7 +133,7 @@ export const content = {
       },
       {
         id: "ghg",
-        icon: "◉",
+        icon: "ghg-module" as IconName,
         color: "#00C2FF",
         title: { en: "GHG Accounting", ar: "محاسبة الغازات الدفيئة" },
         desc: {
@@ -153,12 +155,12 @@ export const content = {
       },
       {
         id: "decarb",
-        icon: "◎",
+        icon: "decarb-module" as IconName,
         color: "#7B61FF",
         title: { en: "Decarbonization Intelligence", ar: "ذكاء إزالة الكربون" },
         desc: {
           en: "Move beyond reporting with AI-powered reduction planning and transition pathways.",
-          ar: "تجاوز التقارير مع تخطيط تخفيض الانبعاثات المدعوم بالذكاء الاصطناعي ومسارات الانتقال.",
+          ar: "تجاوز مرحلة التقارير مع تخطيط تخفيض الانبعاثات المدعوم بالذكاء الاصطناعي ومسارات الانتقال.",
         },
         features: [
           { en: "Net Zero pathways", ar: "مسارات صفر انبعاثات" },
@@ -172,7 +174,7 @@ export const content = {
       },
       {
         id: "nbs",
-        icon: "◍",
+        icon: "nbs-module" as IconName,
         color: "#39D353",
         title: {
           en: "Nature-Based Solutions",
@@ -183,7 +185,7 @@ export const content = {
           ar: "دمج استعادة النظام البيئي والتدخلات الإيجابية للمناخ في استراتيجية الاستدامة الخاصة بك.",
         },
         features: [
-          { en: "Urban landscaping", ar: "التشجير الحضري" },
+          { en: "Urban landscaping", ar: "التشجير والتنسيق الحضري" },
           { en: "Carbon sequestration projects", ar: "مشاريع عزل الكربون" },
           {
             en: "Climate resilience strategies",
@@ -198,6 +200,7 @@ export const content = {
   howItWorks: {
     sectionLabel: { en: "How It Works", ar: "كيف تعمل" },
     headline: { en: "From Measurement to Impact", ar: "من القياس إلى التأثير" },
+    // Steps use numbered badges (01–05) — no icon key needed.
     steps: [
       {
         num: "01",
@@ -225,7 +228,7 @@ export const content = {
       },
       {
         num: "04",
-        title: { en: "Decarbonize", ar: "خفِّض الكربون" }, // FIX: خفِّف → خفِّض
+        title: { en: "Decarbonize", ar: "خفِّض الكربون" },
         desc: {
           en: "Implement reduction strategies and Nature-Based Solutions aligned with business goals.",
           ar: "نفّذ استراتيجيات التخفيض والحلول القائمة على الطبيعة المتوافقة مع أهداف العمل.",
@@ -276,7 +279,7 @@ export const content = {
     },
     features: [
       {
-        icon: "🤖",
+        icon: "ai-extract" as IconName,
         title: {
           en: "AI-Assisted Data Extraction",
           ar: "استخراج البيانات بالذكاء الاصطناعي",
@@ -287,7 +290,7 @@ export const content = {
         },
       },
       {
-        icon: "📡",
+        icon: "emission-map" as IconName,
         title: {
           en: "Automated Emission Mapping",
           ar: "رسم خرائط الانبعاثات الآلي",
@@ -298,7 +301,7 @@ export const content = {
         },
       },
       {
-        icon: "⚠️",
+        icon: "risk" as IconName,
         title: { en: "Risk Prediction", ar: "التنبؤ بالمخاطر" },
         desc: {
           en: "Identify climate and regulatory risks before they escalate.",
@@ -306,15 +309,15 @@ export const content = {
         },
       },
       {
-        icon: "📈",
-        title: { en: "Smart Benchmarking", ar: "المقارنة الذكية" }, // FIX: المقارسة → المقارنة (خطأ إملائي)
+        icon: "benchmark" as IconName,
+        title: { en: "Smart Benchmarking", ar: "المقارنة الذكية" },
         desc: {
           en: "Compare performance against industry peers and best practices.",
           ar: "قارن الأداء مع أقران الصناعة وأفضل الممارسات.",
         },
       },
       {
-        icon: "🎯",
+        icon: "decarb-rec" as IconName,
         title: {
           en: "Decarbonization Recommendations",
           ar: "توصيات إزالة الكربون",
@@ -338,7 +341,7 @@ export const content = {
       ar: "على خلاف منصات برامج ESG التقليدية، تجمع URIMPACT بين الذكاء الرقمي للاستدامة والحلول الطبيعية الواقعية لخلق تأثير بيئي قابل للقياس.",
     },
     highlights: [
-      { en: "Urban Landscaping", ar: "التشجير الحضري" },
+      { en: "Urban Landscaping", ar: "التشجير والتنسيق الحضري" },
       { en: "Biodiversity Restoration", ar: "استعادة التنوع البيولوجي" },
       { en: "Carbon Sink Enhancement", ar: "تعزيز مصارف الكربون" },
     ],
@@ -357,12 +360,12 @@ export const content = {
           en: "Reduction in Reporting Time",
           ar: "تخفيض في وقت التقارير",
         },
-        icon: "⏱",
+        icon: "delayed" as IconName,
       },
       {
         value: "3x",
         label: { en: "Faster ESG Visibility", ar: "رؤية ESG أسرع" },
-        icon: "👁",
+        icon: "chart-gap" as IconName,
       },
       {
         value: "100%",
@@ -370,20 +373,21 @@ export const content = {
           en: "Framework Compliance Coverage",
           ar: "تغطية امتثال المعايير",
         },
-        icon: "✓",
+        icon: "decarb-rec" as IconName,
       },
       {
         value: "∞",
         label: { en: "Investor Confidence Boost", ar: "تعزيز ثقة المستثمرين" },
-        icon: "📈",
+        icon: "benchmark" as IconName,
       },
       {
         value: "Net Zero",
         label: { en: "Accelerated Planning", ar: "تخطيط متسارع" },
-        icon: "🎯",
+        icon: "decarb-module" as IconName,
       },
     ],
   },
+
   caseStudies: {
     sectionLabel: { en: "Impact", ar: "التأثير" },
     headline: {
@@ -402,20 +406,14 @@ export const content = {
           ar: "تتبع انبعاثات سلسلة التوريد الآلي مع رؤى مدعومة بالذكاء الاصطناعي",
         },
         stat1: {
-          label: {
-            en: "Emissions Reduced",
-            ar: "تخفيض الانبعاثات",
-          },
+          label: { en: "Emissions Reduced", ar: "تخفيض الانبعاثات" },
           value: {
             en: "Pilot results available upon request",
             ar: "النتائج التجريبية متاحة عند الطلب",
           },
         },
         stat2: {
-          label: {
-            en: "ESG Score Improved",
-            ar: "تحسين نقاط ESG",
-          },
+          label: { en: "ESG Score Improved", ar: "تحسين نقاط ESG" },
           value: {
             en: "Pilot results available upon request",
             ar: "النتائج التجريبية متاحة عند الطلب",
@@ -433,24 +431,15 @@ export const content = {
           ar: "مراقبة الطاقة في الوقت الفعلي مع خرائط طريق إزالة الكربون",
         },
         stat1: {
-          label: {
-            en: "Carbon Footprint Cut",
-            ar: "خفض البصمة الكربونية",
-          },
+          label: { en: "Carbon Footprint Cut", ar: "خفض البصمة الكربونية" },
           value: {
             en: "Pilot results available upon request",
             ar: "النتائج التجريبية متاحة عند الطلب",
           },
         },
         stat2: {
-          label: {
-            en: "Investor Confidence",
-            ar: "ثقة المستثمرين",
-          },
-          value: {
-            en: "2X",
-            ar: "2X",
-          },
+          label: { en: "Investor Confidence", ar: "ثقة المستثمرين" },
+          value: { en: "2X", ar: "2X" },
         },
       },
       {
@@ -463,24 +452,15 @@ export const content = {
           en: "Unified ESG dashboard with NBS integration for urban greening",
           ar: "لوحة ESG موحدة مع دمج الحلول الطبيعية للتخضير الحضري",
         },
-
         stat1: {
-          label: {
-            en: "Urban Heat Reduced",
-            ar: "تخفيض الحرارة الحضرية",
-          },
-
+          label: { en: "Urban Heat Reduced", ar: "تخفيض الحرارة الحضرية" },
           value: {
             en: "Pilot results available upon request",
             ar: "النتائج التجريبية متاحة عند الطلب",
           },
         },
         stat2: {
-          label: {
-            en: "Reporting Automated",
-            ar: "تقارير مؤتمتة",
-          },
-
+          label: { en: "Reporting Automated", ar: "تقارير مؤتمتة" },
           value: {
             en: "Pilot results available upon request",
             ar: "النتائج التجريبية متاحة عند الطلب",
@@ -508,7 +488,7 @@ export const content = {
       label: { en: "Vision", ar: "الرؤية" },
       text: {
         en: "To become the leading sustainability operating system for enterprises across the Middle East and beyond.",
-        ar: "أن نصبح نظام التشغيل الرائد للاستدامة للمؤسسات عبر الشرق الأوسط  .",
+        ar: "أن نصبح نظام التشغيل الرائد للاستدامة للمؤسسات عبر الشرق الأوسط وما يتخطاه.",
       },
     },
   },
@@ -576,7 +556,10 @@ export const content = {
         },
         features: [
           { en: "Verification certificates", ar: "شهادات التحقق" },
-          { en: "Satellite imagery proof", ar: "دليل صور الأقمار الاصطناعية" },
+          {
+            en: "Satellite imagery proof",
+            ar: "إثبات بصور الأقمار الاصطناعية",
+          },
           {
             en: "GPS-verified tree counts",
             ar: "أعداد الأشجار المتحقق منها بـ GPS",
@@ -641,7 +624,7 @@ export const content = {
       },
       items: [
         {
-          icon: "🚶",
+          icon: "field-visit" as IconName,
           title: { en: "Manual Field Visits", ar: "زيارات ميدانية يدوية" },
           desc: {
             en: "Requires teams to physically visit sites, consuming time and resources",
@@ -649,7 +632,7 @@ export const content = {
           },
         },
         {
-          icon: "🐌",
+          icon: "delayed" as IconName,
           title: { en: "Delayed Reporting", ar: "تأخر التقارير" },
           desc: {
             en: "Data collection and analysis takes weeks or months to complete",
@@ -657,7 +640,7 @@ export const content = {
           },
         },
         {
-          icon: "📍",
+          icon: "limited-coverage" as IconName,
           title: { en: "Limited Coverage", ar: "تغطية محدودة" },
           desc: {
             en: "Difficult to monitor large or remote areas comprehensively",
@@ -665,7 +648,7 @@ export const content = {
           },
         },
         {
-          icon: "💸",
+          icon: "high-cost" as IconName,
           title: { en: "High Costs", ar: "تكاليف عالية" },
           desc: {
             en: "Travel, personnel, and equipment expenses add up quickly",
@@ -685,7 +668,7 @@ export const content = {
       },
       items: [
         {
-          icon: "📡",
+          icon: "realtime" as IconName,
           title: { en: "Real-Time Data", ar: "بيانات فورية" },
           desc: {
             en: "Continuous satellite monitoring provides up-to-date insights daily",
@@ -693,7 +676,7 @@ export const content = {
           },
         },
         {
-          icon: "🌍",
+          icon: "full-coverage" as IconName,
           title: { en: "Full Coverage", ar: "تغطية كاملة" },
           desc: {
             en: "Monitor any location globally, regardless of size or accessibility",
@@ -701,7 +684,7 @@ export const content = {
           },
         },
         {
-          icon: "💰",
+          icon: "cost-effective" as IconName,
           title: { en: "Cost-Effective", ar: "فعّالة من حيث التكلفة" },
           desc: {
             en: "Eliminate travel costs and reduce personnel requirements significantly",
@@ -709,7 +692,7 @@ export const content = {
           },
         },
         {
-          icon: "📊",
+          icon: "transparent" as IconName,
           title: { en: "Transparent Reporting", ar: "تقارير شفافة" },
           desc: {
             en: "Automated reports and dashboards keep all stakeholders informed",
@@ -780,7 +763,7 @@ export const content = {
     newsletter: {
       label: {
         en: "Subscribe to our newsletter",
-        ar: "اشترك في نشرتنا البريدية",
+        ar: "اشترك في نشرتنا الإخبارية",
       },
       placeholder: { en: "Your email address", ar: "بريدك الإلكتروني" },
       btn: { en: "Subscribe", ar: "اشترك" },

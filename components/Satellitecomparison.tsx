@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "@/data/icons";
 
 export default function SatelliteComparison() {
   const { lang, t } = useLang();
@@ -71,7 +72,7 @@ export default function SatelliteComparison() {
                   className={`flex gap-4 p-4 rounded-xl border border-red-500/10 bg-red-500/5`}
                 >
                   <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-xl flex-shrink-0">
-                    {item.icon}
+                    <Icon name={item.icon} size={24} />
                   </div>
                   <div>
                     <p className="text-white/70 font-semibold text-sm mb-1">
@@ -126,8 +127,9 @@ export default function SatelliteComparison() {
                   className={`flex gap-4 p-4 rounded-xl border border-[#00E5A0]/12 bg-[#00E5A0]/5 hover:bg-[#00E5A0]/8 transition-colors `}
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#00E5A0]/10 flex items-center justify-center text-xl flex-shrink-0">
-                    {item.icon}
+                    <Icon name={item.icon} size={24} />
                   </div>
+
                   <div>
                     <p className="text-white font-semibold text-sm mb-1">
                       {t(item.title)}

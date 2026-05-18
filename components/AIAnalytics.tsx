@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "@/data/icons";
 
 export default function AIAnalytics() {
   const { lang, t } = useLang();
@@ -62,7 +63,7 @@ export default function AIAnalytics() {
 
               <div className="relative z-10">
                 <div className="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300 inline-block">
-                  {feat.icon}
+                  <Icon name={feat.icon} size={24} />
                 </div>
                 <h3 className="text-white font-bold text-lg mb-2">
                   {t(feat.title)}

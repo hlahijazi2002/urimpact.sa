@@ -82,7 +82,7 @@ export default function CaseStudies() {
             <div
               className={`p-4 md:p-8 rounded-2xl border border-[#00C2FF]/20 bg-[#00C2FF]/5 `}
             >
-              <div className="text-[#00C2FF] text-xs font-semibold uppercase tracking-widest mb-4">
+              <div className="text-[#00E5A0] text-xs font-semibold uppercase tracking-widest mb-4">
                 {lang === "ar" ? "الحل" : "The Solution"}
               </div>
               <p className="text-white/70 leading-relaxed">
@@ -101,10 +101,10 @@ export default function CaseStudies() {
                 {[cs.cases[active].stat1, cs.cases[active].stat2].map(
                   (stat, i) => (
                     <div key={i} className={isAr ? "text-right" : ""}>
-                      <div className="text-[#00E5A0] font-semibold text-xl mt-1">
+                      <div className="text-[#00E5A0] font-semibold text-lg mt-1">
                         {t(stat.label)}
                       </div>
-                      <div className="text-sm   text-white/50  leading-snug">
+                      <div className="text-xs   text-white/50  leading-snug">
                         {t(stat.value)}
                       </div>
                     </div>

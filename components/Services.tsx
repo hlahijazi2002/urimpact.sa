@@ -3,11 +3,13 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "../data/icons";
+import type { IconName } from "../data/icons";
 
-const TAB_ICONS: Record<string, string> = {
-  csr: "🌳",
-  esg: "📊",
-  mrv: "🔬",
+const TAB_ICONS: Record<string, IconName> = {
+  csr: "nbs-module",
+  esg: "esg-module",
+  mrv: "decarb-rec",
 };
 
 export default function Services() {
@@ -24,14 +26,12 @@ export default function Services() {
       className="relative py-10 md:py-14 lg:py-16  overflow-hidden bg-[#050D0A]"
       dir={isAr ? "rtl" : "ltr"}
     >
-      {/* Background */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-[#00E5A0]/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#00C2FF]/5 rounded-full blur-3xl" />
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function Services() {
         </motion.div>
 
         {/* Tab bar */}
-        <div className={`flex flex-wrap gap-2 mb-10 `}>
+        <div className={`flex flex-wrap gap-2 mb-10`}>
           {s.tabs.map((tab) => (
             <button
               key={tab.id}
@@ -62,9 +62,13 @@ export default function Services() {
                 activeTab === tab.id
                   ? "bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_0_24px_rgba(0,229,160,0.3)]"
                   : "border border-white/10 bg-white/3 text-white/50 hover:text-white hover:border-white/20"
-              } d`}
+              }`}
             >
-              <span>{TAB_ICONS[tab.id]}</span>
+              <Icon
+                name={TAB_ICONS[tab.id]}
+                size={18}
+                color={activeTab === tab.id ? "#050D0A" : "#00E5A0"}
+              />
               <span>{t(tab.title)}</span>
             </button>
           ))}
@@ -82,7 +86,7 @@ export default function Services() {
             <div className={`grid lg:grid-cols-2 gap-10 items-start`}>
               <div>
                 <div className="inline-flex items-center gap-2 mb-4 text-[#00E5A0] text-sm font-semibold">
-                  <span className="text-2xl">{TAB_ICONS[active.id]}</span>
+                  <Icon name={TAB_ICONS[active.id]} size={24} color="#00E5A0" />
                   <span className="uppercase tracking-widest">
                     {t(active.title)}
                   </span>
@@ -101,7 +105,7 @@ export default function Services() {
                       initial={{ opacity: 0, x: isAr ? 16 : -16 }}
                       animate={{ opacity: 1, x: 0 }}
                       transition={{ delay: i * 0.07 }}
-                      className={`flex items-center gap-3 `}
+                      className={`flex items-center gap-3`}
                     >
                       <div className="w-5 h-5 rounded-full bg-[#00E5A0]/15 border border-[#00E5A0]/30 flex items-center justify-center flex-shrink-0">
                         <svg
@@ -128,8 +132,6 @@ export default function Services() {
               {/* Right: visual card */}
               <div className="relative rounded-2xl border border-white/8 bg-[#0A1A14]/60 overflow-hidden p-8">
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-1/2 h-px bg-gradient-to-r from-transparent via-[#00E5A0]/40 to-transparent" />
-
-                {/* Service-specific mockup */}
                 {activeTab === "csr" && <CSRMockup isAr={isAr} />}
                 {activeTab === "esg" && <ESGMockup isAr={isAr} />}
                 {activeTab === "mrv" && <MRVMockup isAr={isAr} />}
@@ -142,14 +144,12 @@ export default function Services() {
   );
 }
 
-/* ── Mini mockup cards ──────────────────────────────────── */
-
 function CSRMockup({ isAr }: { isAr: boolean }) {
   return (
     <div className={isAr ? "text-right" : ""}>
       <div className="flex items-center gap-3 mb-6">
-        <div className="w-10 h-10 rounded-xl bg-[#39D353]/15 border border-[#39D353]/25 flex items-center justify-center text-xl">
-          🌳
+        <div className="w-10 h-10 rounded-xl bg-[#39D353]/15 border border-[#39D353]/25 flex items-center justify-center">
+          <Icon name="nbs-module" size={22} color="#39D353" />
         </div>
         <div>
           <p className="text-white text-xs font-bold uppercase tracking-wider">
@@ -182,16 +182,32 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
       </div>
       <div className="grid grid-cols-2 gap-2">
         {[
-          { icon: "📡", label: "Satellite Verified", color: "#00E5A0" },
-          { icon: "📍", label: "GPS Tracked", color: "#39D353" },
-          { icon: "🌿", label: "Carbon Sequestered", color: "#00C2FF" },
-          { icon: "📋", label: "Audit Ready", color: "#00E5A0" },
+          {
+            icon: "realtime" as IconName,
+            label: "Satellite Verified",
+            color: "#00E5A0",
+          },
+          {
+            icon: "emission-map" as IconName,
+            label: "GPS Tracked",
+            color: "#39D353",
+          },
+          {
+            icon: "nbs-module" as IconName,
+            label: "Carbon Sequestered",
+            color: "#00C2FF",
+          },
+          {
+            icon: "transparent" as IconName,
+            label: "Audit Ready",
+            color: "#00E5A0",
+          },
         ].map((item, i) => (
           <div
             key={i}
             className="flex items-center gap-2 px-3 py-2 rounded-lg border border-white/8 bg-white/3"
           >
-            <span className="text-sm">{item.icon}</span>
+            <Icon name={item.icon} size={14} color={item.color} />
             <span className="text-white/60 text-xs">{item.label}</span>
           </div>
         ))}
@@ -238,7 +254,7 @@ function ESGMockup({ isAr }: { isAr: boolean }) {
         ))}
       </div>
       <div className="mt-6 p-3 rounded-xl bg-[#00E5A0]/8 border border-[#00E5A0]/15 flex items-center gap-3">
-        <span className="text-lg">✅</span>
+        <Icon name="decarb-rec" size={20} color="#00E5A0" />
         <div>
           <p className="text-[#00E5A0] text-xs font-bold">
             GRI & IFRS S1/S2 Compliant
@@ -279,14 +295,24 @@ function MRVMockup({ isAr }: { isAr: boolean }) {
       </div>
       <div className="grid grid-cols-2 gap-3">
         {[
-          { icon: "📄", label: "Q3 2024 Report", status: "Generated" },
-          { icon: "🔍", label: "Additionality", status: "Verified" },
+          {
+            icon: "transparent" as IconName,
+            label: "Q3 2024 Report",
+            status: "Generated",
+          },
+          {
+            icon: "benchmark" as IconName,
+            label: "Additionality",
+            status: "Verified",
+          },
         ].map((item, i) => (
           <div
             key={i}
             className="rounded-xl border border-white/8 bg-white/3 p-3"
           >
-            <div className="text-xl mb-2">{item.icon}</div>
+            <div className="mb-2">
+              <Icon name={item.icon} size={20} color="#00E5A0" />
+            </div>
             <p className="text-white/60 text-xs mb-0.5">{item.label}</p>
             <p className="text-[#00E5A0] text-xs font-bold">{item.status}</p>
           </div>

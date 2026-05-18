@@ -89,8 +89,8 @@ export default function NBS() {
               viewport={{ once: true }}
               className={`flex items-center gap-3 mb-6 ${isAr ? "flex-row-reverse justify-end" : ""}`}
             >
-              <span className="w-8 h-px bg-[#39D353]" />
-              <span className="text-[#39D353] text-sm font-semibold uppercase tracking-widest">
+              <span className="w-8 h-px bg-[#00E5A0]" />
+              <span className="text-[#00E5A0] text-sm font-semibold uppercase tracking-widest">
                 {t(n.sectionLabel)}
               </span>
             </motion.div>

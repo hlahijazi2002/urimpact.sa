@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "@/data/icons";
 
 export default function Problem() {
   const { lang, t } = useLang();
@@ -72,7 +73,9 @@ export default function Problem() {
               <div className="absolute inset-0 bg-gradient-to-br from-[#00E5A0]/0 to-[#00E5A0]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
               <div className="relative z-10">
-                <div className="text-3xl mb-4">{card.icon}</div>
+                <div className="text-3xl mb-4">
+                  <Icon name={card.icon} size={24} />
+                </div>
                 <h3 className="text-white font-bold text-base mb-2">
                   {t(card.title)}
                 </h3>

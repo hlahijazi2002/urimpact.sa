@@ -3,6 +3,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "@/data/icons";
 
 export default function Platform() {
   const { lang, t } = useLang();
@@ -76,7 +77,9 @@ export default function Platform() {
                   : {}
               }
             >
-              <span className="text-xl">{mod.icon}</span>
+              <span className="text-xl">
+                <Icon name={mod.icon} size={24} />
+              </span>
               {t(mod.title)}
             </motion.button>
           ))}
@@ -106,7 +109,7 @@ export default function Platform() {
                       color: activeModule.color,
                     }}
                   >
-                    {activeModule.icon}
+                    <Icon name={activeModule.icon} size={24} />
                   </span>
                   <h3 className="text-3xl font-black text-white">
                     {t(activeModule.title)}
@@ -157,7 +160,7 @@ export default function Platform() {
                 <div className="relative z-10">
                   <div className="flex justify-start gap-2 items-center">
                     <div className="text-5xl opacity-60">
-                      {activeModule.icon}
+                      <Icon name={activeModule.icon} size={24} />
                     </div>
                     <h4
                       className={`text-2xl font-bold text-white `}

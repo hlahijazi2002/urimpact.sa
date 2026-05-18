@@ -2,6 +2,8 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "../data/icons";
+import type { IconName } from "../data/icons";
 
 export default function About() {
   const { lang, t } = useLang();
@@ -49,8 +51,16 @@ export default function About() {
 
           <div className="space-y-6">
             {[
-              { data: a.mission, color: "#00E5A0", icon: "🎯" },
-              { data: a.vision, color: "#00C2FF", icon: "🔭" },
+              {
+                data: a.mission,
+                color: "#00E5A0",
+                icon: "decarb-rec" as IconName,
+              },
+              {
+                data: a.vision,
+                color: "#00C2FF",
+                icon: "emission-map" as IconName,
+              },
             ].map(({ data, color, icon }, i) => (
               <motion.div
                 key={i}
@@ -58,13 +68,15 @@ export default function About() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 }}
-                className={`group p-8 rounded-2xl border border-white/10 bg-white/[0.03] hover:border-[${color}]/30 transition-all duration-300 `}
+                className={`group p-8 rounded-2xl border border-white/10 bg-white/[0.03] transition-all duration-300`}
               >
                 <div className={`flex items-center gap-4 mb-4`}>
-                  <span className="text-2xl">{icon}</span>
+                  <Icon name={icon} size={24} color={color} />
                   <span
                     className="text-sm font-semibold uppercase tracking-widest"
-                    style={{ color }}
+                    style={{
+                      color: color === "#00E5A0" ? "#007a4d" : "#0077a8",
+                    }}
                   >
                     {t(data.label)}
                   </span>

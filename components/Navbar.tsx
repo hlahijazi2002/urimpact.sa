@@ -52,7 +52,7 @@ export default function Navbar() {
         scrolled
           ? isDark
             ? "bg-[#050D0A]/95 backdrop-blur-xl border-b border-[#00E5A0]/10 shadow-sm"
-            : "bg-[#f0f7f4] backdrop-blur-xl border-b border-gray-200/80 shadow-sm"
+            : "bg-[#e8f2ed] backdrop-blur-xl [box-shadow:0_4px_12px_-2px_rgba(0,100,60,0.12)]"
           : "bg-transparent"
       }`}
     >
