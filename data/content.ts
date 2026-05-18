@@ -37,13 +37,16 @@ export const content = {
     ],
     stats: [
       {
-        value: "70%",
-        label: { en: "Reporting Time Saved", ar: "توفير في وقت التقارير" },
+        value: "70–90%",
+        label: { en: "Reporting Effort Reduced", ar: "تخفيض في جهد التقارير" },
       },
-      { value: "3x", label: { en: "Faster Compliance", ar: "امتثال أسرع" } },
       {
-        value: "100+",
-        label: { en: "ESG KPIs Tracked", ar: "مؤشر ESG قيد التتبع" },
+        value: "30%",
+        label: { en: "Faster Deal Closures", ar: "إغلاق صفقات أسرع" },
+      },
+      {
+        value: "100%",
+        label: { en: "Audit-Ready Records", ar: "سجلات جاهزة للتدقيق" },
       },
     ],
   },
@@ -353,39 +356,33 @@ export const content = {
       en: "Sustainability That Creates Business Value",
       ar: "استدامة تخلق قيمة تجارية",
     },
-    metrics: [
-      {
-        value: "70%",
-        label: {
-          en: "Reduction in Reporting Time",
-          ar: "تخفيض في وقت التقارير",
-        },
-        icon: "delayed" as IconName,
-      },
-      {
-        value: "3x",
-        label: { en: "Faster ESG Visibility", ar: "رؤية ESG أسرع" },
-        icon: "chart-gap" as IconName,
-      },
-      {
-        value: "100%",
-        label: {
-          en: "Framework Compliance Coverage",
-          ar: "تغطية امتثال المعايير",
-        },
-        icon: "decarb-rec" as IconName,
-      },
-      {
-        value: "∞",
-        label: { en: "Investor Confidence Boost", ar: "تعزيز ثقة المستثمرين" },
-        icon: "benchmark" as IconName,
-      },
-      {
-        value: "Net Zero",
-        label: { en: "Accelerated Planning", ar: "تخطيط متسارع" },
-        icon: "decarb-module" as IconName,
-      },
-    ],
+  metrics: [
+  {
+    value: "70–90%",
+    label: { en: "Reporting Effort Reduced", ar: "تخفيض في جهد التقارير" },
+    icon: "delayed" as IconName,
+  },
+  {
+    value: "30%",
+    label: { en: "Faster Deal Closures", ar: "إغلاق صفقات أسرع" },
+    icon: "chart-gap" as IconName,
+  },
+  {
+    value: "100%",
+    label: { en: "Audit-Ready Records", ar: "سجلات جاهزة للتدقيق" },
+    icon: "decarb-rec" as IconName,
+  },
+  {
+    value: "∞",
+    label: { en: "Investor Confidence Boost", ar: "تعزيز ثقة المستثمرين" },
+    icon: "benchmark" as IconName,
+  },
+  {
+    value: "Net Zero",
+    label: { en: "Accelerated Planning", ar: "تخطيط متسارع" },
+    icon: "decarb-module" as IconName,
+  },
+],
   },
 
   caseStudies: {

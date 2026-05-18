@@ -167,15 +167,17 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
       </div>
       <div className="grid grid-cols-3 gap-3 mb-6">
         {[
-          { val: "12,450", label: "Trees Detected" },
-          { val: "98.2%", label: "Survival Rate" },
-          { val: "15%", label: "Canopy Growth" },
+          { val: "Trees Detected", label: "Via Satellite Imagery" },
+          { val: "CO₂ Sequestered", label: "Verified Carbon Removal" },
+          { val: "Area Covered", label: "Monitored Green Zones" },
         ].map((s, i) => (
           <div
             key={i}
             className="rounded-xl bg-white/3 border border-white/8 p-3 text-center"
           >
-            <p className="text-[#00E5A0] text-lg font-black">{s.val}</p>
+            <p className="text-[#00E5A0] text-[10px] font-black leading-tight">
+              {s.val}
+            </p>
             <p className="text-white/30 text-[10px] mt-0.5">{s.label}</p>
           </div>
         ))}
