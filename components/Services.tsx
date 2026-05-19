@@ -153,7 +153,7 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
         </div>
         <div>
           <p className="text-white text-xs font-bold uppercase tracking-wider">
-            PROJECT AMAZONIA REFORESTATION
+            King Khalid University - Green University Project
           </p>
           <div className="flex gap-2 mt-1">
             <span className="text-[10px] bg-[#00E5A0]/15 text-[#00E5A0] px-2 py-0.5 rounded-full font-medium">
