@@ -22,7 +22,7 @@ const tajawal = Tajawal({
 
 export const metadata: Metadata = {
   title: {
-    default: "URIMPACT — Measure. Manage. Mitigate.",
+    default: "URIMPACT",
     template: "%s | URIMPACT",
   },
   description:
