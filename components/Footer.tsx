@@ -78,9 +78,7 @@ export default function Footer() {
           >
             {t(f.newsletter.label)}
           </p>
-          <div
-            className={`flex items-center gap-2 w-full sm:w-auto ${isAr ? "flex-row-reverse" : ""}`}
-          >
+          <div className={`flex items-center gap-2 w-full sm:w-auto `}>
             <input
               type="email"
               placeholder={t(f.newsletter.placeholder)}
