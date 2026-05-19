@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
 
-
 const FRAMEWORK_STYLES: Record<
   string,
   {
@@ -22,128 +21,104 @@ const FRAMEWORK_STYLES: Record<
   GRI: {
     darkCard:
       "dark:bg-[#1B4332]/60 dark:border-[#2D6A4F]/50 dark:hover:bg-[#1B4332]/80",
-    lightCard:
-      "bg-[#ECFDF5] border-[#6EE7B7]/60 hover:bg-[#D1FAE5]",
+    lightCard: "bg-[#ECFDF5] border-[#6EE7B7]/60 hover:bg-[#D1FAE5]",
     nameText: "dark:text-[#52B788]",
     lightNameText: "text-[#065F46]",
     dot: "dark:bg-[#52B788]",
     lightDot: "bg-[#059669]",
-    badge:
-      "dark:border-[#2D6A4F]/50 dark:text-[#52B788]",
-    lightBadge:
-      "border-[#6EE7B7]/60 text-[#065F46]",
+    badge: "dark:border-[#2D6A4F]/50 dark:text-[#52B788]",
+    lightBadge: "border-[#6EE7B7]/60 text-[#065F46]",
     abbr: "Global Reporting Initiative",
     abbrAr: "مبادرة التقارير العالمية",
   },
   SASB: {
     darkCard:
       "dark:bg-[#1A3A5C]/60 dark:border-[#2563EB]/40 dark:hover:bg-[#1A3A5C]/80",
-    lightCard:
-      "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
+    lightCard: "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
     nameText: "dark:text-[#60A5FA]",
     lightNameText: "text-[#1D4ED8]",
     dot: "dark:bg-[#60A5FA]",
     lightDot: "bg-[#2563EB]",
-    badge:
-      "dark:border-[#2563EB]/40 dark:text-[#60A5FA]",
-    lightBadge:
-      "border-[#93C5FD]/60 text-[#1D4ED8]",
+    badge: "dark:border-[#2563EB]/40 dark:text-[#60A5FA]",
+    lightBadge: "border-[#93C5FD]/60 text-[#1D4ED8]",
     abbr: "Sustainability Accounting",
     abbrAr: "محاسبة الاستدامة",
   },
   TCFD: {
     darkCard:
       "dark:bg-[#312E81]/60 dark:border-[#6D28D9]/40 dark:hover:bg-[#312E81]/80",
-    lightCard:
-      "bg-[#F5F3FF] border-[#C4B5FD]/60 hover:bg-[#EDE9FE]",
+    lightCard: "bg-[#F5F3FF] border-[#C4B5FD]/60 hover:bg-[#EDE9FE]",
     nameText: "dark:text-[#A78BFA]",
     lightNameText: "text-[#6D28D9]",
     dot: "dark:bg-[#A78BFA]",
     lightDot: "bg-[#7C3AED]",
-    badge:
-      "dark:border-[#6D28D9]/40 dark:text-[#A78BFA]",
-    lightBadge:
-      "border-[#C4B5FD]/60 text-[#6D28D9]",
+    badge: "dark:border-[#6D28D9]/40 dark:text-[#A78BFA]",
+    lightBadge: "border-[#C4B5FD]/60 text-[#6D28D9]",
     abbr: "Climate Financial Disclosures",
     abbrAr: "الإفصاحات المناخية المالية",
   },
   "IFRS S1/S2": {
     darkCard:
       "dark:bg-[#7C2D12]/60 dark:border-[#EA580C]/40 dark:hover:bg-[#7C2D12]/80",
-    lightCard:
-      "bg-[#FFF7ED] border-[#FDBA74]/60 hover:bg-[#FFEDD5]",
+    lightCard: "bg-[#FFF7ED] border-[#FDBA74]/60 hover:bg-[#FFEDD5]",
     nameText: "dark:text-[#FB923C]",
     lightNameText: "text-[#C2410C]",
     dot: "dark:bg-[#FB923C]",
     lightDot: "bg-[#EA580C]",
-    badge:
-      "dark:border-[#EA580C]/40 dark:text-[#FB923C]",
-    lightBadge:
-      "border-[#FDBA74]/60 text-[#C2410C]",
+    badge: "dark:border-[#EA580C]/40 dark:text-[#FB923C]",
+    lightBadge: "border-[#FDBA74]/60 text-[#C2410C]",
     abbr: "International Financial Reporting",
     abbrAr: "معايير التقارير المالية الدولية",
   },
   CSRD: {
     darkCard:
       "dark:bg-[#14532D]/60 dark:border-[#16A34A]/40 dark:hover:bg-[#14532D]/80",
-    lightCard:
-      "bg-[#F0FDF4] border-[#86EFAC]/60 hover:bg-[#DCFCE7]",
+    lightCard: "bg-[#F0FDF4] border-[#86EFAC]/60 hover:bg-[#DCFCE7]",
     nameText: "dark:text-[#4ADE80]",
     lightNameText: "text-[#15803D]",
     dot: "dark:bg-[#4ADE80]",
     lightDot: "bg-[#16A34A]",
-    badge:
-      "dark:border-[#16A34A]/40 dark:text-[#4ADE80]",
-    lightBadge:
-      "border-[#86EFAC]/60 text-[#15803D]",
+    badge: "dark:border-[#16A34A]/40 dark:text-[#4ADE80]",
+    lightBadge: "border-[#86EFAC]/60 text-[#15803D]",
     abbr: "Corporate Sustainability Reporting",
     abbrAr: "تقارير استدامة الشركات",
   },
   "GHG Protocol": {
     darkCard:
       "dark:bg-[#164E63]/60 dark:border-[#0891B2]/40 dark:hover:bg-[#164E63]/80",
-    lightCard:
-      "bg-[#ECFEFF] border-[#67E8F9]/60 hover:bg-[#CFFAFE]",
+    lightCard: "bg-[#ECFEFF] border-[#67E8F9]/60 hover:bg-[#CFFAFE]",
     nameText: "dark:text-[#22D3EE]",
     lightNameText: "text-[#0E7490]",
     dot: "dark:bg-[#22D3EE]",
     lightDot: "bg-[#0891B2]",
-    badge:
-      "dark:border-[#0891B2]/40 dark:text-[#22D3EE]",
-    lightBadge:
-      "border-[#67E8F9]/60 text-[#0E7490]",
+    badge: "dark:border-[#0891B2]/40 dark:text-[#22D3EE]",
+    lightBadge: "border-[#67E8F9]/60 text-[#0E7490]",
     abbr: "Greenhouse Gas Protocol",
     abbrAr: "بروتوكول غازات الاحتباس الحراري",
   },
   CDP: {
     darkCard:
       "dark:bg-[#1E3A5F]/60 dark:border-[#2980B9]/40 dark:hover:bg-[#1E3A5F]/80",
-    lightCard:
-      "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
+    lightCard: "bg-[#EFF6FF] border-[#93C5FD]/60 hover:bg-[#DBEAFE]",
     nameText: "dark:text-[#5BA4E5]",
     lightNameText: "text-[#1E40AF]",
     dot: "dark:bg-[#5BA4E5]",
     lightDot: "bg-[#2563EB]",
-    badge:
-      "dark:border-[#2980B9]/40 dark:text-[#5BA4E5]",
-    lightBadge:
-      "border-[#93C5FD]/60 text-[#1E40AF]",
+    badge: "dark:border-[#2980B9]/40 dark:text-[#5BA4E5]",
+    lightBadge: "border-[#93C5FD]/60 text-[#1E40AF]",
     abbr: "Carbon Disclosure Project",
     abbrAr: "مشروع الإفصاح عن الكربون",
   },
   "UN SDGs": {
     darkCard:
       "dark:bg-[#4A1942]/60 dark:border-[#9333EA]/40 dark:hover:bg-[#4A1942]/80",
-    lightCard:
-      "bg-[#FDF4FF] border-[#E879F9]/40 hover:bg-[#FAE8FF]",
+    lightCard: "bg-[#FDF4FF] border-[#E879F9]/40 hover:bg-[#FAE8FF]",
     nameText: "dark:text-[#E879F9]",
     lightNameText: "text-[#7E22CE]",
     dot: "dark:bg-[#E879F9]",
     lightDot: "bg-[#9333EA]",
-    badge:
-      "dark:border-[#9333EA]/40 dark:text-[#E879F9]",
-    lightBadge:
-      "border-[#E879F9]/40 text-[#7E22CE]",
+    badge: "dark:border-[#9333EA]/40 dark:text-[#E879F9]",
+    lightBadge: "border-[#E879F9]/40 text-[#7E22CE]",
     abbr: "Sustainable Development Goals",
     abbrAr: "أهداف التنمية المستدامة",
   },
@@ -205,7 +180,7 @@ export default function Frameworks() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#00C2FF] animate-pulse" />
               <span className="text-[#00C2FF] text-xs font-semibold">
                 {isAr
-                  ? "متوافق مع ٨ أطر دولية"
+                  ? "متوافق مع ٨ معايير دولية"
                   : "Aligned with 8 global frameworks"}
               </span>
             </motion.div>
@@ -221,7 +196,8 @@ export default function Frameworks() {
           >
             {f.items.map((item, i) => {
               const style = FRAMEWORK_STYLES[item] ?? {
-                darkCard: "dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10",
+                darkCard:
+                  "dark:bg-white/5 dark:border-white/10 dark:hover:bg-white/10",
                 lightCard: "bg-gray-50 border-gray-200 hover:bg-gray-100",
                 nameText: "dark:text-white/70",
                 lightNameText: "text-gray-600",

@@ -12,6 +12,7 @@ export default function CaseStudies() {
 
   return (
     <section
+      id="caseStudies"
       className="relative py-10 md:py-14 lg:py-16 bg-[#050D0A] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >

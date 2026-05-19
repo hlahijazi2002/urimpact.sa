@@ -31,9 +31,8 @@ export default function Navbar() {
 
   const navLinks = [
     { label: n.platform, href: "/#platform" },
-    { label: n.solutions, href: "/#solutions" },
+    { label: n.solutions, href: "/#caseStudies" },
     { label: n.frameworks, href: "/#frameworks" },
-    { label: n.resources, href: "/#resources" },
     { label: n.about, href: "/#about" },
     { label: n.contact, href: "/demo" },
   ];

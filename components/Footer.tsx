@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
 import { useTheme } from "../context/ThemeContext";
