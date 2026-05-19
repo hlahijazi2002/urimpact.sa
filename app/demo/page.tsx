@@ -127,7 +127,7 @@ export default function BookDemoPage() {
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
-          fullName: formData.name,
+          name: formData.name,
           workEmail: formData.email,
           message: formData.message,
         },
@@ -137,7 +137,7 @@ export default function BookDemoPage() {
       if (res.status !== 200) throw new Error();
 
       setSubmitted(true);
-      setFormData({ name: "", email: "", message: "" }); // تنظيف الفورم
+      setFormData({ name: "", email: "", message: "" });
       setTimeout(() => setSubmitted(false), 6000);
     } catch (error) {
       console.error("EmailJS Error:", error);
