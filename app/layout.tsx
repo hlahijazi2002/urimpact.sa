@@ -115,6 +115,21 @@ export default function RootLayout({
 }) {
   return (
     <html suppressHydrationWarning lang="en" dir="ltr">
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                const theme = localStorage.getItem('urimpact-theme') || 'light';
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
+                }
+                document.documentElement.setAttribute('data-theme', theme);
+              })();
+            `,
+          }}
+        />
+      </head>
       <body
         className={`${dmSans.variable} ${tajawal.variable} font-sans antialiased`}
       >
