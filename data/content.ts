@@ -497,38 +497,38 @@ export const content = {
       ar: "موثوق به من قِبَل المؤسسات الرائدة",
     },
     items: [
-      { name: "KACST", logo: "https://urimpact.sa/images/partners/KACST.svg" },
+      { name: "KACST", logo: "https://urimpact.sa/partners/KACST.svg" },
       {
         name: "King Abdulaziz University",
-        logo: "https://urimpact.sa/images/partners/King Abdulaziz University.svg",
+        logo: "https://urimpact.sa/partners/King Abdulaziz University.svg",
       },
       {
         name: "King Khalid University",
-        logo: "https://urimpact.sa/images/partners/king-khalid-university.svg",
+        logo: "https://urimpact.sa/partners/king-khalid-university.svg",
       },
       {
         name: "Majmaah University",
-        logo: "https://urimpact.sa/images/partners/Majmaah University.svg",
+        logo: "https://urimpact.sa/partners/Majmaah University.svg",
       },
       {
         name: "MEWA",
-        logo: "https://urimpact.sa/images/partners/mewa-logo.svg",
+        logo: "https://urimpact.sa/partners/mewa-logo.svg",
       },
       {
         name: "NCVC",
-        logo: "https://urimpact.sa/images/partners/NCVC-Logo-Color-AR.svg",
+        logo: "https://urimpact.sa/partners/NCVC-Logo-Color-AR.svg",
       },
       {
         name: "Prince Sattam University",
-        logo: "https://urimpact.sa/images/partners/prince-sattam-bin-abdullaziz-university.svg",
+        logo: "https://urimpact.sa/partners/prince-sattam-bin-abdullaziz-university.svg",
       },
       {
         name: "Saudi Ministry of National Guard",
-        logo: "https://urimpact.sa/images/partners/Saudi_Ministry_of_National_Guard_Logo.svg",
+        logo: "https://urimpact.sa/partners/Saudi_Ministry_of_National_Guard_Logo.svg",
       },
       {
         name: "Wareef",
-        logo: "https://urimpact.sa/images/partners/wareef.svg",
+        logo: "https://urimpact.sa/partners/wareef.svg",
       },
     ],
   },
