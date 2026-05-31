@@ -149,7 +149,7 @@ export default function Navbar() {
             )}
           </button>
           <a
-            href="link"
+            href="https://droueykib6n4x.cloudfront.net"
             className={`hidden lg:flex items-center gap-2 px-4 py-2.5 rounded-lg border text-sm font-medium transition-all whitespace-nowrap flex-shrink-0 ${
               isDark
                 ? "border-white/10 bg-white/5 text-white/70 hover:text-white hover:bg-white/10"
@@ -240,7 +240,7 @@ export default function Navbar() {
                 </span>
               </button>
               <a
-                href="link"
+                href="https://droueykib6n4x.cloudfront.net"
                 onClick={() => setMenuOpen(false)}
                 className={`w-full py-3 border-b text-sm transition-colors ${
                   isDark
