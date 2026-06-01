@@ -208,7 +208,7 @@ export default function BookDemoPage() {
       </AnimatePresence>
 
       <main className="min-h-screen bg-[#050D0A] pt-20">
-        <div className="max-w-7xl mx-auto px-6 py-16 lg:py-24">
+        <div className="container-main py-16 lg:py-24">
           <div
             className={`grid lg:grid-cols-2 gap-12 lg:gap-20 items-start ${isAr ? "direction-rtl" : ""}`}
           >

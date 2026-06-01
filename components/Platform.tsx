@@ -24,7 +24,7 @@ export default function Platform() {
         <div className="absolute left-0 top-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-[#00E5A0]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         {/* Header */}
         <div className={`mb-16 ${isAr ? "text-right" : ""}`}>
           <motion.div

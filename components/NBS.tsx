@@ -28,7 +28,7 @@ export default function NBS() {
         <div className="absolute inset-0 backdrop-blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}

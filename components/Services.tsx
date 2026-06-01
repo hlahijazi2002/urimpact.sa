@@ -31,7 +31,7 @@ export default function Services() {
         <div className="absolute bottom-0 left-1/4 w-80 h-80 bg-[#00C2FF]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

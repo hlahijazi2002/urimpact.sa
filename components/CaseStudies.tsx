@@ -16,7 +16,7 @@ export default function CaseStudies() {
       className="relative py-10 md:py-14 lg:py-16 bg-[#050D0A] overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         {/* Header */}
         <div className={`mb-16 ${isAr ? "text-right" : ""}`}>
           <motion.div

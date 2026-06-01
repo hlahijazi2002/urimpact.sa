@@ -1,6 +1,19 @@
 @import "tailwindcss/index.css";
 @variant dark (&:where(.dark, .dark *));
+@theme {
+  --max-width-container: 1400px;
+}
 
+@layer components {
+  .container-main {
+    width: 100%;
+    max-width: var(--max-width-container);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: clamp(1.5rem, 5vw, 6rem);
+    padding-right: clamp(1.5rem, 5vw, 6rem);
+  }
+}
 :root {
   --color-emerald: #00e5a0;
   --color-cyan: #00c2ff;

@@ -23,7 +23,7 @@ export default function Footer() {
       className="relative bg-[#030A07] border-t border-white/5 pt-20 pb-10 overflow-hidden"
       dir={isAr ? "rtl" : "ltr"}
     >
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         <div
           className={`grid grid-cols-2 lg:grid-cols-5 gap-10 mb-16 ${isAr ? "direction-rtl" : ""}`}
         >

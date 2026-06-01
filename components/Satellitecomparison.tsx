@@ -15,7 +15,7 @@ export default function SatelliteComparison() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-[#00E5A0]/4 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -18,7 +18,7 @@ export default function Problem() {
       {/* Subtle separator line */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-24 bg-gradient-to-b from-transparent via-[#00E5A0]/30 to-transparent" />
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="container-main">
         {/* Section label */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}

@@ -16,7 +16,7 @@ export default function AIAnalytics() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#7B61FF]/5 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         <div className={`text-center mb-20 ${isAr ? "text-right" : ""}`}>
           <motion.div
             initial={{ opacity: 0, y: 20 }}

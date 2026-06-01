@@ -11,33 +11,6 @@ const fadeUp = (delay = 0) => ({
 });
 
 function DashboardMockup({ isAr }: { isAr: boolean }) {
-  // const scopes = [
-  //   {
-  //     label: isAr ? "النطاق 1" : "Scope 1",
-  //     val: "2,345 tCO₂e",
-  //     sub: isAr ? "انبعاثات مباشرة" : "Direct Emissions",
-  //     color: "#00E5A0",
-  //   },
-  //   {
-  //     label: isAr ? "النطاق 2" : "Scope 2",
-  //     val: "3,210 tCO₂e",
-  //     sub: isAr ? "الطاقة المشتراة" : "Purchased Energy",
-  //     color: "#00C2FF",
-  //   },
-  //   {
-  //     label: isAr ? "النطاق 3" : "Scope 3",
-  //     val: "6,901 tCO₂e",
-  //     sub: isAr ? "سلسلة القيمة" : "Value Chain",
-  //     color: "#7B61FF",
-  //   },
-  // ];
-  // const stats = [
-  //   { val: "2035", sub: isAr ? "هدف صفر كربون" : "Net Zero Target" },
-  //   { val: "84", sub: isAr ? "نقاط ESG" : "ESG Score" },
-  //   { val: "94%", sub: isAr ? "الامتثال" : "Compliance" },
-  // ];
-  // const bars = [20, 35, 28, 42, 38, 55, 48, 60, 52, 70, 65, 80];
-
   return (
     <motion.div
       initial={{ opacity: 0, scale: 0.9, y: 20 }}
@@ -211,7 +184,7 @@ export default function Hero() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full h-full bg-[#00E5A0]/4 rounded-full blur-3xl" />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 py-14 grid lg:grid-cols-2 gap-16 items-center w-full">
+      <div className="relative z-10 container-main py-14 grid lg:grid-cols-2 gap-16 items-center w-full">
         {/* Left Content */}
         <div className={`space-y-8 ${isAr ? "text-right" : ""}`}>
           {/* Badge */}

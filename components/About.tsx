@@ -16,7 +16,7 @@ export default function About() {
       className="relative py-10 md:py-14 lg:py-16 bg-[#030A07] overflow-hidden"
     >
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-gradient-to-r from-[#00E5A0]/5 via-transparent to-[#00C2FF]/5 rounded-full blur-3xl" />
-      <div className="relative z-10 max-w-7xl mx-auto px-6">
+      <div className="relative z-10 container-main">
         <div className="grid lg:grid-cols-2 gap-20 items-center">
           <div className={isAr ? "text-right" : ""}>
             <motion.div
