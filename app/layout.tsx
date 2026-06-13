@@ -10,14 +10,14 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
   weight: ["300", "400", "500", "600", "700", "800", "900"],
-  preload: false,
+  preload: true,
 });
 
 const tajawal = Tajawal({
   subsets: ["arabic"],
   variable: "--font-tajawal",
   weight: ["300", "400", "500", "700", "800", "900"],
-  preload: false,
+  preload: true,
 });
 
 export const metadata: Metadata = {
