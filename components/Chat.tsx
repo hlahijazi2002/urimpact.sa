@@ -191,6 +191,7 @@ export default function Chat() {
               <button
                 onClick={() => setIsOpen(false)}
                 className={`p-1 transition-colors ${closeBtnC}`}
+                aria-label="Close chat window"
               >
                 <svg
                   width="16"
@@ -285,6 +286,7 @@ export default function Chat() {
                   onClick={() => sendMessage(input)}
                   disabled={isLoading || !input.trim()}
                   className="w-9 h-9 rounded-xl bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] flex items-center justify-center flex-shrink-0 disabled:opacity-40 hover:shadow-[0_0_16px_rgba(0,229,160,0.4)] transition-shadow"
+                  aria-label="Send message"
                 >
                   <svg
                     width="14"
@@ -313,6 +315,7 @@ export default function Chat() {
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
         className="w-14 h-14 rounded-full bg-gradient-to-br from-[#00E5A0] to-[#00C2FF] text-[#050D0A] shadow-[0_8px_30px_rgba(0,229,160,0.4)] flex items-center justify-center"
+        aria-label={isOpen ? "Close chat" : "Open chat"}
       >
         <AnimatePresence mode="wait">
           {isOpen ? (
