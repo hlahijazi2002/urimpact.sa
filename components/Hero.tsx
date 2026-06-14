@@ -40,95 +40,13 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
           </span>
         </div>
 
-        {/* <div className="p-5 space-y-4">
-       
-          <div className="flex items-center justify-between text-xs">
-            <span className="text-white/40">
-              {isAr ? "انبعاثات الغازات الدفيئة" : "GHG Emissions"}
-            </span>
-            <span className="text-[#00E5A0] font-semibold">
-              ↓ 8.4% {isAr ? "مقارنة بالعام الماضي" : "vs last year"}
-            </span>
-          </div>
-
-     
-          <div className="space-y-2">
-            {scopes.map((s, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, x: -10 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: 0.8 + i * 0.12 }}
-                className="flex items-center justify-between px-3 py-2.5 rounded-lg bg-white/4 border border-white/6"
-              >
-                <div className="flex items-center gap-2">
-                  <span
-                    className="w-2 h-2 rounded-full flex-shrink-0"
-                    style={{ background: s.color }}
-                  />
-                  <span className="text-white/55 text-xs">{s.label}</span>
-                </div>
-                <div className="text-right">
-                  <div className="text-white text-xs font-bold">{s.val}</div>
-                  <div className="text-white/30 text-[9px]">{s.sub}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-        
-          <div className="grid grid-cols-3 gap-2">
-            {stats.map((stat, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: 1.1 + i * 0.1 }}
-                className="bg-white/5 rounded-xl p-3 text-center"
-              >
-                <div className="text-[#00E5A0] font-bold text-lg leading-none">
-                  {stat.val}
-                </div>
-                <div className="text-white/30 text-[9px] mt-1 leading-tight">
-                  {stat.sub}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-
-          <div className="bg-white/3 rounded-xl p-3">
-            <div className="flex items-end gap-1 h-10">
-              {bars.map((h, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ height: 0 }}
-                  animate={{ height: `${h}%` }}
-                  transition={{
-                    duration: 0.5,
-                    delay: 1.3 + i * 0.04,
-                    ease: "easeOut",
-                  }}
-                  className="flex-1 rounded-sm"
-                  style={{
-                    background: `rgba(0,229,160,${0.2 + (h / 100) * 0.6})`,
-                  }}
-                />
-              ))}
-            </div>
-            <div className="text-[9px] text-white/25 mt-2 text-center">
-              {isAr
-                ? "مسار إزالة الكربون — 12 شهراً"
-                : "Decarbonization Trend — 12 Months"}
-            </div>
-          </div>
-        </div> */}
-
         <div>
           <Image
             src="/dash-hero.png"
             alt="dashboard"
             width={550}
             height={600}
+            sizes="(max-width: 768px) 100vw, 550px"
           />
         </div>
       </div>
