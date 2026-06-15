@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import Image from "next/image";
 
 export default function Partners() {
   const { lang, t } = useLang();
@@ -138,9 +139,11 @@ export default function Partners() {
                 key={i}
                 className="group bg-white flex-shrink-0 w-60 h-28 flex items-center justify-center px-3 rounded-2xl border border-gray-200/60 dark:border-white/10 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden"
               >
-                <img
+                <Image
                   src={partner.logo}
                   alt={partner.name}
+                  width={160}
+                  height={64}
                   className="max-h-16 max-w-full object-contain transition-transform duration-300 group-hover:scale-110"
                   onError={(e) => {
                     const target = e.target as HTMLImageElement;
