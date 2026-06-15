@@ -242,6 +242,7 @@ export default function Navbar() {
               <a
                 href="https://emissionplatform.urimpact.sa/login"
                 onClick={() => setMenuOpen(false)}
+                target="_blank"
                 className={`w-full py-3 border-b text-sm transition-colors ${
                   isDark
                     ? "text-white/70 hover:text-white border-white/5"
