@@ -125,6 +125,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg border border-white/10 bg-white/3 flex items-center justify-center text-white/40 hover:text-[#00E5A0] hover:border-[#00E5A0]/30 transition-all"
+                aria-label="Visit URIMPACT on LinkedIn"
               >
                 <svg
                   width="16"
@@ -142,6 +143,7 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-lg border border-white/10 bg-white/3 flex items-center justify-center text-white/40 hover:text-[#00E5A0] hover:border-[#00E5A0]/30 transition-all"
+                aria-label="Contact us on WhatsApp"
               >
                 <svg
                   width="16"
@@ -157,7 +159,8 @@ export default function Footer() {
               <a
                 href={f.social.email}
                 className="w-9 h-9 rounded-lg border border-white/10 bg-white/3 flex items-center justify-center text-white/40 hover:text-[#00E5A0] hover:border-[#00E5A0]/30 transition-all"
-              >
+             aria-label="Send us an email"
+             >
                 <svg
                   width="16"
                   height="16"
