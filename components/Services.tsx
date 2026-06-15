@@ -159,7 +159,7 @@ function CSRMockup({ isAr }: { isAr: boolean }) {
             <span className="text-[10px] bg-[#00E5A0]/15 text-[#00E5A0] px-2 py-0.5 rounded-full font-medium">
               Verified
             </span>
-            <span className="text-[10px] bg-[#39D353]/15 text-[#39D353] px-2 py-0.5 rounded-full font-medium">
+            <span className="text-[10px] bg-[#39D353]/15 text-white px-2 py-0.5 rounded-full font-medium">
               Active
             </span>
           </div>
