@@ -40,7 +40,7 @@ export default function Footer() {
                 className="object-contain h-8 w-auto"
               />
             </div>
-            <p className="text-white/30 text-sm leading-relaxed">
+            <p className="text-white/60 text-sm leading-relaxed">
               {lang === "ar"
                 ? "منصة ذكاء الاستدامة للشركات في الشرق الأوسط "
                 : "Sustainability intelligence platform for enterprises across the Middle East"}
@@ -50,7 +50,7 @@ export default function Footer() {
           {/* Link columns */}
           {columns.map(({ data }, i) => (
             <div key={i} className={isAr ? "text-right" : ""}>
-           <p className="text-white font-semibold text-sm mb-4">
+              <p className="text-white font-semibold text-sm mb-4">
                 {t(data.label)}
               </p>
               <ul className="space-y-2.5">
@@ -58,7 +58,7 @@ export default function Footer() {
                   <li key={j}>
                     <a
                       href="#"
-                      className="text-white/30 text-sm hover:text-[#00E5A0] transition-colors duration-200"
+                      className="text-white/60 text-sm hover:text-[#00E5A0] transition-colors duration-200"
                     >
                       {t(link)}
                     </a>
@@ -98,12 +98,12 @@ export default function Footer() {
           <div
             className={`flex flex-wrap gap-x-5 gap-y-2 mb-5 ${isAr ? "justify-end" : ""}`}
           >
-            <span className="text-white/20 text-xs font-medium">Legal</span>
+            <span className="text-white/50 text-xs font-medium">Legal</span>
             {f.legal.map((link, i) => (
               <a
                 key={i}
                 href="#"
-                className="text-white/30 text-xs hover:text-[#00E5A0] transition-colors"
+                className="text-white/60 text-xs hover:text-[#00E5A0] transition-colors"
               >
                 {t(link)}
               </a>
@@ -113,7 +113,7 @@ export default function Footer() {
           <div
             className={`flex flex-col sm:flex-row items-center justify-between gap-4 ${isAr ? "flex-row-reverse" : ""}`}
           >
-            <span className="text-white/20 text-sm">{t(f.copyright)}</span>
+            <span className="text-white/50 text-sm">{t(f.copyright)}</span>
 
             {/* Social icons */}
             <div
@@ -159,8 +159,8 @@ export default function Footer() {
               <a
                 href={f.social.email}
                 className="w-9 h-9 rounded-lg border border-white/10 bg-white/3 flex items-center justify-center text-white/40 hover:text-[#00E5A0] hover:border-[#00E5A0]/30 transition-all"
-             aria-label="Send us an email"
-             >
+                aria-label="Send us an email"
+              >
                 <svg
                   width="16"
                   height="16"
@@ -178,7 +178,7 @@ export default function Footer() {
               {["GRI", "IFRS", "ISO 14064"].map((badge) => (
                 <span
                   key={badge}
-                  className="hidden sm:block text-[10px] text-white/20 px-2.5 py-1 rounded-full border border-white/10"
+                  className="hidden sm:block text-[10px] text-white/50 px-2.5 py-1 rounded-full border border-white/10"
                 >
                   {badge}
                 </span>
