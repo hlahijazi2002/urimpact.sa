@@ -50,9 +50,9 @@ export default function Footer() {
           {/* Link columns */}
           {columns.map(({ data }, i) => (
             <div key={i} className={isAr ? "text-right" : ""}>
-              <h4 className="text-white font-semibold text-sm mb-4">
+           <p className="text-white font-semibold text-sm mb-4">
                 {t(data.label)}
-              </h4>
+              </p>
               <ul className="space-y-2.5">
                 {data.links.map((link, j) => (
                   <li key={j}>
