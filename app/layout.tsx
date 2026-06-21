@@ -47,20 +47,20 @@ export const metadata: Metadata = {
     "قياس انبعاثات الكربون",
     "تقارير الاستدامة",
   ],
-  authors: [{ name: "URIMPACT", url: "https://urimpact.sa" }],
+  authors: [{ name: "URIMPACT", url: "https://urimpact-sa.vercel.app" }],
   creator: "URIMPACT",
   publisher: "URIMPACT",
-  metadataBase: new URL("https://urimpact.sa"),
+  metadataBase: new URL("https://urimpact-sa.vercel.app"),
   alternates: {
-    canonical: "https://urimpact.sa",
+    canonical: "https://urimpact-sa.vercel.app",
     languages: {
-      "en-SA": "https://urimpact.sa",
-      "ar-SA": "https://urimpact.sa/ar",
+      "en-SA": "https://urimpact-sa.vercel.app",
+      "ar-SA": "https://urimpact-sa.vercel.app/ar",
     },
   },
   openGraph: {
     type: "website",
-    url: "https://urimpact.sa",
+    url: "https://urimpact-sa.vercel.app",
     siteName: "URIMPACT",
     title: "URIMPACT — Measure. Manage. Mitigate.",
     description:
@@ -127,6 +127,45 @@ export default function RootLayout({
                 document.documentElement.setAttribute('data-theme', theme);
               })();
             `,
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@graph": [
+                {
+                  "@type": "Organization",
+                  "@id": "https://urimpact-sa.vercel.app/#organization",
+                  name: "URIMPACT",
+                  url: "https://urimpact-sa.vercel.app",
+                  logo: "https://urimpact-sa.vercel.app/logo.png",
+                  description:
+                    "AI-powered sustainability platform for GHG accounting, ESG management, and Net Zero planning across the Middle East.",
+                  address: {
+                    "@type": "PostalAddress",
+                    addressCountry: "SA",
+                  },
+                  contactPoint: {
+                    "@type": "ContactPoint",
+                    contactType: "customer support",
+                    email: "info@urimpact.sa",
+                  },
+                  sameAs: ["https://www.linkedin.com/company/urimpact/"],
+                },
+                {
+                  "@type": "WebSite",
+                  "@id": "https://urimpact-sa.vercel.app/#website",
+                  url: "https://urimpact-sa.vercel.app",
+                  name: "URIMPACT",
+                  publisher: {
+                    "@id": "https://urimpact-sa.vercel.app/#organization",
+                  },
+                  inLanguage: ["en-SA", "ar-SA"],
+                },
+              ],
+            }),
           }}
         />
       </head>
