@@ -6,6 +6,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: "*",
       allow: "/",
     },
-    sitemap: "https://urimpact-sa.vercel.app/sitemap.xml",
+    sitemap: "https://urimpact.sa/sitemap.xml",
   };
 }

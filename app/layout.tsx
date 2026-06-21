@@ -47,20 +47,20 @@ export const metadata: Metadata = {
     "قياس انبعاثات الكربون",
     "تقارير الاستدامة",
   ],
-  authors: [{ name: "URIMPACT", url: "https://urimpact-sa.vercel.app" }],
+  authors: [{ name: "URIMPACT", url: "https://urimpact.sa" }],
   creator: "URIMPACT",
   publisher: "URIMPACT",
-  metadataBase: new URL("https://urimpact-sa.vercel.app"),
+  metadataBase: new URL("https://urimpact.sa"),
   alternates: {
-    canonical: "https://urimpact-sa.vercel.app",
+    canonical: "https://urimpact.sa",
     languages: {
-      "en-SA": "https://urimpact-sa.vercel.app",
-      "ar-SA": "https://urimpact-sa.vercel.app/ar",
+      "en-SA": "https://urimpact.sa",
+      "ar-SA": "https://urimpact.sa/ar",
     },
   },
   openGraph: {
     type: "website",
-    url: "https://urimpact-sa.vercel.app",
+    url: "https://urimpact.sa",
     siteName: "URIMPACT",
     title: "URIMPACT — Measure. Manage. Mitigate.",
     description:
@@ -137,10 +137,10 @@ export default function RootLayout({
               "@graph": [
                 {
                   "@type": "Organization",
-                  "@id": "https://urimpact-sa.vercel.app/#organization",
+                  "@id": "https://urimpact.sa/#organization",
                   name: "URIMPACT",
-                  url: "https://urimpact-sa.vercel.app",
-                  logo: "https://urimpact-sa.vercel.app/logo.png",
+                  url: "https://urimpact.sa",
+                  logo: "https://urimpact.sa/logo.png",
                   description:
                     "AI-powered sustainability platform for GHG accounting, ESG management, and Net Zero planning across the Middle East.",
                   address: {
@@ -156,11 +156,11 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  "@id": "https://urimpact-sa.vercel.app/#website",
-                  url: "https://urimpact-sa.vercel.app",
+                  "@id": "https://urimpact.sa/#website",
+                  url: "https://urimpact.sa",
                   name: "URIMPACT",
                   publisher: {
-                    "@id": "https://urimpact-sa.vercel.app/#organization",
+                    "@id": "https://urimpact.sa/#organization",
                   },
                   inLanguage: ["en-SA", "ar-SA"],
                 },
