@@ -23,8 +23,8 @@ export const content = {
     headline2: { en: "Manage", ar: "إلى تأثير" },
     headline3: { en: "Mitigate", ar: "حقيقي" },
     subheadline: {
-      en: "URIMPACT enables organizations to measure GHG emissions, manage ESG performance, automate sustainability reporting, and accelerate decarbonization through AI-driven insights and Nature-Based Solutions.",
-      ar: "تُمكّن URIMPACT المؤسسات من قياس انبعاثات الغازات الدفيئة، وإدارة أداء ESG، وأتمتة تقارير الاستدامة، وتسريع إزالة الكربون من خلال رؤى الذكاء الاصطناعي والحلول القائمة على الطبيعة.",
+      en: "URIMPACT is the leading ESG reporting and GHG emissions tracking platform for enterprises in Saudi Arabia and the Middle East. Measure Scope 1, 2 & 3 emissions, automate sustainability reporting, and accelerate Net Zero — powered by AI.",
+      ar: "URIMPACT هي منصة تقارير ESG وتتبع انبعاثات الغازات الدفيئة الرائدة للمؤسسات في المملكة العربية السعودية والشرق الأوسط. قِس انبعاثات النطاق 1 و2 و3، وأتمت تقارير الاستدامة، وسرّع رحلتك نحو الحياد الصفري — بقوة الذكاء الاصطناعي.",
     },
     cta1: { en: "Request Demo", ar: "طلب عرض تجريبي" },
     cta2: { en: "Learn More", ar: "اعرف المزيد" },
@@ -340,8 +340,8 @@ export const content = {
       ar: "حيث تلتقي التكنولوجيا بالطبيعة",
     },
     body: {
-      en: "Unlike traditional ESG software platforms, URIMPACT combines digital sustainability intelligence with real-world Nature-Based Solutions to create measurable environmental impact.",
-      ar: "على خلاف منصات برامج ESG التقليدية، تجمع URIMPACT بين الذكاء الرقمي للاستدامة والحلول الطبيعية الواقعية لخلق تأثير بيئي قابل للقياس.",
+      en: "Unlike traditional ESG software platforms in Saudi Arabia, URIMPACT combines digital sustainability intelligence with real-world Nature-Based Solutions to create measurable environmental impact.",
+      ar: "على خلاف منصات برامج ESG التقليدية في المملكة العربية السعودية، تجمع URIMPACT بين الذكاء الرقمي للاستدامة والحلول الطبيعية الواقعية لخلق تأثير بيئي قابل للقياس.",
     },
     highlights: [
       { en: "Urban Landscaping", ar: "التشجير والتنسيق الحضري" },
@@ -356,33 +356,33 @@ export const content = {
       en: "Sustainability That Creates Business Value",
       ar: "استدامة تخلق قيمة تجارية",
     },
-  metrics: [
-  {
-    value: "70–90%",
-    label: { en: "Reporting Effort Reduced", ar: "تخفيض في جهد التقارير" },
-    icon: "delayed" as IconName,
-  },
-  {
-    value: "30%",
-    label: { en: "Faster Deal Closures", ar: "إغلاق صفقات أسرع" },
-    icon: "chart-gap" as IconName,
-  },
-  {
-    value: "100%",
-    label: { en: "Audit-Ready Records", ar: "سجلات جاهزة للتدقيق" },
-    icon: "decarb-rec" as IconName,
-  },
-  {
-    value: "∞",
-    label: { en: "Investor Confidence Boost", ar: "تعزيز ثقة المستثمرين" },
-    icon: "benchmark" as IconName,
-  },
-  {
-    value: "Net Zero",
-    label: { en: "Accelerated Planning", ar: "تخطيط متسارع" },
-    icon: "decarb-module" as IconName,
-  },
-],
+    metrics: [
+      {
+        value: "70–90%",
+        label: { en: "Reporting Effort Reduced", ar: "تخفيض في جهد التقارير" },
+        icon: "delayed" as IconName,
+      },
+      {
+        value: "30%",
+        label: { en: "Faster Deal Closures", ar: "إغلاق صفقات أسرع" },
+        icon: "chart-gap" as IconName,
+      },
+      {
+        value: "100%",
+        label: { en: "Audit-Ready Records", ar: "سجلات جاهزة للتدقيق" },
+        icon: "decarb-rec" as IconName,
+      },
+      {
+        value: "∞",
+        label: { en: "Investor Confidence Boost", ar: "تعزيز ثقة المستثمرين" },
+        icon: "benchmark" as IconName,
+      },
+      {
+        value: "Net Zero",
+        label: { en: "Accelerated Planning", ar: "تخطيط متسارع" },
+        icon: "decarb-module" as IconName,
+      },
+    ],
   },
 
   caseStudies: {
@@ -471,7 +471,7 @@ export const content = {
     sectionLabel: { en: "About", ar: "عن الشركة" },
     headline: { en: "About URIMPACT", ar: "عن URIMPACT" },
     body: {
-      en: "URIMPACT is a sustainability intelligence platform helping organizations accelerate their transition toward responsible, resilient, and low-carbon operations. We combine ESG management, GHG accounting, AI-powered decarbonization, and Nature-Based Solutions into one integrated ecosystem designed for modern enterprises.",
+      en: "URIMPACT is a sustainability intelligence platform helping organizations accelerate their transition toward responsible, resilient, and low-carbon operations. We combine ESG management, GHG accounting, carbon accounting, AI-powered decarbonization, and Nature-Based Solutions into one integrated ecosystem designed for modern enterprises.",
       ar: "URIMPACT هي منصة ذكاء استدامة تساعد المؤسسات على تسريع انتقالها نحو عمليات مسؤولة ومرنة وذات انبعاثات كربونية منخفضة. نجمع إدارة ESG ومحاسبة الغازات الدفيئة وإزالة الكربون المدعومة بالذكاء الاصطناعي والحلول الطبيعية في نظام بيئي متكامل واحد مصمم للمؤسسات الحديثة.",
     },
     mission: {
