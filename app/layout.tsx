@@ -5,6 +5,7 @@ import Chat from "../components/Chat";
 import { LangProvider } from "../context/LangContext";
 import { ThemeProvider } from "../context/ThemeContext";
 import Navbar from "@/components/Navbar";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -179,6 +180,7 @@ export default function RootLayout({
             <Chat />
           </LangProvider>
         </ThemeProvider>
+        <GoogleAnalytics gaId="G-VD5MLB1VG9" />
       </body>
     </html>
   );
