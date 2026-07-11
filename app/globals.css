@@ -91,7 +91,8 @@ body {
 
 /* ✅ NBS: إخفاء الـ blobs والـ overlay الداخلية في اللايت */
 [data-theme="light"] #nbs > .absolute.inset-0,
-[data-theme="light"] #contact > .absolute.inset-0 {
+[data-theme="light"] #contact > .absolute.inset-0,
+[data-theme="light"] #webinars > .absolute.inset-0 {
   display: none !important;
 }
 

@@ -56,7 +56,7 @@ export const metadata: Metadata = {
     canonical: "https://urimpact.sa",
     languages: {
       "en-SA": "https://urimpact.sa",
-      "ar-SA": "https://urimpact.sa/ar",
+      "ar-SA": "https://urimpact.sa",
     },
   },
   openGraph: {

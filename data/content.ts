@@ -350,6 +350,17 @@ export const content = {
     ],
   },
 
+  webinars: {
+    headline: { en: "Webinars & Workshops", ar: "ندوات وورش عمل" },
+    sub1: {
+      en: "Sustainability doesn't have to be complicated",
+      ar: "الاستدامة لا يجب أن تكون معقدة",
+    },
+    sub2: {
+      en: "We deliver workshops and webinars that simplify compliance, making it practical, engaging, and easy for every team",
+      ar: "نقدّم ورش عمل وندوات تبسّط الامتثال، وتجعله عمليًا وسهلاً وممتعًا لكل فريق",
+    },
+  },
   businessValue: {
     sectionLabel: { en: "Business Value", ar: "القيمة التجارية" },
     headline: {
