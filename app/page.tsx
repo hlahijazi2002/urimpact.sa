@@ -15,14 +15,12 @@ import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import DashboardShowcase from "@/components/Dashboardshowcase";
 import SatelliteComparison from "@/components/Satellitecomparison";
-import Webinars from "@/components/Webinars";
 
 export default function HomePage() {
   return (
     <main className="bg-[#050D0A] min-h-screen">
       <Navbar />
       <Hero />
-      <Webinars />
       <Partners />
       <Problem />
       <Platform />
