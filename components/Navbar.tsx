@@ -33,6 +33,7 @@ export default function Navbar() {
     { label: n.platform, href: "/#platform" },
     { label: n.solutions, href: "/#caseStudies" },
     { label: n.frameworks, href: "/#frameworks" },
+    { label: n.webinars, href: "/#webinars" },
     { label: n.about, href: "/#about" },
     { label: n.contact, href: "/demo" },
   ];

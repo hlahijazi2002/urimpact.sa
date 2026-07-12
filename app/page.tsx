@@ -15,6 +15,7 @@ import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import DashboardShowcase from "@/components/Dashboardshowcase";
 import SatelliteComparison from "@/components/Satellitecomparison";
+import Webinars from "@/components/Webinars";
 
 export default function HomePage() {
   return (
@@ -34,6 +35,7 @@ export default function HomePage() {
       <BusinessValue />
       <CaseStudies />
       <About />
+      <Webinars />
       <CTA />
       <Footer />
     </main>

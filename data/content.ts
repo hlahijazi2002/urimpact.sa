@@ -8,6 +8,7 @@ export const content = {
     solutions: { en: "Solutions", ar: "الحلول" },
     frameworks: { en: "Frameworks", ar: "المعايير" },
     resources: { en: "Resources", ar: "الموارد" },
+    webinars: { en: "Webinars", ar: "ندواتنا" },
     about: { en: "About", ar: "عن الشركة" },
     contact: { en: "Contact", ar: "تواصل معنا" },
     demo: { en: "Request Demo", ar: "طلب عرض" },
