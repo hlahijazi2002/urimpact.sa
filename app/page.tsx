@@ -34,8 +34,9 @@ export default function HomePage() {
       <SatelliteComparison />
       <BusinessValue />
       <CaseStudies />
+       <Webinars />
       <About />
-      <Webinars />
+     
       <CTA />
       <Footer />
     </main>
