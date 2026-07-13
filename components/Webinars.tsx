@@ -38,7 +38,26 @@ export default function Webinars() {
           <p className="text-lg lg:text-xl font-bold text-[#00E5A0] mb-2.5">
             {t(c.sub1)}
           </p>
-          <p className="text-white/50 text-md max-w-2xl mx-auto">{t(c.sub2)}</p>
+          <p className="text-white/50 text-md max-w-2xl mx-auto mb-10">
+            {t(c.sub2)}
+          </p>
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.15 }}
+          className="relative w-full max-w-3xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-[0_0_60px_rgba(0,229,160,0.1)]"
+        >
+          <iframe
+            className="absolute inset-0 w-full h-full"
+            src="https://www.youtube.com/embed/nlpmnNUZFDs"
+            title={t(c.headline)}
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowFullScreen
+          />
         </motion.div>
       </div>
     </section>
