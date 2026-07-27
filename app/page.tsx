@@ -15,7 +15,11 @@ import CTA from "../components/CTA";
 import Footer from "../components/Footer";
 import DashboardShowcase from "@/components/Dashboardshowcase";
 import SatelliteComparison from "@/components/Satellitecomparison";
-import Webinars from "@/components/Webinars";
+import dynamic from "next/dynamic";
+
+const Webinars = dynamic(() => import("@/components/Webinars"), {
+  ssr: false,
+});
 
 export default function HomePage() {
   return (
