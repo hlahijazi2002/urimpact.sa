@@ -1,4 +1,4 @@
-export const post4 = {
+export const post = {
   slug: "esg-software-middle-east",
   title: {
     en: "ESG Software for Middle East Enterprises: What to Look For in 2026",

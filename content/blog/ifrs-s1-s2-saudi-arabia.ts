@@ -1,4 +1,4 @@
-export const post3 = {
+export const post = {
   slug: "ifrs-s1-s2-saudi-arabia",
   title: {
     en: "IFRS S1 and S2: What Saudi Companies Need to Know",

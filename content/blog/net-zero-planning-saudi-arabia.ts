@@ -1,4 +1,4 @@
-export const post2 = {
+export const post = {
   slug: "net-zero-planning-saudi-arabia",
   title: {
     en: "Net Zero Planning in Saudi Arabia: How Enterprises Can Get Started",
