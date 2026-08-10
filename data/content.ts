@@ -732,37 +732,49 @@ export const content = {
     platform: {
       label: { en: "Platform", ar: "المنصة" },
       links: [
-        { en: "ESG Management", ar: "إدارة ESG" },
-        { en: "GHG Accounting", ar: "محاسبة الغازات الدفيئة" },
-        { en: "Decarbonization", ar: "إزالة الكربون" },
-        { en: "Nature-Based Solutions", ar: "الحلول القائمة على الطبيعة" },
+        { en: "ESG Management", ar: "إدارة ESG", href: "/#platform" },
+        {
+          en: "GHG Accounting",
+          ar: "محاسبة الغازات الدفيئة",
+          href: "/#platform",
+        },
+        { en: "Decarbonization", ar: "إزالة الكربون", href: "/#platform" },
+        {
+          en: "Nature-Based Solutions",
+          ar: "الحلول القائمة على الطبيعة",
+          href: "/#platform",
+        },
       ],
     },
     solutions: {
       label: { en: "Solutions", ar: "الحلول" },
       links: [
-        { en: "Manufacturing", ar: "التصنيع" },
-        { en: "Real Estate", ar: "العقارات" },
-        { en: "Smart Cities", ar: "المدن الذكية" },
-        { en: "Supply Chain", ar: "سلسلة التوريد" },
+        { en: "Manufacturing", ar: "التصنيع", href: "/#caseStudies" },
+        { en: "Real Estate", ar: "العقارات", href: "/#caseStudies" },
+        { en: "Smart Cities", ar: "المدن الذكية", href: "/#caseStudies" },
+        { en: "Supply Chain", ar: "سلسلة التوريد", href: "/#caseStudies" },
       ],
     },
     resources: {
       label: { en: "Resources", ar: "الموارد" },
       links: [
-        { en: "Blogs", ar: "المدونات" },
-        { en: "Sustainability Insights", ar: "رؤى الاستدامة" },
-        { en: "Framework Guides", ar: "أدلة المعايير" },
-        { en: "ESG News", ar: "أخبار ESG" },
+        { en: "Blogs", ar: "المدونات", href: "/blog" },
+        { en: "Sustainability Insights", ar: "رؤى الاستدامة", href: "/blog" },
+        { en: "Framework Guides", ar: "أدلة المعايير", href: "/#frameworks" },
+        { en: "ESG News", ar: "أخبار ESG", href: "/blog" },
       ],
     },
     company: {
       label: { en: "Company", ar: "الشركة" },
       links: [
-        { en: "About", ar: "عن الشركة" },
-        { en: "Contact", ar: "تواصل معنا" },
-        { en: "Careers", ar: "الوظائف" },
-        { en: "Privacy Policy", ar: "سياسة الخصوصية" },
+        { en: "About", ar: "عن الشركة", href: "/#about" },
+        { en: "Contact", ar: "تواصل معنا", href: "/demo" },
+        { en: "Careers", ar: "الوظائف", href: "/careers" },
+        {
+          en: "Privacy Policy",
+          ar: "سياسة الخصوصية",
+          href: "/legal/privacy-policy",
+        },
       ],
     },
     copyright: {

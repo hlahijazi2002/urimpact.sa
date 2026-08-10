@@ -13,12 +13,7 @@ const ThemeContext = createContext<ThemeContextType>({
 });
 
 export function ThemeProvider({ children }: { children: React.ReactNode }) {
-  const [theme, setTheme] = useState<Theme>(() => {
-    if (typeof window !== "undefined") {
-      return (localStorage.getItem("urimpact-theme") as Theme) || "light";
-    }
-    return "light";
-  });
+  const [theme, setTheme] = useState<Theme>("light");
 
   const applyTheme = (t: Theme) => {
     const root = document.documentElement;
@@ -30,6 +25,13 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     root.setAttribute("data-theme", t);
     localStorage.setItem("urimpact-theme", t);
   };
+
+  // Read the saved theme only after mount, so the first client render
+  // matches what the server rendered (avoids hydration mismatch)
+  useEffect(() => {
+    const saved = (localStorage.getItem("urimpact-theme") as Theme) || "light";
+    setTheme(saved);
+  }, []);
 
   useEffect(() => {
     applyTheme(theme);

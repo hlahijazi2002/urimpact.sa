@@ -320,7 +320,7 @@ export default function DashboardShowcase() {
                 className="absolute inset-0"
               >
                 <Image
-                  src={`/dash-${active}.png`}
+                  src={`/dash-${active}.webp`}
                   alt={`URIMPACT ${t(activeTab.label)} dashboard`}
                   fill
                   className="object-cover object-top"
@@ -332,7 +332,7 @@ export default function DashboardShowcase() {
 
             {/* Mobile tap-to-expand — hidden on md+ */}
             <a
-              href={`/dash-${active}.png`}
+              href={`/dash-${active}.webp`}
               target="_blank"
               rel="noopener noreferrer"
               className="absolute inset-0 z-10 flex md:hidden items-start justify-end p-4"

@@ -2,6 +2,7 @@
 import { motion } from "framer-motion";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
+import { Icon } from "../data/icons";
 
 export default function NBS() {
   const { lang, t } = useLang();
@@ -58,27 +59,29 @@ export default function NBS() {
                 />
               ))}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-28 h-28 rounded-full bg-gradient-to-br from-[#00E5A0] to-[#39D353] flex items-center justify-center shadow-[0_0_60px_rgba(0,229,160,0.4)]">
-                <span className="text-5xl">🌿</span>
+                <Icon name="leaf" size={40} className="text-[#050D0A]" />
               </div>
-              {["🌳", "💧", "☀️", "🌍"].map((icon, i) => {
-                const angle = (i / 4) * 2 * Math.PI;
-                const r = 42;
-                const x = 50 + r * Math.cos(angle);
-                const y = 50 + r * Math.sin(angle);
-                return (
-                  <div
-                    key={i}
-                    className="absolute w-12 h-12 rounded-full bg-[#0A1A14] border border-[#00E5A0]/30 flex items-center justify-center shadow-lg"
-                    style={{
-                      left: `${x}%`,
-                      top: `${y}%`,
-                      transform: "translate(-50%, -50%)",
-                    }}
-                  >
-                    <span className="text-xl">{icon}</span>
-                  </div>
-                );
-              })}
+              {(["tree", "water-drop", "sun", "globe"] as const).map(
+                (icon, i) => {
+                  const angle = (i / 4) * 2 * Math.PI;
+                  const r = 42;
+                  const x = 50 + r * Math.cos(angle);
+                  const y = 50 + r * Math.sin(angle);
+                  return (
+                    <div
+                      key={i}
+                      className="absolute w-12 h-12 rounded-full bg-[#0A1A14] border border-[#00E5A0]/30 flex items-center justify-center shadow-lg"
+                      style={{
+                        left: `${x}%`,
+                        top: `${y}%`,
+                        transform: "translate(-50%, -50%)",
+                      }}
+                    >
+                      <Icon name={icon} size={20} className="text-[#00E5A0]" />
+                    </div>
+                  );
+                },
+              )}
             </div>
           </motion.div>
 

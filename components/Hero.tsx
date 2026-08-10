@@ -42,7 +42,7 @@ function DashboardMockup({ isAr }: { isAr: boolean }) {
 
         <div>
           <Image
-            src="/dash-hero.png"
+            src="/dash-hero.webp"
             alt="dashboard"
             width={550}
             height={600}
