@@ -31,7 +31,13 @@ export type IconName =
   | "realtime"
   | "full-coverage"
   | "cost-effective"
-  | "transparent";
+  | "transparent"
+  // NBS section
+  | "leaf"
+  | "tree"
+  | "water-drop"
+  | "sun"
+  | "globe";
 
 interface IconProps {
   name: IconName;
@@ -285,6 +291,50 @@ const paths: Record<IconName, React.ReactNode> = {
       <rect x="3" y="3" width="18" height="14" rx="2" />
       <path strokeLinecap="round" d="M7 8h10M7 11h7" />
       <path strokeLinecap="round" strokeLinejoin="round" d="M8 20h8M12 17v3" />
+    </>
+  ),
+  // ── NBS section ──────────────────────────────
+  leaf: (
+    <>
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M20 4C11 4 4 11 4 20c9 0 16-7 16-16Z"
+      />
+      <path strokeLinecap="round" d="M4 20 12 12" />
+    </>
+  ),
+  tree: (
+    <>
+      <circle cx="12" cy="9" r="6" />
+      <path strokeLinecap="round" d="M12 15v6" />
+    </>
+  ),
+  "water-drop": (
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M12 2s7 8.5 7 13a7 7 0 1 1-14 0c0-4.5 7-13 7-13Z"
+    />
+  ),
+  sun: (
+    <>
+      <circle cx="12" cy="12" r="4" />
+      <path
+        strokeLinecap="round"
+        d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
+      />
+    </>
+  ),
+  globe: (
+    <>
+      <circle cx="12" cy="12" r="9" />
+      <path strokeLinecap="round" d="M3 12h18" />
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M12 3c2.5 2.5 4 5.5 4 9s-1.5 6.5-4 9c-2.5-2.5-4-5.5-4-9s1.5-6.5 4-9Z"
+      />
     </>
   ),
 };

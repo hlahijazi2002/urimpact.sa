@@ -1,15 +1,44 @@
 "use client";
+import { useState } from "react";
 import Image from "next/image";
 import { useLang } from "../context/LangContext";
 import { content } from "../data/content";
 import { useTheme } from "../context/ThemeContext";
+import emailjs from "@emailjs/browser";
 
 export default function Footer() {
   const { lang, t } = useLang();
-  const { theme, toggleTheme } = useTheme();
-  const f = content.footer;
   const isAr = lang === "ar";
+  const { theme, toggleTheme } = useTheme();
   const isDark = theme === "dark";
+  const f = content.footer;
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterStatus, setNewsletterStatus] = useState("idle");
+
+  async function handleNewsletterSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!newsletterEmail) return;
+    setNewsletterStatus("sending");
+    try {
+      const res = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
+        {
+          name: "Newsletter Subscriber",
+          workEmail: newsletterEmail,
+          message: "New newsletter signup from the footer form.",
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!,
+      );
+      if (res.status !== 200) throw new Error();
+      setNewsletterStatus("sent");
+      setNewsletterEmail("");
+      setTimeout(() => setNewsletterStatus("idle"), 5000);
+    } catch {
+      setNewsletterStatus("error");
+      setTimeout(() => setNewsletterStatus("idle"), 5000);
+    }
+  }
 
   const columns = [
     { data: f.platform },
@@ -57,7 +86,7 @@ export default function Footer() {
                 {data.links.map((link, j) => (
                   <li key={j}>
                     <a
-                      href="#"
+                      href={link.href || "#"}
                       className="text-white/60 text-sm hover:text-[#00E5A0] transition-colors duration-200"
                     >
                       {t(link)}
@@ -76,18 +105,40 @@ export default function Footer() {
           <p
             className={`text-white/40 text-sm font-medium ${isAr ? "text-right" : ""}`}
           >
-            {t(f.newsletter.label)}
+            {newsletterStatus === "sent"
+              ? isAr
+                ? "تم الاشتراك بنجاح، شكراً لك!"
+                : "You're subscribed — thank you!"
+              : newsletterStatus === "error"
+                ? isAr
+                  ? "حدث خطأ، حاول مرة أخرى"
+                  : "Something went wrong, please try again"
+                : t(f.newsletter.label)}
           </p>
-          <div className={`flex items-center gap-2 w-full sm:w-auto `}>
+          <form
+            onSubmit={handleNewsletterSubmit}
+            className={`flex items-center gap-2 w-full sm:w-auto `}
+          >
             <input
               type="email"
+              required
+              value={newsletterEmail}
+              onChange={(e) => setNewsletterEmail(e.target.value)}
               placeholder={t(f.newsletter.placeholder)}
               className={`flex-1 sm:w-64 px-4 py-2.5 rounded-lg bg-white/4 border border-white/10 text-white text-sm placeholder-white/20 outline-none focus:border-[#00E5A0]/40 transition-colors ${isAr ? "text-right" : ""}`}
             />
-            <button className="px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm hover:shadow-[0_0_20px_rgba(0,229,160,0.3)] transition-shadow shrink-0">
-              {t(f.newsletter.btn)}
+            <button
+              type="submit"
+              disabled={newsletterStatus === "sending"}
+              className="px-4 py-2.5 rounded-lg bg-gradient-to-r from-[#00E5A0] to-[#00C2FF] text-[#050D0A] font-semibold text-sm hover:shadow-[0_0_20px_rgba(0,229,160,0.3)] transition-shadow shrink-0 disabled:opacity-60"
+            >
+              {newsletterStatus === "sending"
+                ? isAr
+                  ? "جارٍ الإرسال..."
+                  : "Sending..."
+                : t(f.newsletter.btn)}
             </button>
-          </div>
+          </form>
         </div>
 
         {/* Bottom bar */}

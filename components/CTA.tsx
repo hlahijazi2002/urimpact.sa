@@ -61,7 +61,9 @@ export default function CTA() {
               {t(c.btn1)}
             </motion.a>
             <motion.a
-              href="#"
+              href={content.footer.social.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.98 }}
               className="px-10 py-5 rounded-xl border border-white/20 text-white font-medium text-lg hover:bg-white/5 hover:border-white/40 transition-all"
