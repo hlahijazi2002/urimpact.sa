@@ -6,6 +6,7 @@ import { LangProvider } from "../context/LangContext";
 import { ThemeProvider } from "../context/ThemeContext";
 import Navbar from "@/components/Navbar";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import { headers } from "next/headers";
 
 const dmSans = DM_Sans({
   subsets: ["latin"],
@@ -114,8 +115,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const locale = headers().get("x-locale") === "ar" ? "ar" : "en";
+  const dir = locale === "ar" ? "rtl" : "ltr";
+
   return (
-    <html suppressHydrationWarning lang="en" dir="ltr">
+    <html suppressHydrationWarning lang={locale} dir={dir}>
       <head>
         <script
           dangerouslySetInnerHTML={{
@@ -174,7 +178,7 @@ export default function RootLayout({
         className={`${dmSans.variable} ${tajawal.variable} font-sans antialiased`}
       >
         <ThemeProvider>
-          <LangProvider>
+          <LangProvider initialLang={locale}>
             <Navbar />
             {children}
             <Chat />

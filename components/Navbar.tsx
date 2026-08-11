@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "../context/LangContext";
@@ -7,12 +8,17 @@ import { useTheme } from "../context/ThemeContext";
 import { content } from "../data/content";
 
 export default function Navbar() {
-  const { lang, setLang, t } = useLang();
+  const { lang, t } = useLang();
   const { theme, toggleTheme } = useTheme();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const isAr = lang === "ar";
   const isDark = theme === "dark";
+  const pathname = usePathname();
+
+  const otherLangHref = isAr
+    ? pathname.replace(/^\/ar/, "") || "/"
+    : `/ar${pathname === "/" ? "" : pathname}`;
   const n = content.nav;
 
   useEffect(() => {
@@ -92,8 +98,8 @@ export default function Navbar() {
         {/* Right actions */}
         <div className="flex items-center gap-2 flex-shrink-0">
           {/* Language */}
-          <button
-            onClick={() => setLang(lang === "en" ? "ar" : "en")}
+          <a
+            href={otherLangHref}
             className={`flex items-center gap-1.5 px-3 py-2 rounded-lg border text-sm font-medium transition-all whitespace-nowrap ${
               isDark
                 ? "border-white/10 bg-white/5 text-white/70 hover:text-white hover:bg-white/10"
@@ -112,7 +118,7 @@ export default function Navbar() {
               <path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
             </svg>
             {t(n.langSwitch)}
-          </button>
+          </a>
 
           {/* Theme */}
           <button

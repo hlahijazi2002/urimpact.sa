@@ -14,28 +14,22 @@ const LangContext = createContext<LangContextType>({
   t: (obj) => obj.en,
 });
 
-export function LangProvider({ children }: { children: React.ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("en");
+export function LangProvider({
+  children,
+  initialLang,
+}: {
+  children: React.ReactNode;
+  initialLang: Lang;
+}) {
+  const [lang, setLangState] = useState<Lang>(initialLang);
 
-  // Persist language choice
   useEffect(() => {
-    const saved = localStorage.getItem("urimpact-lang") as Lang | null;
-    if (saved) setLangState(saved);
-  }, []);
+    setLangState(initialLang);
+  }, [initialLang]);
 
   const setLang = (l: Lang) => {
     setLangState(l);
-    localStorage.setItem("urimpact-lang", l);
-    // Update document dir for proper RTL layout
-    document.documentElement.setAttribute("dir", l === "ar" ? "rtl" : "ltr");
-    document.documentElement.setAttribute("lang", l);
   };
-
-  useEffect(() => {
-    // Apply dir on initial load
-    document.documentElement.setAttribute("dir", lang === "ar" ? "rtl" : "ltr");
-    document.documentElement.setAttribute("lang", lang);
-  }, [lang]);
 
   const t = (obj: { en: string; ar: string }) => obj[lang];
 

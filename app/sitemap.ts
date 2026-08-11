@@ -1,60 +1,57 @@
 import { MetadataRoute } from "next";
 
+const paths = [
+  { path: "", changeFrequency: "monthly" as const, priority: 1 },
+  { path: "/demo", changeFrequency: "monthly" as const, priority: 0.8 },
+  { path: "/blog", changeFrequency: "weekly" as const, priority: 0.9 },
+  {
+    path: "/blog/esg-reporting-saudi-arabia",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/blog/ghg-emissions-tracking-saudi-arabia",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/blog/net-zero-planning-saudi-arabia",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/blog/ifrs-s1-s2-saudi-arabia",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/blog/esg-software-middle-east",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+  {
+    path: "/blog/carbon-footprint-measurement-saudi-arabia",
+    changeFrequency: "monthly" as const,
+    priority: 0.8,
+  },
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const base = "https://urimpact.sa";
+  const now = new Date();
+
+  return paths.flatMap(({ path, changeFrequency, priority }) => [
     {
-      url: "https://urimpact.sa",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 1,
+      url: `${base}${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
     },
     {
-      url: "https://urimpact.sa/demo",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
+      url: `${base}/ar${path}`,
+      lastModified: now,
+      changeFrequency,
+      priority,
     },
-    {
-      url: "https://urimpact.sa/blog",
-      lastModified: new Date(),
-      changeFrequency: "weekly",
-      priority: 0.9,
-    },
-    {
-      url: "https://urimpact.sa/blog/esg-reporting-saudi-arabia",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://urimpact.sa/blog/ghg-emissions-tracking-saudi-arabia",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://urimpact.sa/blog/net-zero-planning-saudi-arabia",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://urimpact.sa/blog/ifrs-s1-s2-saudi-arabia",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://urimpact.sa/blog/esg-software-middle-east",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-    {
-      url: "https://urimpact.sa/blog/carbon-footprint-measurement-saudi-arabia",
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.8,
-    },
-  ];
+  ]);
 }
