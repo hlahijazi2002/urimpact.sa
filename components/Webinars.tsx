@@ -18,6 +18,19 @@ const VIDEOS = [
     },
     date: "June 18, 2026",
   },
+  {
+    id: "roi-sustainability-2026",
+    videoId: "IqGa605_u44",
+    title: {
+      en: "The ROI of Sustainability",
+      ar: "العائد على الاستثمار في الاستدامة",
+    },
+    desc: {
+      en: "Turning ESG & carbon management into business value",
+      ar: "تحويل إدارة ESG والكربون إلى قيمة تجارية",
+    },
+    date: "August 2, 2026",
+  },
 ];
 
 export default function Webinars() {
@@ -75,10 +88,13 @@ export default function Webinars() {
               onClick={() => setActive(v.videoId)}
               className={`group relative w-full sm:w-96 rounded-xl overflow-hidden border border-white/10 bg-white/3 hover:border-white/25 transition-colors ${isAr ? "text-right" : "text-left"}`}
             >
-              <div className="relative aspect-video overflow-hidden">
+              <div className="relative aspect-video overflow-hidden bg-black">
                 <img
-                  src={`https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg`}
+                  src={`https://img.youtube.com/vi/${v.videoId}/maxresdefault.jpg`}
                   alt={t(v.title)}
+                  onError={(e) => {
+                    e.currentTarget.src = `https://img.youtube.com/vi/${v.videoId}/hqdefault.jpg`;
+                  }}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
                 />
                 <div className="absolute inset-0 bg-black/20 flex items-center justify-center">
@@ -93,15 +109,16 @@ export default function Webinars() {
                   </div>
                 </div>
               </div>
-              <div className="p-3">
-                <h3 className="text-sm font-semibold text-white leading-snug mb-1">
+              <div className="p-3 flex flex-col">
+                <h3 className="text-sm font-semibold text-white leading-snug mb-2ذ line-clamp-2">
                   {t(v.title)}
                 </h3>
-                <p className="text-xs text-white/50 leading-snug">
+                <p className="text-xs text-white/50 leading-snug line-clamp-2">
                   {t(v.desc)}
                 </p>
                 <span
-                  className={`inline-flex mt-3 items-center gap-1 text-[10px] text-white/50  py-1 bg-white/5 border border-white/10 px-1.5 rounded-full`}
+                  style={{ marginTop: "10px" }}
+                  className={`inline-flex w-fit items-center gap-1 text-[10px] text-white/50  py-1 bg-white/5 border border-white/10 px-1.5 rounded-full`}
                 >
                   <svg
                     className="w-3 h-3"
